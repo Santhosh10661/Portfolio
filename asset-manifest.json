@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.c81dd831.css",
+    "main.js": "/Portfolio/static/js/main.6ca2dbb8.js",
+    "static/js/592.eb07726c.chunk.js": "/Portfolio/static/js/592.eb07726c.chunk.js",
+    "static/media/Introduction to Frontend Development.jpg": "/Portfolio/static/media/Introduction to Frontend Development.2c900118b7923e38d887.jpg",
+    "static/media/React Basics.jpg": "/Portfolio/static/media/React Basics.660ddda6d38159822baa.jpg",
+    "static/media/Programming In Javascript.jpg": "/Portfolio/static/media/Programming In Javascript.80a2dd2d8280432fb7d9.jpg",
+    "static/media/Notes 2.jpg": "/Portfolio/static/media/Notes 2.dbb6976244651a34cf8b.jpg",
+    "static/media/Notes 4.jpg": "/Portfolio/static/media/Notes 4.8a2c254e21f0058c0221.jpg",
+    "static/media/Foundation Ux Design.jpg": "/Portfolio/static/media/Foundation Ux Design.e6de76aab6e354797e48.jpg",
+    "static/media/Notes 3.jpg": "/Portfolio/static/media/Notes 3.7ccb5cdb729fab062de2.jpg",
+    "static/media/Notes 1.jpg": "/Portfolio/static/media/Notes 1.668b29b8b5c830cd6d35.jpg",
+    "index.html": "/Portfolio/index.html",
+    "main.c81dd831.css.map": "/Portfolio/static/css/main.c81dd831.css.map",
+    "main.6ca2dbb8.js.map": "/Portfolio/static/js/main.6ca2dbb8.js.map",
+    "592.eb07726c.chunk.js.map": "/Portfolio/static/js/592.eb07726c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c81dd831.css",
+    "static/js/main.6ca2dbb8.js"
+  ]
+}
