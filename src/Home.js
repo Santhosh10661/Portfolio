@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProImgCont from "./ProImgCont";
 import { MdDoubleArrow } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 import "./Css/Home.css";
 
 function Home() {
   let [newPageOpend, setNewPageOpened] = useState(false);
+
+  let navigate = useNavigate();
+  useEffect(() => {
+    navigate("/", { replace: true });
+  }, []);
 
   function handleNewPage() {
     setNewPageOpened(true);
