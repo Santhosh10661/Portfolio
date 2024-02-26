@@ -1,0 +1,186 @@
+/* profile ImgCon */
+.circleCon {
+  position: absolute;
+  top: 80%;
+  left: 15%;
+  animation-name: imgConAnimate;
+  animation-duration: 2s;
+  transition: 2s ease-out;
+  overflow: visible;
+}
+
+@keyframes imgConAnimate {
+  0% {
+    top: -5%;
+    left: 60%;
+    transform: scale(0.5);
+  }
+  20% {
+    top: 50%;
+    left: 30%;
+    transform: scale(1);
+  }
+  40% {
+    top: 55%;
+    left: 40%;
+    transform: scale(1);
+  }
+  50% {
+    top: 95%;
+    left: -5%;
+    transform: scale(1);
+  }
+  100% {
+    top: 80%;
+    left: 15%;
+    transform: scale(8);
+  }
+}
+.openPage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  border-radius: 0%;
+  animation-name: openNewPage;
+  animation-duration: 1.5s;
+}
+
+@keyframes openNewPage {
+  0% {
+    position: absolute;
+    top: 80%;
+    left: 15%;
+    transform: scale(8);
+  }
+  25% {
+    position: absolute;
+    top: 90%;
+    left: 0%;
+    transform: scale(2);
+  }
+  50% {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: scale(5);
+  }
+  75% {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: scale(10);
+  }
+  100% {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 0%;
+    transform: scale(21);
+  }
+}
+.nameCon {
+  position: absolute;
+  top: 35%;
+  animation-name: nameShow;
+  animation-duration: 2s;
+}
+
+@keyframes nameShow {
+  0% {
+    top: -50%;
+  }
+  75% {
+    top: -50%;
+  }
+  90% {
+    top: 40%;
+  }
+  100% {
+    top: 35%;
+  }
+}
+.nameConHide {
+  position: absolute;
+  top: -50%;
+  animation-name: nameHide;
+  animation-duration: 2s;
+}
+@keyframes nameHide {
+  0% {
+    top: 35%;
+  }
+  10% {
+    top: 40%;
+  }
+  25% {
+    top: -50%;
+  }
+  100% {
+    top: -50%;
+  }
+}
+
+.letGoArrowL {
+  position: relative;
+  left: 0%;
+  animation-name: arrowMoveL;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+}
+
+@keyframes arrowMoveL {
+  0% {
+    left: 0%;
+    transform: rotate(180deg);
+  }
+  40% {
+    left: -20%;
+    transform: rotate(180deg);
+  }
+  50% {
+    left: -20%;
+    transform: rotate(0deg);
+  }
+  90% {
+    left: 0%;
+    transform: rotate(0deg);
+  }
+  100% {
+    left: 0%;
+    transform: rotate(180deg);
+  }
+}
+.letGoArrowR {
+  position: relative;
+  left: 0%;
+  transform: rotate(180deg);
+  animation-name: arrowMoveR;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+}
+
+@keyframes arrowMoveR {
+  0% {
+    left: 0%;
+    transform: rotate(0deg);
+  }
+  40% {
+    left: 20%;
+    transform: rotate(0deg);
+  }
+  50% {
+    left: 20%;
+    transform: rotate(180deg);
+  }
+  90% {
+    left: 0%;
+    transform: rotate(180deg);
+  }
+  100% {
+    left: 0%;
+    transform: rotate(0deg);
+  }
+}
