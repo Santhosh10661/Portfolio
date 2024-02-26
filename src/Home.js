@@ -34,7 +34,7 @@ function Home() {
             borderRadius: "5px",
           }}
         >
-          i am frontend developer
+          i am a frontend developer
         </h4>
         <p className=" text-capitalize">
           A frontend developer specializes in building the user interface of
