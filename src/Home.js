@@ -7,8 +7,6 @@ import "./Css/Home.css";
 function Home() {
   let [newPageOpend, setNewPageOpened] = useState(false);
 
-  
-
   function handleNewPage() {
     setNewPageOpened(true);
   }
