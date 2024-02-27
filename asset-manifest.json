@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.c81dd831.css",
-    "main.js": "/Portfolio/static/js/main.6ca2dbb8.js",
+    "main.js": "/Portfolio/static/js/main.cd86ed1d.js",
     "static/js/592.eb07726c.chunk.js": "/Portfolio/static/js/592.eb07726c.chunk.js",
     "static/media/Introduction to Frontend Development.jpg": "/Portfolio/static/media/Introduction to Frontend Development.2c900118b7923e38d887.jpg",
     "static/media/React Basics.jpg": "/Portfolio/static/media/React Basics.660ddda6d38159822baa.jpg",
@@ -13,11 +13,11 @@
     "static/media/Notes 1.jpg": "/Portfolio/static/media/Notes 1.668b29b8b5c830cd6d35.jpg",
     "index.html": "/Portfolio/index.html",
     "main.c81dd831.css.map": "/Portfolio/static/css/main.c81dd831.css.map",
-    "main.6ca2dbb8.js.map": "/Portfolio/static/js/main.6ca2dbb8.js.map",
+    "main.cd86ed1d.js.map": "/Portfolio/static/js/main.cd86ed1d.js.map",
     "592.eb07726c.chunk.js.map": "/Portfolio/static/js/592.eb07726c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c81dd831.css",
-    "static/js/main.6ca2dbb8.js"
+    "static/js/main.cd86ed1d.js"
   ]
 }
