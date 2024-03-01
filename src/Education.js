@@ -1,9 +1,9 @@
 import React from "react";
 import "./Css/Education.css";
-
 import { LiaCertificateSolid } from "react-icons/lia";
 import { GiNotebook } from "react-icons/gi";
 import { MdLocationCity } from "react-icons/md";
+import { RxLapTimer } from "react-icons/rx";
 import { FaUserGraduate } from "react-icons/fa6";
 import { GrCertificate } from "react-icons/gr";
 
@@ -50,22 +50,32 @@ function Education() {
                       {edu.degree} <LiaCertificateSolid className="fs-2" />
                     </h5>
                     <div className="p-3">
-                      <div className="d-flex align-items-center">
-                        <h1>
+                      <div className="d-flex my-1 align-items-center ">
+                        <h1 className="m-2">
                           <GiNotebook />
                         </h1>
-                        <p className="m-0"> {edu.course}</p>
+                        <p className="m-0">{edu.course}</p>
                       </div>
-
-                      <div className="d-flex">
-                        <h1>
+                      <div className="d-flex my-1 ">
+                        <h1 className="m-2">
                           <MdLocationCity />
                         </h1>
-                        <p>
+                        <p className="m-0 mt-3">
                           {edu.college} {edu.city} - {edu.pinode}
                         </p>
                       </div>
-                      <p>duration : {edu.duration}</p>
+                      <div className="d-flex my-1 align-items-center">
+                        <h1 className="m-2">
+                          <GrCertificate />
+                        </h1>
+                        <p className="m-0">{edu.university}</p>
+                      </div>
+                      <div className="d-flex my-1 align-items-center">
+                        <h1 className="m-2">
+                          <RxLapTimer />
+                        </h1>
+                        <p className="m-0">{edu.duration}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
