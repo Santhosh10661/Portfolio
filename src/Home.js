@@ -1,21 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ProImgCont from "./ProImgCont";
 import { MdDoubleArrow } from "react-icons/md";
-
 import "./Css/Home.css";
 
-function Home() {
-  let [newPageOpend, setNewPageOpened] = useState(false);
-
-  function handleNewPage() {
-    setNewPageOpened(true);
-  }
+function Home(props) {
+  let { newPageOpend, handleNewPage } = props;
   return (
-    <div className="Home row  align-items-center ">
-      <ProImgCont
-        newPageOpend={newPageOpend}
-        setNewPageOpened={setNewPageOpened}
-      />
+    <div className="Home row align-items-center">
+      <ProImgCont newPageOpend={newPageOpend} />
       <div
         className={
           newPageOpend

@@ -4,11 +4,12 @@ import ProgramminInJavascript from "./certificate/Programming In Javascript.jpg"
 import IntroToFED from "./certificate/Introduction to Frontend Development.jpg";
 import FoundationUX from "./certificate/Foundation Ux Design.jpg";
 import OpenCertificateCon from "./OpenCertificateCon";
+
 import "./Css/Certification.css";
+import CertifiList from "./CertifiList";
 
 function Certification() {
-  let [openCertificate, setOpenCertificate] = useState(false);
-  let [reqId, setReqId] = useState(null);
+  let [reqId, setReqId] = useState(1);
   let certificationList = [
     {
       id: 1,
@@ -45,35 +46,37 @@ function Certification() {
   ];
 
   const handleOpen = (openedId) => {
-    setOpenCertificate(true);
     setReqId(openedId);
   };
   return (
-    <div className="Certification text-capitalize">
-      <h1 className="m-0 my-1 text-capitalize text-center">certification</h1>
-      <div className="row justify-content-center " style={{ height: "100%" }}>
-        <ul className="col-4 certiList p-0">
-          {certificationList.map((certificate) => {
-            return (
-              <li
-                className="listItem text-center py-2 my-2 "
-                onClick={() => handleOpen(certificate.id)}
-              >
-                {certificate.title}
-              </li>
-            );
-          })}
-        </ul>
-
-        <div className="col-8" style={{ transition: "0.3s ease" }}>
-          <OpenCertificateCon
-            reqId={reqId}
-            certificationList={certificationList}
-            openCertificate={openCertificate}
-          />
+    <section className="container-fluid Certification" id="Certification">
+      <div className="">
+        <h1
+          className="col-12 m-0 my-1 text-capitalize text-center"
+          style={{ height: "fit-content" }}
+        >
+          certification
+        </h1>
+        <div className="col-12 my-auto" style={{ height: "100%" }}>
+          <div className="row justify-content-center p-1 ">
+            <CertifiList
+              certificationList={certificationList}
+              handleOpen={handleOpen}
+              reqId={reqId}
+            />
+            <div
+              className="col-11 d-flex flex-wrap p-0"
+              style={{ transition: "0.3s ease" }}
+            >
+              <OpenCertificateCon
+                reqId={reqId}
+                certificationList={certificationList}
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

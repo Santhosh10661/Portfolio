@@ -1,12 +1,16 @@
 import React from "react";
 import "./Css/Education.css";
 
+import { LiaCertificateSolid } from "react-icons/lia";
+import { GiNotebook } from "react-icons/gi";
+import { MdLocationCity } from "react-icons/md";
+import { FaUserGraduate } from "react-icons/fa6";
+import { GrCertificate } from "react-icons/gr";
+
 function Education() {
   const education = [
     {
       id: 1,
-
-      type: "post graduation",
       degree: "master's degree",
       course: "computer application (mca)",
       college: "mass college of arts and science",
@@ -17,7 +21,6 @@ function Education() {
     },
     {
       id: 2,
-      type: "under graduation",
       degree: "bachelor degree",
       course: " computer science (bsc.cs)",
       college: "swami dayanandha college of arts and science",
@@ -29,42 +32,49 @@ function Education() {
   ];
 
   return (
-    <div className="Education text-capitalize ">
-      <h1 className="my-3 text-capitalize text-center">education</h1>
-      <div className="row justify-content-center align-items-center">
-        {/* <div className="col-12 d-flex flex-column flex-sm-row justify-content-center"> */}
-        {education.map((edu) => {
-          return (
-            <div
-              className="col-11 col-sm-4 d-flex flex-column justify-content-evenly my-4"
-              key={edu.id}
-            >
-              <button
-                className="col-6 btn mx-auto my-2"
-                style={{ border: "1px solid #2c3333" }}
-              >
-                {edu.type}
-              </button>
-              <div className="shadow my-4 col-12 rounded" key={edu.id}>
-                <h5 className="text-center bgBlack p-2">{edu.degree}</h5>
-                <div className="p-3">
-                  <p>course : {edu.course}</p>
-                  <p>college : </p>
-                  <div className="p-2">
-                    <p>{edu.college}</p>
-                    <p>
-                      {edu.city} - {edu.pinode}
-                    </p>
+    <section className="container-fluid Education" id="Education">
+      <div className="row">
+        <h1 className=" col-12 text-capitalize text-center m-0 my-2">
+          education
+        </h1>
+        <div className=" col-12 ">
+          <div className="row justify-content-center align-items-center">
+            {education.map((edu) => {
+              return (
+                <div
+                  className="col-11 col-sm-4 d-flex flex-column justify-content-evenly p-2"
+                  key={edu.id}
+                >
+                  <div className="shadow my-4 col-12 rounded" key={edu.id}>
+                    <h5 className="text-center bgBlack p-2 position-relative">
+                      {edu.degree} <LiaCertificateSolid className="fs-2" />
+                    </h5>
+                    <div className="p-3">
+                      <div className="d-flex align-items-center">
+                        <h1>
+                          <GiNotebook />
+                        </h1>
+                        <p className="m-0"> {edu.course}</p>
+                      </div>
+
+                      <div className="d-flex">
+                        <h1>
+                          <MdLocationCity />
+                        </h1>
+                        <p>
+                          {edu.college} {edu.city} - {edu.pinode}
+                        </p>
+                      </div>
+                      <p>duration : {edu.duration}</p>
+                    </div>
                   </div>
-                  <p>duration : {edu.duration}</p>
                 </div>
-              </div>
-            </div>
-          );
-        })}
-        {/* </div> */}
+              );
+            })}
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -1,0 +1,50 @@
+import notesImg1 from "./projectSnap/notes-app1.png";
+import notesImg2 from "./projectSnap/notes-app2.png";
+import notesImg3 from "./projectSnap/notes-app3.png";
+import weatherImg1 from "./projectSnap/weather-app1.png";
+import weatherImg2 from "./projectSnap/weather-app2.png";
+import weatherImg3 from "./projectSnap/weather-app3.png";
+import todoImg1 from "./projectSnap/todoList1.png";
+import todoImg2 from "./projectSnap/todoList2.png";
+import todoImg3 from "./projectSnap/todoList3.png";
+
+let projectList = [
+  {
+    id: 1,
+    title: "notes",
+    image: {
+      img1: notesImg1,
+      img2: notesImg2,
+      img3: notesImg3,
+    },
+    shortNote:
+      "Create, organize, and manage your notes seamlessly with our React.js-based app. Utilizing Bootstrap for sleek design and MySQL for data storage, it offers a user-friendly experience for all your note-taking needs.",
+    link: "https://santhosh10661.github.io/Notes/",
+  },
+  {
+    id: 2,
+    title: "weather",
+    image: {
+      img1: weatherImg1,
+      img2: weatherImg2,
+      img3: weatherImg3,
+    },
+    shortNote:
+      "Easily check the weather anytime, anywhere with our simple weather app. Built with React.js and integrated with a reliable weather API, it provides accurate weather updates and forecasts.",
+    link: "https://santhosh10661.github.io/weather-app/",
+  },
+  {
+    id: 3,
+    title: "todo list",
+    image: {
+      img1: todoImg1,
+      img2: todoImg2,
+      img3: todoImg3,
+    },
+    shortNote:
+      "Effortlessly manage tasks with our simple todo list. Designed with HTML, CSS, and Bootstrap, and utilizing local storage for seamless storage, stay organized and productive with ease",
+    link: "https://santhosh10661.github.io/to-do/",
+  },
+];
+
+export default projectList;
