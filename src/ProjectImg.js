@@ -31,7 +31,7 @@ function ProjectImg(props) {
         ></button>
       </div>
       <div className="carousel-inner">
-        <div className="carousel-item active" data-bs-interval="2000">
+        <div className="carousel-item active" data-bs-interval="10000">
           <img src={pro.image.img1} className="d-block w-100" alt="..." />
         </div>
         <div className="carousel-item" data-bs-interval="2000">
@@ -42,7 +42,7 @@ function ProjectImg(props) {
         </div>
       </div>
       <button
-        className="carousel-control-prev visually-hidden"
+        className="carousel-control-prev "
         type="button"
         data-bs-target={`#carouselExampleDark${pro.id}`}
         data-bs-slide="prev"
@@ -51,7 +51,7 @@ function ProjectImg(props) {
         <span className="visually-hidden">Previous</span>
       </button>
       <button
-        className="carousel-control-next visually-hidden"
+        className="carousel-control-next "
         type="button"
         data-bs-target={`#carouselExampleDark${pro.id}`}
         data-bs-slide="next"

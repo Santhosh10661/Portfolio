@@ -18,7 +18,7 @@ let projectList = [
       img3: notesImg3,
     },
     shortNote:
-      "Create, organize, and manage your notes seamlessly with our React.js-based app. Utilizing Bootstrap for sleek design and MySQL for data storage, it offers a user-friendly experience for all your note-taking needs.",
+      "Create, organize, and manage your notes seamlessly with our React.js-based app. Utilizing Bootstrap for sleek design and MySQL for data storage, it offers all your note-taking needs.",
     link: "https://santhosh10661.github.io/Notes/",
   },
   {

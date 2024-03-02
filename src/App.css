@@ -13,6 +13,33 @@
   width: 100vw;
   height: 100vh;
 }
+.headingCon {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #2c3333;
+}
+.tarketIcon {
+  transform: rotate(0deg) scale(1);
+  animation-name: tarketIcon;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes tarketIcon {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(190deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+.heading {
+  width: fit-content;
+  border-radius: 10px 10px 0px 0px;
+  padding: 10px 10px 5px 10px;
+}
 .Home {
   position: relative;
   height: 100%;

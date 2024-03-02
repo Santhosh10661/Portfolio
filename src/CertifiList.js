@@ -1,5 +1,4 @@
 import React from "react";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 function CertifiList(props) {
   let { certificationList, handleOpen, listShow, setListShow, reqId } = props;
@@ -10,7 +9,7 @@ function CertifiList(props) {
     transition: "0.3s ease",
   };
   return (
-    <nav className="col-11 certiListCon my-2 p-2 rounded ">
+    <nav className="col-12 certiListCon p-2 rounded ">
       <ul className="p-0 m-0" style={listconstyle}>
         {certificationList.map((certificate) => {
           return (

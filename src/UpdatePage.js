@@ -9,13 +9,11 @@ import Nav from "./Nav";
 function UpdatePage(props) {
   // let { setNewPageOpened } = props;
   return (
-    <div className="container-fluid UpdatePage ">
-      <div className="row text-capitalize">
-        <Nav />
-        <Education />
-        <Certification />
-        <Project />
-      </div>
+    <div className="UpdatePage text-capitalize">
+      <Nav />
+      <Education />
+      <Certification />
+      <Project />
     </div>
   );
 }

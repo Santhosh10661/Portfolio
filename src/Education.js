@@ -1,11 +1,8 @@
 import React from "react";
 import "./Css/Education.css";
-import { LiaCertificateSolid } from "react-icons/lia";
-import { GiNotebook } from "react-icons/gi";
-import { MdLocationCity } from "react-icons/md";
-import { RxLapTimer } from "react-icons/rx";
-import { FaUserGraduate } from "react-icons/fa6";
-import { GrCertificate } from "react-icons/gr";
+import EduSvg from "./svg/undraw_graduation_re_gthn (1).svg";
+import { MdOutlineGpsFixed } from "react-icons/md";
+import Edubox from "./Edubox";
 
 function Education() {
   const education = [
@@ -14,75 +11,51 @@ function Education() {
       degree: "master's degree",
       course: "computer application (mca)",
       college: "mass college of arts and science",
+      city: "kumbakonam - 612501",
       university: "bharathidasan university",
-      city: "kumbakonam",
-      pinode: 612501,
+      percentage: 70,
       duration: "jun 2021 - jun 2023",
     },
     {
       id: 2,
       degree: "bachelor degree",
       course: " computer science (bsc.cs)",
-      college: "swami dayanandha college of arts and science",
+      college: "swami dayanandha college of arts and science ",
+      city: "thiruvarur - 612610",
       university: "bharathidasan university",
-      city: "thiruvarur",
-      pinode: 612610,
+      percentage: 70,
       duration: "jun 2018 - jun 2021",
     },
   ];
-
+  // className=" m-0 my-2  px-3 py-2"
   return (
     <section className="container-fluid Education" id="Education">
-      <div className="row">
-        <h1 className=" col-12 text-capitalize text-center m-0 my-2">
-          education
-        </h1>
-        <div className=" col-12 ">
-          <div className="row justify-content-center align-items-center">
-            {education.map((edu) => {
-              return (
-                <div
-                  className="col-11 col-sm-4 d-flex flex-column justify-content-evenly p-2"
-                  key={edu.id}
-                >
-                  <div className="shadow my-4 col-12 rounded" key={edu.id}>
-                    <h5 className="text-center bgBlack p-2 position-relative">
-                      {edu.degree} <LiaCertificateSolid className="fs-2" />
-                    </h5>
-                    <div className="p-3">
-                      <div className="d-flex my-1 align-items-center ">
-                        <h1 className="m-2">
-                          <GiNotebook />
-                        </h1>
-                        <p className="m-0">{edu.course}</p>
-                      </div>
-                      <div className="d-flex my-1 ">
-                        <h1 className="m-2">
-                          <MdLocationCity />
-                        </h1>
-                        <p className="m-0 mt-3">
-                          {edu.college} {edu.city} - {edu.pinode}
-                        </p>
-                      </div>
-                      <div className="d-flex my-1 align-items-center">
-                        <h1 className="m-2">
-                          <GrCertificate />
-                        </h1>
-                        <p className="m-0">{edu.university}</p>
-                      </div>
-                      <div className="d-flex my-1 align-items-center">
-                        <h1 className="m-2">
-                          <RxLapTimer />
-                        </h1>
-                        <p className="m-0">{edu.duration}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+      <div className="row justify-content-center">
+        <div className="col-12 headingCon d-flex justify-content-center text-capitalize my-2">
+          <h3 className="bgBlack heading m-0">education</h3>
         </div>
+
+        <div className="col-12 d-flex justify-content-center my-2">
+          <MdOutlineGpsFixed className="tarketIcon fs-5 mx-1 " />
+          <p className="col-11 col-sm-8 p-0">
+            I completed my secondary education in government higher secondary
+            school in 2018. Following this, I pursued my undergraduate studies
+            at Bharathidasan University, where I obtained my Bachelor's degree.
+            Subsequently, I furthered my education with a postgraduate degree
+            from the same institution.
+          </p>
+        </div>
+        {/* <p className="col-11 col-sm-8 my-2 p-0">
+          I completed my secondary education in government higher secondary
+          school in 2018. Following this, I pursued my undergraduate studies at
+          Bharathidasan University, where I obtained my Bachelor's degree.
+          Subsequently, I furthered my education with a postgraduate degree from
+          the same institution.
+        </p> */}
+        <div className="col-11 d-flex justify-content-center">
+          <img src={EduSvg} alt="" className="col-12 col-sm-8" />
+        </div>
+        <Edubox education={education} />
       </div>
     </section>
   );
