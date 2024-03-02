@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.ebc70afc.css",
-    "main.js": "/Portfolio/static/js/main.5365b833.js",
+    "main.css": "/Portfolio/static/css/main.8855ec99.css",
+    "main.js": "/Portfolio/static/js/main.439b6840.js",
     "static/js/592.eb07726c.chunk.js": "/Portfolio/static/js/592.eb07726c.chunk.js",
     "static/media/weather-app3.png": "/Portfolio/static/media/weather-app3.10b104f59640e270777f.png",
     "static/media/weather-app2.png": "/Portfolio/static/media/weather-app2.49e73d2cd6d23c603702.png",
@@ -16,13 +16,16 @@
     "static/media/notes-app1.png": "/Portfolio/static/media/notes-app1.0f6f9e249b8ca51f59ca.png",
     "static/media/notes-app3.png": "/Portfolio/static/media/notes-app3.8990468920b0863c9f4a.png",
     "static/media/Foundation Ux Design.jpg": "/Portfolio/static/media/Foundation Ux Design.e6de76aab6e354797e48.jpg",
+    "static/media/undraw_graduation_re_gthn (1).svg": "/Portfolio/static/media/undraw_graduation_re_gthn (1).a05cc60ea78563e01609f491a4d87a4b.svg",
+    "static/media/undraw_feeling_proud_qne1.svg": "/Portfolio/static/media/undraw_feeling_proud_qne1.004348e37b0608affcbf1ecf660b6399.svg",
+    "static/media/undraw_certificate_re_yadi.svg": "/Portfolio/static/media/undraw_certificate_re_yadi.24b3a24bb57367b1d5bc268f346aac7e.svg",
     "index.html": "/Portfolio/index.html",
-    "main.ebc70afc.css.map": "/Portfolio/static/css/main.ebc70afc.css.map",
-    "main.5365b833.js.map": "/Portfolio/static/js/main.5365b833.js.map",
+    "main.8855ec99.css.map": "/Portfolio/static/css/main.8855ec99.css.map",
+    "main.439b6840.js.map": "/Portfolio/static/js/main.439b6840.js.map",
     "592.eb07726c.chunk.js.map": "/Portfolio/static/js/592.eb07726c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ebc70afc.css",
-    "static/js/main.5365b833.js"
+    "static/css/main.8855ec99.css",
+    "static/js/main.439b6840.js"
   ]
 }
