@@ -7,12 +7,9 @@ import { GiUpgrade } from "react-icons/gi";
 
 function OpenCertificateCon(props) {
   let { reqId, certificationList, handleOpen } = props;
-
   let reqCertificate = certificationList.filter(
     (certificate) => reqId === certificate.id
   );
-
-  console.log(reqCertificate);
   return (
     <>
       <div className="col-12 col-sm-6 p-2">

@@ -14,6 +14,7 @@ function CertifiList(props) {
         {certificationList.map((certificate) => {
           return (
             <li
+              key={certificate.id}
               className={
                 reqId === certificate.id
                   ? "listItem text-center py-2 my-2 listItemActive"

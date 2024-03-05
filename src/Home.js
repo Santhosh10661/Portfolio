@@ -2,6 +2,7 @@ import React from "react";
 import ProImgCont from "./ProImgCont";
 import { MdDoubleArrow } from "react-icons/md";
 import "./Css/Home.css";
+import "./Css/homeMobl.css";
 
 function Home(props) {
   let { newPageOpend, handleNewPage } = props;
@@ -11,8 +12,8 @@ function Home(props) {
       <div
         className={
           newPageOpend
-            ? "col-10 col-sm-5 offset-sm-5 nameCon nameConHide"
-            : "col-10 col-sm-5 offset-sm-5 nameCon"
+            ? "col-12 col-sm-5 offset-sm-5 nameCon nameConHide"
+            : "col-12 col-sm-5 offset-sm-5 nameCon"
         }
         style={{ zIndex: 1 }}
       >

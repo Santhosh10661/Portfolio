@@ -1,16 +1,23 @@
 import React, { useState } from "react";
+import "./Css/Certification.css";
 import ReactBasics from "./certificate/React Basics.jpg";
 import ProgramminInJavascript from "./certificate/Programming In Javascript.jpg";
 import IntroToFED from "./certificate/Introduction to Frontend Development.jpg";
 import FoundationUX from "./certificate/Foundation Ux Design.jpg";
 import OpenCertificateCon from "./OpenCertificateCon";
-import { MdOutlineGpsFixed } from "react-icons/md";
 import certifiSvg from "./svg/undraw_certificate_re_yadi.svg";
-
-import "./Css/Certification.css";
-// import CertifiList from "./CertifiList";
+import Heading from "./commonContents/Heading";
+import Describtion from "./commonContents/Describtion";
 
 function Certification() {
+  let heading = "certification";
+  let describtion = [
+    ` In addition to my formal education, I have also completed several
+  certificate courses to further enhance my skills and expertise.
+  These courses cover a range of topics relevant to my field of
+  interest and professional development, providing me with valuable
+  knowledge and practical experience.`,
+  ];
   let [reqId, setReqId] = useState(1);
   let certificationList = [
     {
@@ -53,24 +60,12 @@ function Certification() {
   return (
     <section className="container-fluid Certification" id="Certification">
       <div className="row justify-content-center">
-        <div className="col-12 headingCon d-flex justify-content-center text-capitalize my-2">
-          <h3 className="bgBlack heading m-0">certification</h3>
-        </div>
+        <Heading heading={heading} />
+        <Describtion describtion={describtion} />
 
-        <div className="col-12 d-flex justify-content-center my-2">
-          <MdOutlineGpsFixed className="tarketIcon fs-5 mx-1 " />
-          <p className="col-11 col-sm-8  p-0">
-            In addition to my formal education, I have also completed several
-            certificate courses to further enhance my skills and expertise.
-            These courses cover a range of topics relevant to my field of
-            interest and professional development, providing me with valuable
-            knowledge and practical experience.
-          </p>
-        </div>
         <div className="col-11 col-sm-6 d-flex justify-content-center">
           <img src={certifiSvg} alt="" className="col-6 col-sm-4" />
         </div>
-
         <div
           className="col-11 col-sm-10 certifiInfoCon rounded"
           style={{ height: "100%" }}

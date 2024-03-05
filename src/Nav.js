@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 // import { IoClose } from "react-icons/io5";
 
@@ -7,16 +7,17 @@ function Nav() {
   // let [menuBtnClicked, setmenuBtnClicked] = useState(false);
   return (
     <nav
-      className="container-fluid navbar navbar-expand-lg  shadow py-1 px-3"
+      className="container-fluid navbar navbar-expand-lg  shadow py-1 px-3 "
       style={{
         position: "sticky",
         top: "0",
         zIndex: "2",
         backgroundColor: "#2c3333",
         height: "fit-content",
+        borderRadius: "0 0 10px 10px",
       }}
     >
-      <a className="navbar-brand" href="#" style={navTextClr}>
+      <a className="navbar-brand" href="/" style={navTextClr}>
         portfolio
       </a>
       <button
@@ -53,7 +54,7 @@ function Nav() {
           <a className="nav-link " href="#Project" style={navTextClr}>
             Project
           </a>
-          <a className="nav-link " href="#" style={navTextClr}>
+          <a className="nav-link " href="#Skill" style={navTextClr}>
             Skill
           </a>
         </div>

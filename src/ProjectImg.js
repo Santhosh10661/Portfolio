@@ -2,11 +2,13 @@ import React from "react";
 
 function ProjectImg(props) {
   let { pro } = props;
+
   return (
     <div
       id={`carouselExampleDark${pro.id}`}
       className="carousel carousel-dark slide"
       data-bs-ride="carousel"
+      key={pro.id}
     >
       <div className="carousel-indicators">
         <button

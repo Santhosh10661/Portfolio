@@ -1,0 +1,78 @@
+.HtmlSvg,
+.BootstrapSvg {
+  position: absolute;
+  top: 10%;
+  transform: scale(0.5);
+  animation-name: skillIcon;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes skillIcon {
+  0% {
+    top: -30%;
+    transform: scale(0.5);
+  }
+  15% {
+    top: 15%;
+    transform: scale(0.9);
+  }
+  85% {
+    top: 15%;
+    transform: scale(0.9);
+  }
+  100% {
+    top: 100%;
+    transform: scale(0.5);
+  }
+}
+.CssSvg,
+.JsSvg {
+  position: absolute;
+  top: 10%;
+  transform: scale(0.5);
+  animation-name: skillIcon2;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes skillIcon2 {
+  0% {
+    top: 100%;
+    transform: scale(0.5);
+  }
+  15% {
+    top: 15%;
+    transform: scale(0.9);
+  }
+  85% {
+    top: 15%;
+    transform: scale(0.9);
+  }
+  100% {
+    top: -60%;
+    transform: scale(0.5);
+  }
+}
+
+.ReactSvg {
+  transform: rotate(190deg);
+  animation-name: skillIcon3;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes skillIcon3 {
+  0% {
+    transform: rotate(0deg) scale(0);
+  }
+  20% {
+    transform: rotate(0deg) scale(1);
+  }
+  40% {
+    transform: rotate(-190deg) scale(1);
+  }
+  80% {
+    transform: rotate(190deg) scale(1);
+  }
+  100% {
+    transform: rotate(190deg) scale(0);
+  }
+}
