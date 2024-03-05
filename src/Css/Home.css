@@ -1,91 +1,4 @@
-/* profile ImgCon */
-.circleCon {
-  position: absolute;
-  top: 80%;
-  left: 15%;
-  animation-name: imgConAnimate;
-  animation-duration: 2s;
-  transition: 2s ease-out;
-  overflow: visible;
-}
-
-@keyframes imgConAnimate {
-  0% {
-    top: -5%;
-    left: 60%;
-    transform: scale(0.5);
-  }
-  20% {
-    top: 50%;
-    left: 30%;
-    transform: scale(1);
-  }
-  40% {
-    top: 55%;
-    left: 40%;
-    transform: scale(1);
-  }
-  50% {
-    top: 95%;
-    left: -5%;
-    transform: scale(1);
-  }
-  100% {
-    top: 80%;
-    left: 15%;
-    transform: scale(8);
-  }
-}
-.openPage {
-  position: absolute;
-  top: 80%;
-  left: 15%;
-  z-index: 2;
-  border-radius: 0%;
-  animation-name: openNewPage;
-  animation-duration: 1.5s;
-}
-
-@keyframes openNewPage {
-  0% {
-    position: absolute;
-    top: 80%;
-    left: 15%;
-    transform: scale(8);
-  }
-  25% {
-    position: absolute;
-    top: 90%;
-    left: 0%;
-    transform: scale(2);
-  }
-  50% {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: scale(5);
-  }
-  75% {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: scale(10);
-  }
-  /* 99% {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border-radius: 0%;
-    transform: scale(21);
-  } */
-  100% {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border-radius: 0%;
-    transform: scale(21);
-  }
-}
+/* Name Container */
 .nameCon {
   position: absolute;
   top: 35%;
@@ -125,6 +38,50 @@
   }
   100% {
     top: -50%;
+  }
+}
+
+@media (max-width: 992px) {
+  .nameCon {
+    position: absolute;
+    top: 5%;
+    animation-name: nameShow;
+    animation-duration: 2s;
+  }
+
+  @keyframes nameShow {
+    0% {
+      top: -100%;
+    }
+    75% {
+      top: -100%;
+    }
+    90% {
+      top: 10%;
+    }
+    100% {
+      top: 5%;
+    }
+  }
+  .nameConHide {
+    position: absolute;
+    top: -100%;
+    animation-name: nameHide;
+    animation-duration: 2s;
+  }
+  @keyframes nameHide {
+    0% {
+      top: 5%;
+    }
+    10% {
+      top: 10%;
+    }
+    25% {
+      top: -100%;
+    }
+    100% {
+      top: -100%;
+    }
   }
 }
 

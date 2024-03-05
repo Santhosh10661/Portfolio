@@ -1,11 +1,12 @@
 import React from "react";
+import "./Css/ProImgCon.css";
 
 function ProImgCont(props) {
   let { newPageOpend } = props;
   return (
     <div
       className={newPageOpend ? "circleCon p-2 openPage" : "circleCon p-2"}
-      style={{ width: "100px", height: "100px", transform: "scale(8)" }}
+      style={{ width: "100px", height: "100px" }}
     >
       <div
         className="circle"

@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 // import { IoClose } from "react-icons/io5";
 
 function Nav() {
   let navTextClr = { color: "#ffffec" };
-  // let [menuBtnClicked, setmenuBtnClicked] = useState(false);
+  let [menuBtnClicked, setmenuBtnClicked] = useState(false);
   return (
     <nav
-      className="container-fluid navbar navbar-expand-lg  shadow py-1 px-3 "
+      className="container-fluid navbar navbar-expand-lg shadow py-1 px-3 "
       style={{
         position: "sticky",
         top: "0",
@@ -29,13 +29,13 @@ function Nav() {
         aria-expanded="false"
         aria-label="Toggle navigation"
         style={{ border: "none", outline: "none", boxShadow: "none" }}
-        // onClick={() => setmenuBtnClicked(!menuBtnClicked)}
+        onClick={() => setmenuBtnClicked(!menuBtnClicked)}
       >
         {/* {menuBtnClicked ? (
-            <IoClose  style={navTextClr} />
-          ) : (
-            <HiOutlineMenuAlt3 style={navTextClr} />
-          )} */}
+          <IoClose style={navTextClr} />
+        ) : (
+          <HiOutlineMenuAlt3 style={navTextClr} />
+        )} */}
         <HiOutlineMenuAlt3 style={navTextClr} />
       </button>
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">

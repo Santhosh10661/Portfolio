@@ -4,6 +4,11 @@
   color: #ffffec;
   background-color: #2c3333;
 }
+.bgWhite {
+  background-color: #ffffec;
+  color: #2c3333;
+}
+
 /* all */
 .App {
   background-color: #ffffec;

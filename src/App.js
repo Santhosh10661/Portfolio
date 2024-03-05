@@ -7,14 +7,14 @@ import UpdatePage from "./UpdatePage";
 function App() {
   let [newPageOpend, setNewPageOpened] = useState(false);
 
-  // let navigate = useNavigate();
+  let navigate = useNavigate();
   function handleNewPage() {
     setNewPageOpened(true);
   }
 
-  // useEffect(() => {
-  //   navigate("/", { replace: true });
-  // }, []);
+  useEffect(() => {
+    navigate("/", { replace: true });
+  }, []);
 
   return (
     <div className="container-fluid App">

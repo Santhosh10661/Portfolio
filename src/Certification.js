@@ -27,6 +27,7 @@ function Certification() {
       issuedBy: "Coursera",
       completionDate: "January 23, 2024",
       grade: 100,
+      link: "https://www.coursera.org/account/accomplishments/verify/N8GZUZ853QR6?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course",
     },
     {
       id: 2,
@@ -35,6 +36,7 @@ function Certification() {
       issuedBy: "Coursera",
       completionDate: "November 15, 2023",
       grade: 97.06,
+      link: "https://coursera.org/share/03bbc688a769f4f23e1212b53a07531d",
     },
     {
       id: 3,
@@ -43,6 +45,7 @@ function Certification() {
       issuedBy: "Coursera",
       completionDate: "September 19, 2023",
       grade: 98,
+      link: "https://coursera.org/share/608f3dcb6a1ef57abdbd40f910b1a77b",
     },
     {
       id: 4,
@@ -51,6 +54,7 @@ function Certification() {
       issuedBy: "Coursera",
       completionDate: "July 24, 2023",
       grade: 84.69,
+      link: "https://www.coursera.org/account/accomplishments/verify/NAUDV39K5ZZ3?utm_source%3Dandroid%26utm_medium%3Dcertificate%26utm_content%3Dcert_image%26utm_campaign%3Dsharing_cta%26utm_product%3Dcourse",
     },
   ];
 
@@ -67,12 +71,12 @@ function Certification() {
           <img src={certifiSvg} alt="" className="col-6 col-sm-4" />
         </div>
         <div
-          className="col-11 col-sm-10 certifiInfoCon rounded"
+          className="col-11 col-sm-10 shadow rounded mb-3"
           style={{ height: "100%" }}
         >
           <div className="row justify-content-center ">
             <div
-              className="col-12 d-flex align-items-center justify-content-center flex-wrap p-0"
+              className="col-12 d-flex align-items-center justify-content-center flex-wrap p-2"
               style={{ transition: "0.3s ease" }}
             >
               <OpenCertificateCon

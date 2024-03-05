@@ -2,7 +2,6 @@ import React from "react";
 import ProImgCont from "./ProImgCont";
 import { MdDoubleArrow } from "react-icons/md";
 import "./Css/Home.css";
-import "./Css/homeMobl.css";
 
 function Home(props) {
   let { newPageOpend, handleNewPage } = props;
@@ -12,8 +11,8 @@ function Home(props) {
       <div
         className={
           newPageOpend
-            ? "col-12 col-sm-5 offset-sm-5 nameCon nameConHide"
-            : "col-12 col-sm-5 offset-sm-5 nameCon"
+            ? "col-12 col-md-7 col-lg-5 offset-md-4 offset-lg-6 nameCon nameConHide"
+            : "col-12 col-md-7 col-lg-5 offset-md-4 offset-lg-6 nameCon"
         }
         style={{ zIndex: 1 }}
       >
@@ -36,7 +35,7 @@ function Home(props) {
           enhance user experience across devices and browsers.
         </p>
         <button
-          className="col-4 btn p-1 pt-2 s fw-bold text-capitalize"
+          className="col-6 col-sm-5  btn p-1 pt-2 s fw-bold text-capitalize"
           style={{
             backgroundColor: "#ffffec",
             color: "#2c3333",

@@ -5,14 +5,15 @@ function Edubox(props) {
   let { education } = props;
   return (
     <div className=" col-12 my-3">
-      <div className="row justify-content-center align-items-center">
+      <div className="row justify-content-center ">
         {education.map((edu) => {
           return (
-            <div
-              className="col-11 col-sm-5 d-flex flex-column justify-content-evenly my-2 "
-              key={edu.id}
-            >
-              <div className="shadow  col-12 rounded" key={edu.id}>
+            <div className="col-11 col-md-5 my-2 " key={edu.id}>
+              <div
+                className="shadow  col-12 rounded"
+                key={edu.id}
+                style={{ height: "100%" }}
+              >
                 <h5 className="text-center bgBlack p-2 position-relative">
                   {edu.degree} <LiaCertificateSolid className="fs-3" />
                 </h5>

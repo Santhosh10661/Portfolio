@@ -31,7 +31,7 @@ function Project() {
           <div className="row justify-content-around">
             {projectList.map((pro) => {
               return (
-                <div className="col-11  col-sm-3  p-0 mb-3" key={pro.id}>
+                <div className="col-11 col-md-5 col-lg-3 p-0 mb-3" key={pro.id}>
                   <div
                     className="card shadow-lg p-2"
                     style={{

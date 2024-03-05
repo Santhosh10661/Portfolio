@@ -2,7 +2,7 @@ import React from "react";
 import CertifiList from "./CertifiList";
 import { PiCertificateFill } from "react-icons/pi";
 import { MdCastForEducation } from "react-icons/md";
-import { FaRegCalendarCheck } from "react-icons/fa6";
+import { FaRegCalendarCheck, FaLocationArrow } from "react-icons/fa6";
 import { GiUpgrade } from "react-icons/gi";
 
 function OpenCertificateCon(props) {
@@ -12,7 +12,7 @@ function OpenCertificateCon(props) {
   );
   return (
     <>
-      <div className="col-12 col-sm-6 p-2">
+      <div className="col-12 col-md-10 col-lg-6 p-1">
         <img
           src={reqCertificate[0].img}
           alt=""
@@ -20,13 +20,13 @@ function OpenCertificateCon(props) {
         />
       </div>
 
-      <div className="col-12 col-sm-6 d-flex flex-column-reverse flex-sm-column certifiInfoCon p-2 rounded">
+      <div className="bgWhite col-12 col-md-12 col-lg-6 d-flex flex-column-reverse flex-md-row-reverse flex-lg-column p-2 rounded mt-1 ">
         <CertifiList
           certificationList={certificationList}
           handleOpen={handleOpen}
           reqId={reqId}
         />
-        <div className="col-12 certifiInfo rounded p-2">
+        <div className="col-12 col-md-7 col-lg-12 bgWhite rounded p-2">
           <h4 className="m-0 my-1 p-2 rounded bgBlack">
             {reqCertificate[0].title} <PiCertificateFill className="fs-2" />
           </h4>
@@ -42,6 +42,17 @@ function OpenCertificateCon(props) {
             <p className="fw-bold">
               <GiUpgrade className="fs-3 m-1" />
               {reqCertificate[0].grade} %
+            </p>
+            <p className="fw-bold">
+              <a
+                href={reqCertificate[0].link}
+                className="mt-1"
+                target="blank"
+                style={{ color: "#2c3333" }}
+              >
+                <FaLocationArrow className="fs-3 m-1" />
+                more details
+              </a>
             </p>
           </div>
         </div>
