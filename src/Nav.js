@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
-// import { IoClose } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 
 function Nav() {
   let navTextClr = { color: "#ffffec" };
@@ -31,12 +31,12 @@ function Nav() {
         style={{ border: "none", outline: "none", boxShadow: "none" }}
         onClick={() => setmenuBtnClicked(!menuBtnClicked)}
       >
-        {/* {menuBtnClicked ? (
+        {menuBtnClicked ? (
           <IoClose style={navTextClr} />
         ) : (
           <HiOutlineMenuAlt3 style={navTextClr} />
-        )} */}
-        <HiOutlineMenuAlt3 style={navTextClr} />
+        )}
+        {/* <HiOutlineMenuAlt3 style={navTextClr} /> */}
       </button>
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div className="navbar-nav text-center">
