@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import "./Css/Nav.css";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
+import { RiLogoutCircleRLine } from "react-icons/ri";
 
-function Nav() {
+function Nav(props) {
+  let { setNewPageOpened } = props;
   let navTextClr = { color: "#ffffec" };
   let [menuBtnClicked, setmenuBtnClicked] = useState(false);
   return (
@@ -36,10 +39,12 @@ function Nav() {
         ) : (
           <HiOutlineMenuAlt3 style={navTextClr} />
         )}
-        {/* <HiOutlineMenuAlt3 style={navTextClr} /> */}
       </button>
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div className="navbar-nav text-center">
+        <div
+          className="navbar-nav text-center"
+          style={{ width: "100%", position: "relative" }}
+        >
           <a
             className="nav-link active"
             aria-current="page"
@@ -57,6 +62,13 @@ function Nav() {
           <a className="nav-link " href="#Skill" style={navTextClr}>
             Skill
           </a>
+          <RiLogoutCircleRLine
+            className="fs-1 nav-link logOutIcon position-absolute end-0 "
+            style={navTextClr}
+            onClick={() => {
+              setNewPageOpened(false);
+            }}
+          />
         </div>
       </div>
     </nav>

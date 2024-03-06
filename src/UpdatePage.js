@@ -7,10 +7,11 @@ import Nav from "./Nav";
 import Skill from "./Skill";
 import Footer from "./Footer";
 
-function UpdatePage() {
+function UpdatePage(props) {
+  let { setNewPageOpened } = props;
   return (
     <div className="UpdatePage text-capitalize">
-      <Nav />
+      <Nav setNewPageOpened={setNewPageOpened} />
       <Education />
       <Certification />
       <Project />

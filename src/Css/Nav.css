@@ -1,0 +1,8 @@
+.logOutIcon {
+  cursor: pointer;
+  transform: rotate(-90deg) scale(1);
+  transition: 0.3s ease-in;
+}
+.logOutIcon:hover {
+  transform: rotate(0deg) scale(1.1);
+}
