@@ -9,6 +9,9 @@
   color: #2c3333;
 }
 
+.dropSha {
+  filter: drop-shadow(3px 1px 1px rgb(0 0 0 / 0.4));
+}
 /* all */
 .App {
   background-color: #ffffec;

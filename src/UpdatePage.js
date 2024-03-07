@@ -6,16 +6,18 @@ import Project from "./Project";
 import Nav from "./Nav";
 import Skill from "./Skill";
 import Footer from "./Footer";
+import Contact from "./Contact";
 
 function UpdatePage(props) {
-  let { setNewPageOpened } = props;
+  let { handleClosePage } = props;
   return (
     <div className="UpdatePage text-capitalize">
-      <Nav setNewPageOpened={setNewPageOpened} />
+      <Nav handleClosePage={handleClosePage} />
       <Education />
       <Certification />
       <Project />
       <Skill />
+      <Contact />
       <Footer />
     </div>
   );

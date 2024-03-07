@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Css/Skill.css";
 import ReactSvg from "./svg/react-js-icon.svg";
 import HtmlSvg from "./svg/html-icon.svg";
@@ -9,8 +9,6 @@ import Heading from "./commonContents/Heading";
 import Describtion from "./commonContents/Describtion";
 
 function Skill() {
-  let [skillAlign, setSkillAlign] = useState("row");
-
   let heading = "skills";
   let describtion = [
     `Upon completing my certificate courses, I acquired essential skills in
@@ -22,21 +20,12 @@ function Skill() {
   satisfaction.`,
   ];
   let skillList = [
-    { id: 1, className: "HtmlSvg", svg: HtmlSvg },
-    { id: 2, className: "CssSvg", svg: CssSvg },
-    { id: 3, className: "ReactSvg", svg: ReactSvg },
-    { id: 4, className: "BootstrapSvg", svg: BootstrapSvg },
-    { id: 5, className: "JsSvg", svg: JsSvg },
+    { id: 1, className: "Html", svg: HtmlSvg },
+    { id: 2, className: "Css", svg: CssSvg },
+    { id: 3, className: "React", svg: ReactSvg },
+    { id: 4, className: "Bootstrap", svg: BootstrapSvg },
+    { id: 5, className: "Js", svg: JsSvg },
   ];
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     // let date = new Date();
-  //     setSkillAlign((prevDirection) =>
-  //       prevDirection === "row" ? "row-reverse" : "row"
-  //     );
-  //     // console.log(date);
-  //   }, 2200);
-  // }, []);
 
   return (
     <section className="container-fluid" id="Skill">
@@ -47,18 +36,19 @@ function Skill() {
         <div className="col-12 d-flex justify-content-center">
           <div
             className="col-6 col-sm-8 d-flex flex-wrap align-items-center justify-content-center shadow m-2 rounded p-3"
-            style={{ backgroundColor: "#2c3333", flexDirection: skillAlign }}
+            style={{ backgroundColor: "#2c3333" }}
           >
             {skillList.map((skill) => {
               return (
                 <div
-                  className="col-6 col-sm-1 m-1 d-flex justify-content-center align-items-center rounded-circle p-3"
+                  className="col-6 col-sm-1 m-1 d-flex justify-content-center align-items-center rounded-circle p-3 skillCon"
                   key={skill.id}
                   style={{
                     backgroundColor: "#ffffec",
                     aspectRatio: "1/1",
                     position: "relative",
                     overflow: "hidden",
+                    cursor: "pointer",
                   }}
                 >
                   <img
@@ -67,6 +57,11 @@ function Skill() {
                     className={`${skill.className} `}
                     style={{ width: "70%", height: "70%" }}
                   />
+                  <div className="skillName bgBlack text-center p-1">
+                    <p className="mb-1" style={{ fontSize: "12px" }}>
+                      <small>{skill.className}</small>
+                    </p>
+                  </div>
                 </div>
               );
             })}

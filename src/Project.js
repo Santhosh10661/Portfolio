@@ -2,6 +2,7 @@ import React from "react";
 import "./Css/Project.css";
 import { FaArrowTrendUp } from "react-icons/fa6";
 import projectSvg from "./svg/undraw_feeling_proud_qne1.svg";
+
 import projectList from "./projectList";
 import ProjectImg from "./ProjectImg";
 import Heading from "./commonContents/Heading";
@@ -25,7 +26,7 @@ function Project() {
 
         <Describtion describtion={describtion} />
         <div className="col-11 d-flex justify-content-center">
-          <img src={projectSvg} alt="" className="col-8 col-sm-3" />
+          <img src={projectSvg} alt="" className="col-10 col-sm-3 dropSha" />
         </div>
         <div className="col-12">
           <div className="row justify-content-around">

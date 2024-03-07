@@ -1,16 +1,21 @@
 import React from "react";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
-import { IoIosMail } from "react-icons/io";
 
 function Footer() {
   let connectionList = [
     {
       id: 1,
       tag: <BsLinkedin />,
+      title: "LinkedIn",
+
       link: "https://www.linkedin.com/in/santhosh-kannan-6108b7239/",
     },
-    { id: 2, tag: <BsGithub />, link: "https://github.com/Santhosh10661" },
-    { id: 3, tag: <IoIosMail />, link: "mailto:santhosh10661@gmail.com" },
+    {
+      id: 2,
+      tag: <BsGithub />,
+      title: "GitHub",
+      link: "https://github.com/Santhosh10661",
+    },
   ];
   return (
     <footer
@@ -26,7 +31,7 @@ function Footer() {
                 className="btn p-0"
                 data-bs-toggle="tooltip"
                 data-bs-placement="top"
-                title="Tooltip on top"
+                title={connect.title}
                 key={connect.id}
               >
                 <a

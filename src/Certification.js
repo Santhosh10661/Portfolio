@@ -68,7 +68,7 @@ function Certification() {
         <Describtion describtion={describtion} />
 
         <div className="col-11 col-sm-6 d-flex justify-content-center">
-          <img src={certifiSvg} alt="" className="col-6 col-sm-4" />
+          <img src={certifiSvg} alt="" className="col-6 col-sm-4 dropSha" />
         </div>
         <div
           className="col-11 col-sm-10 shadow rounded mb-3"

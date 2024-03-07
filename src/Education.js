@@ -36,14 +36,13 @@ function Education() {
       duration: "jun 2018 - jun 2021",
     },
   ];
-  // className=" m-0 my-2  px-3 py-2"
   return (
     <section className="container-fluid Education" id="Education">
       <div className="row justify-content-center">
         <Heading heading={heading} />
         <Describtion describtion={describtion} />
         <div className="col-11 d-flex justify-content-center">
-          <img src={EduSvg} alt="" className="col-12 col-sm-8" />
+          <img src={EduSvg} alt="" className="col-12 col-sm-8 dropSha" />
         </div>
         <Edubox education={education} />
       </div>

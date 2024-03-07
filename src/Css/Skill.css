@@ -1,5 +1,15 @@
-.HtmlSvg,
-.BootstrapSvg {
+.skillName {
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  z-index: 1;
+  transition: 0.3s ease;
+}
+.skillCon:hover .skillName {
+  bottom: 0;
+}
+.Html,
+.Bootstrap {
   position: absolute;
   top: 10%;
   transform: scale(0.5);
@@ -12,10 +22,7 @@
     top: -30%;
     transform: scale(0.5);
   }
-  15% {
-    top: 15%;
-    transform: scale(0.9);
-  }
+  15%,
   85% {
     top: 15%;
     transform: scale(0.9);
@@ -25,8 +32,8 @@
     transform: scale(0.5);
   }
 }
-.CssSvg,
-.JsSvg {
+.Css,
+.Js {
   position: absolute;
   top: 10%;
   transform: scale(0.5);
@@ -39,10 +46,7 @@
     top: 100%;
     transform: scale(0.5);
   }
-  15% {
-    top: 15%;
-    transform: scale(0.9);
-  }
+  15%,
   85% {
     top: 15%;
     transform: scale(0.9);
@@ -53,7 +57,7 @@
   }
 }
 
-.ReactSvg {
+.React {
   transform: rotate(190deg);
   animation-name: skillIcon3;
   animation-duration: 3s;

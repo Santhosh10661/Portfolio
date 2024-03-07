@@ -5,7 +5,7 @@ import { IoClose } from "react-icons/io5";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 
 function Nav(props) {
-  let { setNewPageOpened } = props;
+  let { handleClosePage } = props;
   let navTextClr = { color: "#ffffec" };
   let [menuBtnClicked, setmenuBtnClicked] = useState(false);
   return (
@@ -62,13 +62,16 @@ function Nav(props) {
           <a className="nav-link " href="#Skill" style={navTextClr}>
             Skill
           </a>
-          <RiLogoutCircleRLine
-            className="fs-1 nav-link logOutIcon position-absolute end-0 "
-            style={navTextClr}
-            onClick={() => {
-              setNewPageOpened(false);
-            }}
-          />
+          <a className="nav-link " href="#Contact" style={navTextClr}>
+            Contact
+          </a>
+          <p className="text-end nav-link m-0">
+            <RiLogoutCircleRLine
+              className="fs-4 logOutIcon"
+              style={navTextClr}
+              onClick={() => handleClosePage()}
+            />
+          </p>
         </div>
       </div>
     </nav>

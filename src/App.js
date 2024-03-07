@@ -1,25 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Home from "./Home";
-// import { useNavigate } from "react-router-dom";
 import UpdatePage from "./UpdatePage";
 
 function App() {
   let [newPageOpend, setNewPageOpened] = useState(false);
+  let [profileImg, setProfileImg] = useState(true);
 
-  // let navigate = useNavigate();
   function handleNewPage() {
+    setProfileImg(false);
+    // setTimeout(() => {
+    //   setNewPageOpened(true);
+    // }, 200);
     setNewPageOpened(true);
   }
 
-  // useEffect(() => {
-  //   navigate("/", { replace: true });
-  // }, []);
-
+  function handleClosePage() {
+    setNewPageOpened(false);
+    setTimeout(() => {
+      setProfileImg(true);
+    }, 1500);
+  }
   return (
     <div className="container-fluid App">
-      <Home newPageOpend={newPageOpend} handleNewPage={handleNewPage} />
-      {newPageOpend && <UpdatePage setNewPageOpened={setNewPageOpened} />}
+      <Home
+        newPageOpend={newPageOpend}
+        handleNewPage={handleNewPage}
+        profileImg={profileImg}
+      />
+      {newPageOpend && <UpdatePage handleClosePage={handleClosePage} />}
     </div>
   );
 }

@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import "./Css/Home.css";
 import ProImgCont from "./ProImgCont";
 import { MdDoubleArrow } from "react-icons/md";
-import "./Css/Home.css";
+import ProfileImg from "./ProfileImg";
 
 function Home(props) {
-  let { newPageOpend, handleNewPage } = props;
+  let { newPageOpend, handleNewPage, profileImg } = props;
+  let [showImg, setShowImg] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setShowImg(true);
+    }, 1500);
+  }, []);
   return (
     <div className="Home row align-items-center">
       <ProImgCont newPageOpend={newPageOpend} />
+      {showImg && <ProfileImg profileImg={profileImg} />}
       <div
         className={
           newPageOpend
@@ -18,7 +26,7 @@ function Home(props) {
       >
         <h1 className="m-0 text-uppercase">SANTHOSH KANNAN</h1>
         <h4
-          className=" fw-bolder text-capitalize p-2"
+          className=" fw-bolder p-2"
           style={{
             width: "fit-content",
             backgroundColor: "#ffffec",
@@ -26,7 +34,7 @@ function Home(props) {
             borderRadius: "5px",
           }}
         >
-          i am a frontend developer
+          I am Frontend Developer
         </h4>
         <p className=" text-capitalize">
           A frontend developer specializes in building the user interface of

@@ -5,11 +5,8 @@
   animation-name: nameShow;
   animation-duration: 2s;
 }
-
 @keyframes nameShow {
-  0% {
-    top: -50%;
-  }
+  0%,
   75% {
     top: -50%;
   }
@@ -33,9 +30,7 @@
   10% {
     top: 40%;
   }
-  25% {
-    top: -50%;
-  }
+  25%,
   100% {
     top: -50%;
   }
@@ -50,9 +45,7 @@
   }
 
   @keyframes nameShow {
-    0% {
-      top: -100%;
-    }
+    0%,
     75% {
       top: -100%;
     }
@@ -76,9 +69,7 @@
     10% {
       top: 10%;
     }
-    25% {
-      top: -100%;
-    }
+    25%,
     100% {
       top: -100%;
     }
@@ -93,7 +84,6 @@
   animation-iteration-count: infinite;
   animation-delay: 2s;
 }
-
 @keyframes arrowMoveL {
   0% {
     left: 0%;
