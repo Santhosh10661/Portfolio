@@ -1,9 +1,8 @@
 .ProfileImg {
   position: absolute;
-  bottom: 5%;
-  left: 5%;
+  bottom: 10%;
+  left: 0%;
   z-index: 3;
-  transform: scale(1);
   /* background-color: #2c3333;
   border-radius: 66% 34% 88% 12% / 11% 30% 70% 89%; */
   animation-name: ProfileImgMove;
@@ -11,21 +10,23 @@
 }
 
 @keyframes ProfileImgMove {
-  0% {
-    bottom: -50%;
-    left: -20%;
-    transform: scale(0);
+  0%,
+  50% {
+    bottom: 10%;
+    left: -100%;
+  }
+  80% {
+    bottom: 10%;
+    left: 10%;
   }
   100% {
-    bottom: 5%;
-    left: 5%;
-    transform: scale(1);
+    bottom: 10%;
+    left: 0%;
   }
 }
 .ProfileImgClose {
   position: absolute;
   bottom: -50%;
-  transform: scale(0);
   left: -20%;
   z-index: 3;
   animation-name: ProfileImgCloseMove;
@@ -34,15 +35,17 @@
 
 @keyframes ProfileImgCloseMove {
   0% {
-    bottom: 5%;
-    left: 5%;
-    transform: scale(1);
+    bottom: 10%;
+    left: 0%;
   }
-
+  20% {
+    bottom: 10%;
+    left: 10%;
+  }
+  50%,
   100% {
-    bottom: -50%;
-    left: -20%;
-    transform: scale(0);
+    bottom: 10%;
+    left: -100%;
   }
 }
 .brChange {

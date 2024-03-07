@@ -8,9 +8,22 @@
   background-color: #ffffec;
   color: #2c3333;
 }
-
 .dropSha {
   filter: drop-shadow(3px 1px 1px rgb(0 0 0 / 0.4));
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #ffffec;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+  background: #2c3333;
+  border-radius: 20px;
+  margin: 0 2px;
+  cursor: pointer;
 }
 /* all */
 .App {

@@ -21,7 +21,7 @@ function Nav(props) {
       }}
     >
       <a className="navbar-brand" href="/" style={navTextClr}>
-        portfolio
+        santhosh|portfolio
       </a>
       <button
         className="navbar-toggler"

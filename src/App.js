@@ -9,10 +9,10 @@ function App() {
 
   function handleNewPage() {
     setProfileImg(false);
-    // setTimeout(() => {
-    //   setNewPageOpened(true);
-    // }, 200);
-    setNewPageOpened(true);
+    setTimeout(() => {
+      setNewPageOpened(true);
+    }, 200);
+    // setNewPageOpened(true);
   }
 
   function handleClosePage() {
@@ -21,6 +21,7 @@ function App() {
       setProfileImg(true);
     }, 1500);
   }
+
   return (
     <div className="container-fluid App">
       <Home

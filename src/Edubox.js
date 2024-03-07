@@ -10,7 +10,7 @@ function Edubox(props) {
           return (
             <div className="col-11 col-md-5 my-2 " key={edu.id}>
               <div
-                className="shadow  col-12 rounded"
+                className="shadow col-12 rounded"
                 key={edu.id}
                 style={{ height: "100%" }}
               >
