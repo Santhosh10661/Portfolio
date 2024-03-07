@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.039350f7.css",
-    "main.js": "/Portfolio/static/js/main.a7efad7b.js",
+    "main.css": "/Portfolio/static/css/main.336ac423.css",
+    "main.js": "/Portfolio/static/js/main.f34f01cb.js",
     "static/js/592.eb07726c.chunk.js": "/Portfolio/static/js/592.eb07726c.chunk.js",
     "static/media/weather-app3.png": "/Portfolio/static/media/weather-app3.10b104f59640e270777f.png",
     "static/media/weather-app2.png": "/Portfolio/static/media/weather-app2.49e73d2cd6d23c603702.png",
@@ -18,7 +18,7 @@
     "static/media/Foundation Ux Design.jpg": "/Portfolio/static/media/Foundation Ux Design.e6de76aab6e354797e48.jpg",
     "static/media/undraw_graduation_re_gthn (1).svg": "/Portfolio/static/media/undraw_graduation_re_gthn (1).a05cc60ea78563e01609f491a4d87a4b.svg",
     "static/media/undraw_feeling_proud_qne1.svg": "/Portfolio/static/media/undraw_feeling_proud_qne1.004348e37b0608affcbf1ecf660b6399.svg",
-    "static/media/undraw_welcoming_re_x0qo.svg": "/Portfolio/static/media/undraw_welcoming_re_x0qo.a3af8dad8d256e688a41f2bf11ef08fa.svg",
+    "static/media/undraw_hello_re_3evm.svg": "/Portfolio/static/media/undraw_hello_re_3evm.4d62c21dcccab27bf553249dd7fd7488.svg",
     "static/media/undraw_envelope_re_f5j4.svg": "/Portfolio/static/media/undraw_envelope_re_f5j4.fc74ba827f6f86b36271b12188d86305.svg",
     "static/media/undraw_certificate_re_yadi.svg": "/Portfolio/static/media/undraw_certificate_re_yadi.24b3a24bb57367b1d5bc268f346aac7e.svg",
     "static/media/react-js-icon.svg": "/Portfolio/static/media/react-js-icon.4ee8d0003d0f7f9ccea03ac4aa13fb99.svg",
@@ -27,12 +27,12 @@
     "static/media/html-icon.svg": "/Portfolio/static/media/html-icon.115310285b7fd7194c7afea2c04ec0f7.svg",
     "index.html": "/Portfolio/index.html",
     "static/media/javascript-1.svg": "/Portfolio/static/media/javascript-1.b879f838faf1cb951d1c2230fd933a39.svg",
-    "main.039350f7.css.map": "/Portfolio/static/css/main.039350f7.css.map",
-    "main.a7efad7b.js.map": "/Portfolio/static/js/main.a7efad7b.js.map",
+    "main.336ac423.css.map": "/Portfolio/static/css/main.336ac423.css.map",
+    "main.f34f01cb.js.map": "/Portfolio/static/js/main.f34f01cb.js.map",
     "592.eb07726c.chunk.js.map": "/Portfolio/static/js/592.eb07726c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.039350f7.css",
-    "static/js/main.a7efad7b.js"
+    "static/css/main.336ac423.css",
+    "static/js/main.f34f01cb.js"
   ]
 }
