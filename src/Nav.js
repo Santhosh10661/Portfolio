@@ -14,7 +14,7 @@ function Nav(props) {
       style={{
         position: "sticky",
         top: "0",
-        zIndex: "2",
+        zIndex: "3",
         backgroundColor: "#2c3333",
         height: "fit-content",
         borderRadius: "0 0 10px 10px",
