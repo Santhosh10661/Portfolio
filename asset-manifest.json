@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.cdf47528.css",
-    "main.js": "/Portfolio/static/js/main.cbee099e.js",
+    "main.css": "/Portfolio/static/css/main.336ac423.css",
+    "main.js": "/Portfolio/static/js/main.e47b7a13.js",
     "static/js/592.eb07726c.chunk.js": "/Portfolio/static/js/592.eb07726c.chunk.js",
     "static/media/weather-app3.png": "/Portfolio/static/media/weather-app3.10b104f59640e270777f.png",
     "static/media/weather-app2.png": "/Portfolio/static/media/weather-app2.49e73d2cd6d23c603702.png",
@@ -27,12 +27,12 @@
     "static/media/html-icon.svg": "/Portfolio/static/media/html-icon.115310285b7fd7194c7afea2c04ec0f7.svg",
     "index.html": "/Portfolio/index.html",
     "static/media/javascript-1.svg": "/Portfolio/static/media/javascript-1.b879f838faf1cb951d1c2230fd933a39.svg",
-    "main.cdf47528.css.map": "/Portfolio/static/css/main.cdf47528.css.map",
-    "main.cbee099e.js.map": "/Portfolio/static/js/main.cbee099e.js.map",
+    "main.336ac423.css.map": "/Portfolio/static/css/main.336ac423.css.map",
+    "main.e47b7a13.js.map": "/Portfolio/static/js/main.e47b7a13.js.map",
     "592.eb07726c.chunk.js.map": "/Portfolio/static/js/592.eb07726c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cdf47528.css",
-    "static/js/main.cbee099e.js"
+    "static/css/main.336ac423.css",
+    "static/js/main.e47b7a13.js"
   ]
 }
