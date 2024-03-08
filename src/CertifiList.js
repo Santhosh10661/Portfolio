@@ -4,7 +4,6 @@ function CertifiList(props) {
   let { certificationList, handleOpen, reqId } = props;
 
   let listconstyle = {
-    // height: "200px",
     overflow: "hidden",
     transition: "0.3s ease",
   };

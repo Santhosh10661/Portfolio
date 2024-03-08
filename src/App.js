@@ -12,7 +12,6 @@ function App() {
     setTimeout(() => {
       setNewPageOpened(true);
     }, 200);
-    // setNewPageOpened(true);
   }
 
   function handleClosePage() {

@@ -37,10 +37,11 @@ function Home(props) {
           I am Frontend Developer
         </h4>
         <p className=" text-capitalize">
-          A frontend developer specializes in building the user interface of
-          websites or web applications using HTML, CSS, and JavaScript. They
-          focus on creating responsive, visually appealing interfaces that
-          enhance user experience across devices and browsers.
+          As a recent MCA graduate, I've embraced frontend development with
+          enthusiasm. With a keen eye for design and a solid technical
+          foundation, I specialize in creating polished user interfaces. Eager
+          to continually learn and innovate, I'm driven to deliver exceptional
+          digital experiences.
         </p>
         <button
           className="col-6 col-sm-5  btn p-1 pt-2 s fw-bold text-capitalize"
