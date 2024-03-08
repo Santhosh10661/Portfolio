@@ -40,11 +40,11 @@ function Nav(props) {
           <HiOutlineMenuAlt3 style={navTextClr} />
         )}
       </button>
-      <div
-        className="collapse navbar-collapse d-flex justify-content-end"
-        id="navbarNavAltMarkup"
-      >
-        <div className="navbar-nav text-center">
+      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div
+          className="navbar-nav text-center"
+          style={{ width: "100%", position: "relative" }}
+        >
           <a
             className="nav-link active"
             aria-current="page"
@@ -65,7 +65,7 @@ function Nav(props) {
           <a className="nav-link " href="#Contact" style={navTextClr}>
             Contact
           </a>
-          <p className=" nav-link m-0">
+          <p className="text-end nav-link m-0">
             <RiLogoutCircleRLine
               className="fs-5 logOutIcon"
               style={navTextClr}
