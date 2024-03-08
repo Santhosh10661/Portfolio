@@ -6,7 +6,7 @@ import { RiLogoutCircleRLine } from "react-icons/ri";
 
 function Nav(props) {
   let { handleClosePage } = props;
-  let navTextClr = { color: "#ffffec" };
+  let navTextClr = { color: "#ffffec", cursor: "pointer" };
   let [menuBtnClicked, setmenuBtnClicked] = useState(false);
   return (
     <nav
@@ -20,9 +20,9 @@ function Nav(props) {
         borderRadius: "0 0 10px 10px",
       }}
     >
-      <a className="navbar-brand" href="/" style={navTextClr}>
+      <span style={navTextClr} onClick={() => handleClosePage()}>
         santhosh|portfolio
-      </a>
+      </span>
       <button
         className="navbar-toggler"
         type="button"
@@ -40,11 +40,11 @@ function Nav(props) {
           <HiOutlineMenuAlt3 style={navTextClr} />
         )}
       </button>
-      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div
-          className="navbar-nav text-center"
-          style={{ width: "100%", position: "relative" }}
-        >
+      <div
+        className="collapse navbar-collapse d-flex justify-content-end"
+        id="navbarNavAltMarkup"
+      >
+        <div className="navbar-nav text-center">
           <a
             className="nav-link active"
             aria-current="page"
@@ -65,9 +65,9 @@ function Nav(props) {
           <a className="nav-link " href="#Contact" style={navTextClr}>
             Contact
           </a>
-          <p className="text-end nav-link m-0">
+          <p className=" nav-link m-0">
             <RiLogoutCircleRLine
-              className="fs-4 logOutIcon"
+              className="fs-5 logOutIcon"
               style={navTextClr}
               onClick={() => handleClosePage()}
             />

@@ -1,6 +1,4 @@
 .logOutIcon {
-  position: absolute;
-  right: 0;
   cursor: pointer;
   transform: rotate(-90deg) scale(1);
   transition: 0.3s ease;
