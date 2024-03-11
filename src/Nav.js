@@ -46,23 +46,27 @@ function Nav(props) {
           style={{ width: "100%", position: "relative" }}
         >
           <a
-            className="nav-link active"
+            className="nav-link linkItem active"
             aria-current="page"
             href="#Education"
             style={navTextClr}
           >
             Education
           </a>
-          <a className="nav-link " href="#Certification" style={navTextClr}>
+          <a
+            className="nav-link linkItem "
+            href="#Certification"
+            style={navTextClr}
+          >
             Certification
           </a>
-          <a className="nav-link " href="#Project" style={navTextClr}>
+          <a className="nav-link linkItem " href="#Project" style={navTextClr}>
             Project
           </a>
-          <a className="nav-link " href="#Skill" style={navTextClr}>
+          <a className="nav-link linkItem " href="#Skill" style={navTextClr}>
             Skill
           </a>
-          <a className="nav-link " href="#Contact" style={navTextClr}>
+          <a className="nav-link linkItem " href="#Contact" style={navTextClr}>
             Contact
           </a>
           <p className="text-end nav-link m-0">
