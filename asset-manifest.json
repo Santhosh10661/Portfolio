@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.259c3147.css",
-    "main.js": "/Portfolio/static/js/main.e4fd6dc1.js",
+    "main.css": "/Portfolio/static/css/main.5c860de8.css",
+    "main.js": "/Portfolio/static/js/main.5514f1dc.js",
     "static/js/592.eb07726c.chunk.js": "/Portfolio/static/js/592.eb07726c.chunk.js",
     "static/media/weather-app3.png": "/Portfolio/static/media/weather-app3.10b104f59640e270777f.png",
     "static/media/weather-app2.png": "/Portfolio/static/media/weather-app2.49e73d2cd6d23c603702.png",
@@ -16,6 +16,7 @@
     "static/media/notes-app1.png": "/Portfolio/static/media/notes-app1.0f6f9e249b8ca51f59ca.png",
     "static/media/notes-app3.png": "/Portfolio/static/media/notes-app3.8990468920b0863c9f4a.png",
     "static/media/Foundation Ux Design.jpg": "/Portfolio/static/media/Foundation Ux Design.e6de76aab6e354797e48.jpg",
+    "static/media/SANTHOSH_K_CV.pdf": "/Portfolio/static/media/SANTHOSH_K_CV.6a91c291a98d2f835cd2.pdf",
     "static/media/undraw_graduation_re_gthn (1).svg": "/Portfolio/static/media/undraw_graduation_re_gthn (1).a05cc60ea78563e01609f491a4d87a4b.svg",
     "static/media/undraw_feeling_proud_qne1.svg": "/Portfolio/static/media/undraw_feeling_proud_qne1.004348e37b0608affcbf1ecf660b6399.svg",
     "static/media/undraw_hello_re_3evm.svg": "/Portfolio/static/media/undraw_hello_re_3evm.4d62c21dcccab27bf553249dd7fd7488.svg",
@@ -27,12 +28,12 @@
     "static/media/html-icon.svg": "/Portfolio/static/media/html-icon.115310285b7fd7194c7afea2c04ec0f7.svg",
     "index.html": "/Portfolio/index.html",
     "static/media/javascript-1.svg": "/Portfolio/static/media/javascript-1.b879f838faf1cb951d1c2230fd933a39.svg",
-    "main.259c3147.css.map": "/Portfolio/static/css/main.259c3147.css.map",
-    "main.e4fd6dc1.js.map": "/Portfolio/static/js/main.e4fd6dc1.js.map",
+    "main.5c860de8.css.map": "/Portfolio/static/css/main.5c860de8.css.map",
+    "main.5514f1dc.js.map": "/Portfolio/static/js/main.5514f1dc.js.map",
     "592.eb07726c.chunk.js.map": "/Portfolio/static/js/592.eb07726c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.259c3147.css",
-    "static/js/main.e4fd6dc1.js"
+    "static/css/main.5c860de8.css",
+    "static/js/main.5514f1dc.js"
   ]
 }
