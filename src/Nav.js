@@ -53,6 +53,7 @@ function Nav(props) {
           >
             Education
           </a>
+
           <a
             className="nav-link linkItem "
             href="#Certification"
