@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./Css/Home.css";
 import ProImgCont from "./ProImgCont";
 import { MdDoubleArrow } from "react-icons/md";
+import { IoCloudDownloadSharp } from "react-icons/io5";
 import ProfileImg from "./ProfileImg";
+import resume from "./certificate/SANTHOSH_K_CV.pdf";
 
 function Home(props) {
   let { newPageOpend, handleNewPage, profileImg } = props;
@@ -25,17 +27,32 @@ function Home(props) {
         style={{ zIndex: 1 }}
       >
         <h1 className="m-0 text-uppercase">SANTHOSH KANNAN</h1>
-        <h4
-          className=" fw-bolder p-2"
-          style={{
-            width: "fit-content",
-            backgroundColor: "#ffffec",
-            color: "#2c3333",
-            borderRadius: "5px",
-          }}
-        >
-          I am Frontend Developer
-        </h4>
+        <div className="col-12 d-flex align-items-center mb-2">
+          <h4
+            className=" fw-bolder p-2 m-0"
+            style={{
+              width: "fit-content",
+              backgroundColor: "#ffffec",
+              color: "#2c3333",
+              borderRadius: "5px",
+            }}
+          >
+            I am Frontend Developer
+          </h4>
+
+          <a
+            href={resume}
+            className="connectLink btn mx-3 p-0"
+            download="SANTHOSH_K_CV.pdf"
+            type="application/pdf"
+            style={{
+              border: "none",
+              color: "#ffffec",
+            }}
+          >
+            <IoCloudDownloadSharp className="fs-3" />
+          </a>
+        </div>
         <p className=" text-capitalize">
           As a recent MCA graduate, I've embraced frontend development with
           enthusiasm. With a keen eye for design and a solid technical
@@ -56,13 +73,6 @@ function Home(props) {
           -lets go-
           <MdDoubleArrow className="mb-1 letGoArrowR" />
         </button>
-        <a
-          href="./certificate/SANTHOSH_K_CV.pdf"
-          download="SANTHOSH_K_CV.pdf"
-          type="application/pdf"
-        >
-          download
-        </a>
       </div>
     </div>
   );

@@ -50,6 +50,10 @@
   animation-duration: 3s;
   animation-iteration-count: infinite;
 }
+.connectLink {
+  transform: scale(1);
+  transition: 1s ease;
+}
 .connectLink:hover {
   transform: scale(1.1);
 }
