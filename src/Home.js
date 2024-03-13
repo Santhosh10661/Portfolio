@@ -56,7 +56,11 @@ function Home(props) {
           -lets go-
           <MdDoubleArrow className="mb-1 letGoArrowR" />
         </button>
-        <a href="./certificate/SANTHOSH_K_CV.pdf" download>
+        <a
+          href="./certificate/SANTHOSH_K_CV.pdf"
+          download="SANTHOSH_K_CV.pdf"
+          type="application/pdf"
+        >
           download
         </a>
       </div>
