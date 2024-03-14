@@ -14,7 +14,7 @@ function Nav(props) {
   let [menuBtnClicked, setmenuBtnClicked] = useState(false);
   return (
     <nav
-      className="container-fluid navbar navbar-expand-lg shadow py-1 px-3 "
+      className="container-fluid navbar navbar-expand-lg shadow py-2 px-3 "
       style={{
         position: "sticky",
         top: "0",
@@ -44,9 +44,9 @@ function Nav(props) {
           <HiOutlineMenuAlt3 style={navTextClr} />
         )}
       </button>
-      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div className="collapse navbar-collapse " id="navbarNavAltMarkup ">
         <div
-          className="navbar-nav text-center d-flex align-items-center pb-2"
+          className="navbar-nav text-center d-flex align-items-center "
           style={{ width: "100%", position: "relative" }}
         >
           <a
