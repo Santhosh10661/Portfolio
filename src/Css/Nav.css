@@ -29,5 +29,7 @@
 @media (max-width: 992px) {
   .logOutIcon {
     position: relative;
+    /* justify-self: end; */
+    align-self: flex-end;
   }
 }

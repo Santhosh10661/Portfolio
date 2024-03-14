@@ -6,7 +6,11 @@ import { RiLogoutCircleRLine } from "react-icons/ri";
 
 function Nav(props) {
   let { handleClosePage } = props;
-  let navTextClr = { color: "#ffffec", cursor: "pointer" };
+  let navTextClr = {
+    width: "fit-content",
+    color: "#ffffec",
+    cursor: "pointer",
+  };
   let [menuBtnClicked, setmenuBtnClicked] = useState(false);
   return (
     <nav
@@ -42,7 +46,7 @@ function Nav(props) {
       </button>
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div
-          className="navbar-nav text-center"
+          className="navbar-nav text-center d-flex align-items-center pb-2"
           style={{ width: "100%", position: "relative" }}
         >
           <a
@@ -70,13 +74,11 @@ function Nav(props) {
           <a className="nav-link linkItem " href="#Contact" style={navTextClr}>
             Contact
           </a>
-          <p className="text-end nav-link m-0">
-            <RiLogoutCircleRLine
-              className="fs-5 logOutIcon"
-              style={navTextClr}
-              onClick={() => handleClosePage()}
-            />
-          </p>
+          <RiLogoutCircleRLine
+            className="fs-5 logOutIcon my-2 my-md-0"
+            style={{ color: "#ffffec" }}
+            onClick={() => handleClosePage()}
+          />
         </div>
       </div>
     </nav>
