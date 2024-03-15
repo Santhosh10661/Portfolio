@@ -1,15 +1,18 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { ImSpinner9 } from "react-icons/im";
 import { RiSendPlaneFill } from "react-icons/ri";
-
 import emailjs from "@emailjs/browser";
-function Emailjs(props) {
-  let { isLoading, setIsLoading, setMailSuccess, setMailErr } = props;
+import DataContext from "./ContextApi/DataContext";
+
+function Emailjs() {
+  const { isLoading, setIsLoading, setMailSuccess, setMailErr } =
+    useContext(DataContext);
+
   let [fName, setFName] = useState("");
   let [fEmail, setFEmail] = useState("");
   let [fMessage, setFMessage] = useState("");
-
   let form = useRef();
+
   const sendEmail = async (e) => {
     e.preventDefault();
     setIsLoading(true);

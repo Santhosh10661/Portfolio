@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Css/ProfileImage.css";
 import img from "./svg/undraw_hello_re_3evm.svg";
+import DataContext from "./ContextApi/DataContext";
 
-function ProfileImg(props) {
-  let { profileImg } = props;
+function ProfileImg() {
+  const { profileImg } = useContext(DataContext);
+
+  console.log(profileImg);
   return (
     <div
       className={

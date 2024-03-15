@@ -52,7 +52,7 @@
 }
 .connectLink {
   transform: scale(1);
-  transition: 1s ease;
+  transition: 0.3s ease-in-out;
 }
 .connectLink:hover {
   transform: scale(1.1);

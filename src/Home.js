@@ -1,23 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import "./Css/Home.css";
 import ProImgCont from "./ProImgCont";
 import { MdDoubleArrow } from "react-icons/md";
 import { IoCloudDownloadSharp } from "react-icons/io5";
 import ProfileImg from "./ProfileImg";
 import resume from "./certificate/SANTHOSH_K_CV.pdf";
+import DataContext from "./ContextApi/DataContext";
 
-function Home(props) {
-  let { newPageOpend, handleNewPage, profileImg } = props;
-  let [showImg, setShowImg] = useState(false);
+function Home() {
+  const { newPageOpend, setNewPageOpened, setProfileImg, showImg, setShowImg } =
+    useContext(DataContext);
+
   useEffect(() => {
     setTimeout(() => {
       setShowImg(true);
     }, 1500);
   }, []);
+
+  function handleNewPage() {
+    setProfileImg(false);
+    setTimeout(() => {
+      setNewPageOpened(true);
+    }, 200);
+  }
   return (
     <div className="Home row align-items-center">
-      <ProImgCont newPageOpend={newPageOpend} />
-      {showImg && <ProfileImg profileImg={profileImg} />}
+      <ProImgCont />
+      {showImg && <ProfileImg />}
       <div
         className={
           newPageOpend

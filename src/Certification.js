@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Css/Certification.css";
 import ReactBasics from "./certificate/React Basics.jpg";
 import ProgramminInJavascript from "./certificate/Programming In Javascript.jpg";
@@ -18,7 +18,7 @@ function Certification() {
   interest and professional development, providing me with valuable
   knowledge and practical experience.`,
   ];
-  let [reqId, setReqId] = useState(1);
+
   let certificationList = [
     {
       id: 1,
@@ -58,9 +58,6 @@ function Certification() {
     },
   ];
 
-  const handleOpen = (openedId) => {
-    setReqId(openedId);
-  };
   return (
     <section className="container-fluid Certification" id="Certification">
       <div className="row justify-content-center">
@@ -79,11 +76,7 @@ function Certification() {
               className="col-12 d-flex align-items-center justify-content-center flex-wrap p-2"
               style={{ transition: "0.3s ease" }}
             >
-              <OpenCertificateCon
-                reqId={reqId}
-                certificationList={certificationList}
-                handleOpen={handleOpen}
-              />
+              <OpenCertificateCon certificationList={certificationList} />
             </div>
           </div>
         </div>

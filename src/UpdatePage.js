@@ -8,11 +8,10 @@ import Skill from "./Skill";
 import Footer from "./Footer";
 import Contact from "./Contact";
 
-function UpdatePage(props) {
-  let { handleClosePage } = props;
+function UpdatePage() {
   return (
     <div className="UpdatePage text-capitalize">
-      <Nav handleClosePage={handleClosePage} />
+      <Nav />
       <Education />
       <Certification />
       <Project />

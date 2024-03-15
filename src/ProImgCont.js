@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Css/ProImgCon.css";
+import DataContext from "./ContextApi/DataContext";
 
-function ProImgCont(props) {
-  let { newPageOpend } = props;
+function ProImgCont() {
+  let { newPageOpend } = useContext(DataContext);
   return (
     <div
       className={newPageOpend ? "circleCon p-2 openPage" : "circleCon p-2"}

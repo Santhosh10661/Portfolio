@@ -1,20 +1,29 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "./Css/Nav.css";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import { RiLogoutCircleRLine } from "react-icons/ri";
+import DataContext from "./ContextApi/DataContext";
 
-function Nav(props) {
-  let { handleClosePage } = props;
+function Nav() {
+  const { setNewPageOpened, setProfileImg, menuBtnClicked, setmenuBtnClicked } =
+    useContext(DataContext);
+
   let navTextClr = {
     width: "fit-content",
     color: "#ffffec",
     cursor: "pointer",
   };
-  let [menuBtnClicked, setmenuBtnClicked] = useState(false);
+
+  function handleClosePage() {
+    setNewPageOpened(false);
+    setTimeout(() => {
+      setProfileImg(true);
+    }, 1500);
+  }
   return (
     <nav
-      className="container-fluid navbar navbar-expand-lg shadow py-2 px-3 "
+      className="container-fluid navbar navbar-expand-lg shadow py-2 px-3"
       style={{
         position: "sticky",
         top: "0",

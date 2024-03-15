@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import DataContext from "./ContextApi/DataContext";
 
 function CertifiList(props) {
-  let { certificationList, handleOpen, reqId } = props;
+  const { certificationList } = props;
 
+  const { reqId, setReqId } = useContext(DataContext);
+
+  const handleOpen = (openedId) => {
+    setReqId(openedId);
+  };
   let listconstyle = {
     overflow: "hidden",
     transition: "0.3s ease",

@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "./Css/Contact.css";
 import { RiMailSendFill } from "react-icons/ri";
 import { MdOutlineError } from "react-icons/md";
 import mailSvg from "./svg/undraw_envelope_re_f5j4.svg";
 import Heading from "./commonContents/Heading";
 import Emailjs from "./Emailjs";
+import DataContext from "./ContextApi/DataContext";
 
 function Contact() {
-  let heading = "contact";
-  let [isLoading, setIsLoading] = useState(false);
-  let [mailSuccess, setMailSuccess] = useState(false);
-  let [mailErr, setMailErr] = useState(false);
+  const { isLoading, mailSuccess, mailErr } = useContext(DataContext);
+
+  const heading = "contact";
+
   return (
     <section className="container-fluid Contact" id="Contact">
       <div className="row">
@@ -22,12 +23,7 @@ function Contact() {
             <img src={mailSvg} alt="" className="col-8 col-md-10 dropSha" />
           </div>
           <div className="col-12 col-md-5 position-relative rounded">
-            <Emailjs
-              setMailSuccess={setMailSuccess}
-              isLoading={isLoading}
-              setIsLoading={setIsLoading}
-              setMailErr={setMailErr}
-            />
+            <Emailjs />
             {isLoading && (
               <div
                 className="returnMessage col-12"

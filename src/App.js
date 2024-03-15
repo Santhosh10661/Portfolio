@@ -1,34 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "./App.css";
 import Home from "./Home";
 import UpdatePage from "./UpdatePage";
+import DataContext from "./ContextApi/DataContext";
 
 function App() {
-  let [newPageOpend, setNewPageOpened] = useState(false);
-  let [profileImg, setProfileImg] = useState(true);
-
-  function handleNewPage() {
-    setProfileImg(false);
-    setTimeout(() => {
-      setNewPageOpened(true);
-    }, 200);
-  }
-
-  function handleClosePage() {
-    setNewPageOpened(false);
-    setTimeout(() => {
-      setProfileImg(true);
-    }, 1500);
-  }
+  const { newPageOpend } = useContext(DataContext);
 
   return (
     <div className="container-fluid App">
-      <Home
-        newPageOpend={newPageOpend}
-        handleNewPage={handleNewPage}
-        profileImg={profileImg}
-      />
-      {newPageOpend && <UpdatePage handleClosePage={handleClosePage} />}
+      <Home />
+      {newPageOpend && <UpdatePage />}
     </div>
   );
 }
