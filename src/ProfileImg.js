@@ -6,7 +6,6 @@ import DataContext from "./ContextApi/DataContext";
 function ProfileImg() {
   const { profileImg } = useContext(DataContext);
 
-  console.log(profileImg);
   return (
     <div
       className={

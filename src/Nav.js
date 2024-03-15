@@ -53,7 +53,7 @@ function Nav() {
           <HiOutlineMenuAlt3 style={navTextClr} />
         )}
       </button>
-      <div className="collapse navbar-collapse " id="navbarNavAltMarkup ">
+      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div
           className="navbar-nav text-center d-flex align-items-center "
           style={{ width: "100%", position: "relative" }}
