@@ -3,6 +3,9 @@ import "./Css/Nav.css";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import { RiLogoutCircleRLine } from "react-icons/ri";
+// import { FaReact } from "react-icons/fa";
+import { SiSemanticuireact } from "react-icons/si";
+
 import DataContext from "./ContextApi/DataContext";
 
 function Nav() {
@@ -33,8 +36,16 @@ function Nav() {
         borderRadius: "0 0 10px 10px",
       }}
     >
-      <span style={navTextClr} onClick={() => handleClosePage()}>
-        santhosh
+      <span
+        className="bgWhite p-1 rounded-circle d-flex justify-content-center align-items-center "
+        style={{
+          width: "fit-content",
+          cursor: "pointer",
+          aspectRatio: "1/1",
+        }}
+        onClick={() => handleClosePage()}
+      >
+        <SiSemanticuireact className="fs-2" />
       </span>
       <button
         className="navbar-toggler"
