@@ -34,7 +34,7 @@ function Nav() {
       }}
     >
       <span style={navTextClr} onClick={() => handleClosePage()}>
-        santhosh|portfolio
+        santhosh
       </span>
       <button
         className="navbar-toggler"
