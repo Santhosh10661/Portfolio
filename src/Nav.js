@@ -19,6 +19,7 @@ function Nav() {
   };
 
   function handleClosePage() {
+    setmenuBtnClicked(false);
     setNewPageOpened(false);
     setTimeout(() => {
       setProfileImg(true);
@@ -94,11 +95,21 @@ function Nav() {
           <a className="nav-link linkItem " href="#Contact" style={navTextClr}>
             Contact
           </a>
-          <RiLogoutCircleRLine
-            className="fs-5 logOutIcon my-2 my-md-0"
-            style={{ color: "#ffffec" }}
+
+          <span
+            className="bgWhite p-1 rounded-circle d-flex justify-content-center align-items-center logOutIconCon"
+            style={{
+              width: "fit-content",
+              cursor: "pointer",
+              aspectRatio: "1/1",
+            }}
             onClick={() => handleClosePage()}
-          />
+          >
+            <RiLogoutCircleRLine
+              className="fs-3 rounded-circle bgBlack p-1 logOutIcon"
+              onClick={() => handleClosePage()}
+            />
+          </span>
         </div>
       </div>
     </nav>
