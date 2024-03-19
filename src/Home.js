@@ -3,9 +3,10 @@ import "./Css/Home.css";
 import ProImgCont from "./ProImgCont";
 import { MdDoubleArrow } from "react-icons/md";
 import { IoCloudDownloadSharp } from "react-icons/io5";
-import ProfileImg from "./ProfileImg";
 import resume from "./certificate/SANTHOSH_K_CV.pdf";
+import ProfileImg from "./ProfileImg";
 import DataContext from "./ContextApi/DataContext";
+import RoleTypeWriter from "./RoleTypeWriter";
 
 function Home() {
   const { newPageOpend, setNewPageOpened, setProfileImg, showImg, setShowImg } =
@@ -25,6 +26,24 @@ function Home() {
   }
   return (
     <div className="Home row align-items-center">
+      <a
+        className="btn p-1 pt-2 text-capitalize"
+        href={resume}
+        download="SANTHOSH_K_CV.pdf"
+        type="application/pdf"
+        style={{
+          position: "absolute",
+          top: "0",
+          right: "0",
+          // backgroundColor: "#ffffec",
+          // color: "#2c3333",
+          width: "fit-content",
+          color: "#ffffec",
+          borderRadius: "50px",
+        }}
+      >
+        Resume <IoCloudDownloadSharp className="fs-3" />
+      </a>
       <ProImgCont />
       {showImg && <ProfileImg />}
       <div
@@ -36,32 +55,9 @@ function Home() {
         style={{ zIndex: 1 }}
       >
         <h1 className="m-0 text-uppercase">SANTHOSH KANNAN</h1>
-        <div className="col-12 d-flex align-items-center mb-2">
-          <h4
-            className=" fw-bolder p-2 m-0"
-            style={{
-              width: "fit-content",
-              backgroundColor: "#ffffec",
-              color: "#2c3333",
-              borderRadius: "5px",
-            }}
-          >
-            I am Frontend Developer
-          </h4>
 
-          <a
-            href={resume}
-            className="connectLink btn mx-3 p-0"
-            download="SANTHOSH_K_CV.pdf"
-            type="application/pdf"
-            style={{
-              border: "none",
-              color: "#ffffec",
-            }}
-          >
-            <IoCloudDownloadSharp className="fs-3" />
-          </a>
-        </div>
+        <RoleTypeWriter />
+
         <p className=" text-capitalize">
           As a recent MCA graduate, I've embraced frontend development with
           enthusiasm. With a keen eye for design and a solid technical
@@ -69,19 +65,38 @@ function Home() {
           to continually learn and innovate, I'm driven to deliver exceptional
           digital experiences.
         </p>
-        <button
-          className="col-6 col-sm-5  btn p-1 pt-2 s fw-bold text-capitalize"
-          style={{
-            backgroundColor: "#ffffec",
-            color: "#2c3333",
-            borderRadius: "50px",
-          }}
-          onClick={() => handleNewPage()}
-        >
-          <MdDoubleArrow className="mb-1 letGoArrowL" />
-          -lets go-
-          <MdDoubleArrow className="mb-1 letGoArrowR" />
-        </button>
+        <div className="d-flex align-items-center">
+          <button
+            className="col-6 col-sm-5 btn p-1 pt-2 s fw-bold text-capitalize"
+            style={{
+              backgroundColor: "#ffffec",
+              color: "#2c3333",
+              borderRadius: "50px",
+            }}
+            onClick={() => handleNewPage()}
+          >
+            <MdDoubleArrow className="mb-1 letGoArrowL" />
+            -lets go-
+            <MdDoubleArrow className="mb-1 letGoArrowR" />
+          </button>
+          {/* <a
+            className="btn p-1 pt-2 s fw-bold text-capitalize"
+            href={resume}
+            download="SANTHOSH_K_CV.pdf"
+            type="application/pdf"
+            style={{
+              position: "absolute",
+              top: "0",
+              right: "0",
+              // backgroundColor: "#ffffec",
+              // color: "#2c3333",
+              color: "#ffffec",
+              borderRadius: "50px",
+            }}
+          >
+            Resume <IoCloudDownloadSharp className="fs-3" />
+          </a> */}
+        </div>
       </div>
     </div>
   );

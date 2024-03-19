@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import "./Css/ProfileImage.css";
 import img from "./svg/undraw_hello_re_3evm.svg";
+import { IoCloudDownloadSharp } from "react-icons/io5";
+import resume from "./certificate/SANTHOSH_K_CV.pdf";
 import DataContext from "./ContextApi/DataContext";
 
 function ProfileImg() {
