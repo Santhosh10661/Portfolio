@@ -15,10 +15,10 @@ function RoleTypeWriter() {
       }}
     >
       <h4 className="fw-bolder m-0 ">I am a </h4>
-      <span className="h4 fw-bolder m-0 mx-1" style={{ color: "#FFBB5C" }}>
+      <span className="h4 fw-bolder m-0 mx-1" style={{ color: "#2192FF" }}>
         <span>{text}</span>
 
-        <Cursor cursorColor="#FFBB5C" />
+        <Cursor cursorColor="#2192FF" />
       </span>
     </div>
   );

@@ -53,7 +53,7 @@ function Home() {
             type="application/pdf"
             style={{
               width: "fit-content",
-              color: "#FFBB5C",
+              color: "#2192FF",
               textWrap: "nowrap",
             }}
           >
