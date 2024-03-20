@@ -10,17 +10,15 @@ function RoleTypeWriter() {
     <div
       className="d-flex align-items-center my-1"
       style={{
-        backgroundColor: "#ffffec",
-        color: "#2c3333",
-        borderRadius: "5px",
+        color: "#ffffec",
         width: "fit-content",
       }}
     >
-      <h4 className="fw-bolder m-0 p-1 pt-2">I am a </h4>
-      <span className="h4 fw-bolder p-1 pt-2  m-0 mx-1">
+      <h4 className="fw-bolder m-0 ">I am a </h4>
+      <span className="h4 fw-bolder m-0 mx-1" style={{ color: "#FFBB5C" }}>
         <span>{text}</span>
 
-        <Cursor cursorColor="#2c3333" />
+        <Cursor cursorColor="#FFBB5C" />
       </span>
     </div>
   );

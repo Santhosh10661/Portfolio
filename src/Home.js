@@ -26,24 +26,6 @@ function Home() {
   }
   return (
     <div className="Home row align-items-center">
-      <a
-        className="btn p-1 pt-2 text-capitalize"
-        href={resume}
-        download="SANTHOSH_K_CV.pdf"
-        type="application/pdf"
-        style={{
-          position: "absolute",
-          top: "0",
-          right: "0",
-          // backgroundColor: "#ffffec",
-          // color: "#2c3333",
-          width: "fit-content",
-          color: "#ffffec",
-          borderRadius: "50px",
-        }}
-      >
-        Resume <IoCloudDownloadSharp className="fs-3" />
-      </a>
       <ProImgCont />
       {showImg && <ProfileImg />}
       <div
@@ -54,7 +36,7 @@ function Home() {
         }
         style={{ zIndex: 1 }}
       >
-        <h1 className="m-0 text-uppercase">SANTHOSH KANNAN</h1>
+        <h1 className="m-0">SANTHOSH KANNAN</h1>
 
         <RoleTypeWriter />
 
@@ -63,40 +45,35 @@ function Home() {
           enthusiasm. With a keen eye for design and a solid technical
           foundation, I specialize in creating polished user interfaces. Eager
           to continually learn and innovate, I'm driven to deliver exceptional
-          digital experiences.
-        </p>
-        <div className="d-flex align-items-center">
-          <button
-            className="col-6 col-sm-5 btn p-1 pt-2 s fw-bold text-capitalize"
-            style={{
-              backgroundColor: "#ffffec",
-              color: "#2c3333",
-              borderRadius: "50px",
-            }}
-            onClick={() => handleNewPage()}
-          >
-            <MdDoubleArrow className="mb-1 letGoArrowL" />
-            -lets go-
-            <MdDoubleArrow className="mb-1 letGoArrowR" />
-          </button>
-          {/* <a
-            className="btn p-1 pt-2 s fw-bold text-capitalize"
+          digital experiences.{" "}
+          <a
+            className="px-1 text-decoration-none fw-bold text-capitalize"
             href={resume}
             download="SANTHOSH_K_CV.pdf"
             type="application/pdf"
             style={{
-              position: "absolute",
-              top: "0",
-              right: "0",
-              // backgroundColor: "#ffffec",
-              // color: "#2c3333",
-              color: "#ffffec",
-              borderRadius: "50px",
+              width: "fit-content",
+              color: "#FFBB5C",
+              textWrap: "nowrap",
             }}
           >
             Resume <IoCloudDownloadSharp className="fs-3" />
-          </a> */}
-        </div>
+          </a>
+        </p>
+
+        <button
+          className="col-6 col-sm-5 btn p-1 pt-2 s fw-bold text-capitalize"
+          style={{
+            backgroundColor: "#ffffec",
+            color: "#2c3333",
+            borderRadius: "50px",
+          }}
+          onClick={() => handleNewPage()}
+        >
+          <MdDoubleArrow className="mb-1 letGoArrowL" />
+          -lets go-
+          <MdDoubleArrow className="mb-1 letGoArrowR" />
+        </button>
       </div>
     </div>
   );
