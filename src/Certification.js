@@ -8,6 +8,7 @@ import OpenCertificateCon from "./OpenCertificateCon";
 import certifiSvg from "./svg/undraw_certificate_re_yadi.svg";
 import Heading from "./commonContents/Heading";
 import Describtion from "./commonContents/Describtion";
+import LineSlide from "./LineSlide";
 
 function Certification() {
   let heading = "certification";
@@ -74,9 +75,11 @@ function Certification() {
           <div className="row justify-content-center ">
             <div
               className="col-12 d-flex align-items-center justify-content-center flex-wrap p-2"
-              style={{ transition: "0.3s ease" }}
+              style={{ transition: "0.3s ease", position: "relative" }}
             >
+              <LineSlide placement={"sliderTop"} />
               <OpenCertificateCon certificationList={certificationList} />
+              <LineSlide placement={"sliderBottom"} />
             </div>
           </div>
         </div>

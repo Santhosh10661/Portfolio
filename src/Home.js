@@ -45,7 +45,7 @@ function Home() {
           enthusiasm. With a keen eye for design and a solid technical
           foundation, I specialize in creating polished user interfaces. Eager
           to continually learn and innovate, I'm driven to deliver exceptional
-          digital experiences.{" "}
+          digital experiences.
           <a
             className="px-1 text-decoration-none fw-bold text-capitalize"
             href={resume}
