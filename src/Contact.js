@@ -38,7 +38,10 @@ function Contact() {
                 {mailErr && (
                   <div className="bgBlack col-5 text-center p-2 rounded mailErr">
                     <MdOutlineError className="fs-1 m-1" />
-                    <p>failed try again</p>
+                    <p className="m-0">failed try again</p>
+                    <p>
+                      <small>check your connection</small>
+                    </p>
                   </div>
                 )}
               </div>

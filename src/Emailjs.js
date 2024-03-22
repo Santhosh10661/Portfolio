@@ -85,7 +85,7 @@ function Emailjs() {
       <div className="d-flex justify-content-center align-items-center">
         <button
           type="submit"
-          className="col-5 text-capitalize p-2 bgBlack rounded-pill d-felx align-self-center"
+          className="col-5 text-capitalize p-2 bgBlack rounded-pill d-felx align-self-center subBtn"
         >
           {isLoading ? (
             <ImSpinner9 className="spinner" />

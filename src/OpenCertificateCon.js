@@ -24,38 +24,36 @@ function OpenCertificateCon(props) {
         />
       </div>
 
-      <div className="bgWhite col-12 col-md-12 col-lg-6 d-flex flex-column-reverse flex-md-row-reverse flex-lg-column p-2 rounded mt-1 ">
-        <CertifiList certificationList={certificationList} />
-        <div className="col-12 col-md-7 col-lg-12 bgWhite rounded p-2">
-          <h4 className="m-0 my-1 p-2 rounded bgBlack">
+      <div className="bgWhite col-12 col-lg-6 d-flex flex-column flex-lg-column-reverse justify-content-center p-2 rounded mt-1">
+        <div
+          className="col-12 bgWhite rounded m-1"
+          style={{ border: "4px solid #2c3333 " }}
+        >
+          <h5 className="m-0 p-2 bgBlack">
             {reqCertificate[0].title} <PiCertificateFill className="fs-2" />
-          </h4>
+          </h5>
           <div>
-            <p className="fw-bold">
+            <div className="fw-bold d-flex align-items-center m-1">
               <MdCastForEducation className="fs-3 m-1" />
-              {reqCertificate[0].issuedBy}
-            </p>
-            <p className="fw-bold">
+              <p className="m-0 mt-1">{reqCertificate[0].issuedBy}</p>
+            </div>
+            <div className="fw-bold d-flex align-items-center m-1">
               <FaRegCalendarCheck className="fs-3 m-1" />
-              {reqCertificate[0].completionDate}
-            </p>
-            <p className="fw-bold">
+              <p className="m-0 mt-1"> {reqCertificate[0].completionDate}</p>
+            </div>
+            <div className="fw-bold d-flex align-items-center m-1">
               <GiUpgrade className="fs-3 m-1" />
-              {reqCertificate[0].grade} %
-            </p>
-            <p className="fw-bold">
-              <a
-                href={reqCertificate[0].link}
-                className="mt-1"
-                target="blank"
-                style={{ color: "#2c3333" }}
-              >
+              <p className="m-0 mt-1">{reqCertificate[0].grade} %</p>
+            </div>
+            <p className="fw-bold text-primary">
+              <a href={reqCertificate[0].link} className="mt-1" target="blank">
                 <FaLocationArrow className="fs-3 m-1" />
                 more details
               </a>
             </p>
           </div>
         </div>
+        <CertifiList certificationList={certificationList} />
       </div>
     </>
   );

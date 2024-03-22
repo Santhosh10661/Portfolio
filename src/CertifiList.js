@@ -14,7 +14,7 @@ function CertifiList(props) {
     transition: "0.3s ease",
   };
   return (
-    <nav className="col-12 col-md-5 col-lg-12 bgBlack p-2 rounded ">
+    <nav className="col-12 bgBlack p-2 rounded m-1 ">
       <ul className="p-0 m-0" style={listconstyle}>
         {certificationList.map((certificate) => {
           return (

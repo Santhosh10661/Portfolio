@@ -63,3 +63,12 @@
     left: -40%;
   }
 }
+.subBtn {
+  border: none;
+  transform: scale(0.9);
+  transition: 0.3s ease;
+}
+
+.subBtn:hover {
+  transform: scale(1);
+}
