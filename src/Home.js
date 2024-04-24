@@ -16,6 +16,7 @@ function Home() {
     setTimeout(() => {
       setShowImg(true);
     }, 1500);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function handleNewPage() {
