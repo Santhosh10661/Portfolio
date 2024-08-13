@@ -4,6 +4,7 @@ import DataContext from "./ContextApi/DataContext";
 
 function ProImgCont() {
   let { newPageOpend } = useContext(DataContext);
+
   return (
     <div
       className={newPageOpend ? "circleCon p-2 openPage" : "circleCon p-2"}

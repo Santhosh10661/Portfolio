@@ -5,14 +5,14 @@ import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import reportWebVitals from "./reportWebVitals";
-import { DataProvider } from "./ContextApi/DataContext";
+import { AllContextProvider } from "./ContextApi/AllContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <DataProvider>
+    <AllContextProvider>
       <App />
-    </DataProvider>
+    </AllContextProvider>
   </React.StrictMode>
 );
 

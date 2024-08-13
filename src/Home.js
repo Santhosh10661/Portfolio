@@ -6,11 +6,13 @@ import { IoCloudDownloadSharp } from "react-icons/io5";
 import resume from "./certificate/SANTHOSH_K_CV.pdf";
 import ProfileImg from "./ProfileImg";
 import DataContext from "./ContextApi/DataContext";
+// import InfoContext from "./ContextApi/InfoContext";
 import RoleTypeWriter from "./RoleTypeWriter";
 
 function Home() {
   const { newPageOpend, setNewPageOpened, setProfileImg, showImg, setShowImg } =
     useContext(DataContext);
+  // const { myName } = useContext(InfoContext);
 
   useEffect(() => {
     setTimeout(() => {
@@ -42,6 +44,7 @@ function Home() {
         <RoleTypeWriter />
 
         <p className=" text-capitalize">
+          {/* {myName} */}
           As a recent MCA graduate, I've embraced frontend development with
           enthusiasm. With a keen eye for design and a solid technical
           foundation, I specialize in creating polished user interfaces. Eager
