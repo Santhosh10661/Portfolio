@@ -12,7 +12,7 @@ function Education() {
   in 2018. Following this, I pursued my undergraduate studies at
   Bharathidasan University, where I obtained my Bachelor's degree.
   Subsequently, I furthered my education with a postgraduate degree from
-  the same institution.`,
+  the same University.`,
   ];
   const education = [
     {
