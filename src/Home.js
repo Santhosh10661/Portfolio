@@ -39,7 +39,7 @@ function Home() {
         }
         style={{ zIndex: 1 }}
       >
-        <h1 className="m-0">SANTHOSH KANNAN</h1>
+        <h1 className="m-0">SANTHOSH_KANNAN</h1>
 
         <RoleTypeWriter />
 
