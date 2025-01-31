@@ -1,8 +1,6 @@
 import React from "react";
-import "./Css/Project.css";
 import { FaArrowTrendUp } from "react-icons/fa6";
 import projectSvg from "./svg/undraw_feeling_proud_qne1.svg";
-
 import projectList from "./projectList";
 import ProjectImg from "./ProjectImg";
 import Heading from "./commonContents/Heading";
