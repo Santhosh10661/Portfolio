@@ -9,6 +9,7 @@ import DataContext from "./ContextApi/DataContext";
 // import InfoContext from "./ContextApi/InfoContext";
 import RoleTypeWriter from "./RoleTypeWriter";
 
+import Part from "./Part";
 function Home() {
   const { newPageOpend, setNewPageOpened, setProfileImg, showImg, setShowImg } =
     useContext(DataContext);
@@ -29,6 +30,26 @@ function Home() {
   }
   return (
     <div className="Home row align-items-center">
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+          top: "0%",
+          left: "0%",
+        }}
+      >
+        <Part
+          particleColors={["#ffffff", "#ffffff"]}
+          particleCount={200}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div>
       <ProImgCont />
       {showImg && <ProfileImg />}
       <div
@@ -44,7 +65,6 @@ function Home() {
         <RoleTypeWriter />
 
         <p className=" text-capitalize">
-          {/* {myName} */}
           As a recent MCA graduate, I've embraced frontend development with
           enthusiasm. With a keen eye for design and a solid technical
           foundation, I specialize in creating polished user interfaces. Eager
