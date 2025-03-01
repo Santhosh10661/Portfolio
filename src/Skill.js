@@ -3,7 +3,9 @@ import "./Css/Skill.css";
 import ReactSvg from "./svg/react-js-icon.svg";
 import HtmlSvg from "./svg/html-icon.svg";
 import CssSvg from "./svg/css-icon.svg";
+import ScssSvg from "./svg/scss.svg";
 import BootstrapSvg from "./svg/bootstrap-5-logo-icon.svg";
+import Tailwind from "./svg/tailwind.svg";
 import JsSvg from "./svg/javascript-1.svg";
 import Heading from "./commonContents/Heading";
 import Describtion from "./commonContents/Describtion";
@@ -22,9 +24,11 @@ function Skill() {
   let skillList = [
     { id: 1, className: "Html", svg: HtmlSvg },
     { id: 2, className: "Css", svg: CssSvg },
-    { id: 3, className: "React", svg: ReactSvg },
-    { id: 4, className: "Bootstrap", svg: BootstrapSvg },
-    { id: 5, className: "Js", svg: JsSvg },
+    { id: 3, className: "Scss", svg: ScssSvg },
+    { id: 4, className: "React", svg: ReactSvg },
+    { id: 5, className: "Tailwind", svg: Tailwind },
+    { id: 6, className: "Bootstrap", svg: BootstrapSvg },
+    { id: 7, className: "Js", svg: JsSvg },
   ];
 
   return (

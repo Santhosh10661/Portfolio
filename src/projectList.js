@@ -4,9 +4,12 @@ import recipesImg3 from "./projectSnap/recipes3.png";
 import notesImg1 from "./projectSnap/notes-app1.png";
 import notesImg2 from "./projectSnap/notes-app2.png";
 import notesImg3 from "./projectSnap/notes-app3.png";
-import weatherImg1 from "./projectSnap/weather-app1.png";
-import weatherImg2 from "./projectSnap/weather-app2.png";
-import weatherImg3 from "./projectSnap/weather-app3.png";
+import articlesImg1 from "./projectSnap/articles-app1.png";
+import articlesImg2 from "./projectSnap/articles-app2.png";
+import articlesImg3 from "./projectSnap/articles-app3.png";
+// import weatherImg1 from "./projectSnap/weather-app1.png";
+// import weatherImg2 from "./projectSnap/weather-app2.png";
+// import weatherImg3 from "./projectSnap/weather-app3.png";
 // import todoImg1 from "./projectSnap/todoList1.png";
 // import todoImg2 from "./projectSnap/todoList2.png";
 // import todoImg3 from "./projectSnap/todoList3.png";
@@ -14,6 +17,18 @@ import weatherImg3 from "./projectSnap/weather-app3.png";
 let projectList = [
   {
     id: 1,
+    title: "articles",
+    image: {
+      img1: articlesImg1,
+      img2: articlesImg2,
+      img3: articlesImg3,
+    },
+    shortNote:
+      "I have developed an articles app focused on frontend practices using React, React Router, and Tailwind CSS. The app includes search and categorization features for better content organization. It provides a seamless user experience with a clean and responsive UI.",
+    link: "https://articles-app-task.netlify.app/",
+  },
+  {
+    id: 2,
     title: "recipes",
     image: {
       img1: recipesImg1,
@@ -25,7 +40,7 @@ let projectList = [
     link: "https://recipeslistapp.netlify.app/recipes/breakfastlist",
   },
   {
-    id: 2,
+    id: 3,
     title: "notes",
     image: {
       img1: notesImg1,
@@ -36,18 +51,18 @@ let projectList = [
       "Create, organize, and manage your notes seamlessly with our React.js-based app. Utilizing Bootstrap for sleek design and MySQL for data storage, it offers all your note-taking needs.",
     link: "https://santhosh10661.github.io/Notes/",
   },
-  {
-    id: 3,
-    title: "weather",
-    image: {
-      img1: weatherImg1,
-      img2: weatherImg2,
-      img3: weatherImg3,
-    },
-    shortNote:
-      "Easily check the weather anytime, anywhere with our simple weather app. Built with React.js and integrated with a reliable weather API, it provides accurate weather updates and forecasts.",
-    link: "https://santhosh10661.github.io/weather-app/",
-  },
+  // {
+  //   id: 3,
+  //   title: "weather",
+  //   image: {
+  //     img1: weatherImg1,
+  //     img2: weatherImg2,
+  //     img3: weatherImg3,
+  //   },
+  //   shortNote:
+  //     "Easily check the weather anytime, anywhere with our simple weather app. Built with React.js and integrated with a reliable weather API, it provides accurate weather updates and forecasts.",
+  //   link: "https://santhosh10661.github.io/weather-app/",
+  // },
   // {
   //   id: 4,
   //   title: "todo list",
