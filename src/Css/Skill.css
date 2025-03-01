@@ -9,7 +9,8 @@
   bottom: 0;
 }
 .Html,
-.Bootstrap {
+.Bootstrap,
+.Scss {
   position: absolute;
   top: 10%;
   transform: scale(0.5);
@@ -33,6 +34,7 @@
   }
 }
 .Css,
+.Tailwind,
 .Js {
   position: absolute;
   top: 10%;
