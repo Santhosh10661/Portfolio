@@ -6,26 +6,25 @@
   height: fit-content;
   color: #2c3333;
   background-color: #ffffec;
-  transform: scale(1);
   animation-name: showPage;
   animation-duration: 1.5s;
   z-index: 2;
+  filter: opacity(1);
 }
 @keyframes showPage {
   0% {
     display: none;
     z-index: 0;
-    transform: scale(0);
   }
   90% {
     z-index: 2;
     display: none;
-    transform: scale(0.9);
+    filter: opacity(0.5);
   }
   100% {
     display: block;
     z-index: 2;
-    transform: scale(1);
+    filter: opacity(1);
   }
 }
 
