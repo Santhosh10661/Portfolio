@@ -37,7 +37,7 @@ let projectList = [
     },
     shortNote:
       "I have developed a Recipes App using React, Redux Toolkit, Bootstrap, and SCSS for efficient state management and a responsive UI. The app allows users to browse, search, and view detailed recipes with an intuitive interface.",
-    link: "https://recipeslistapp.netlify.app/recipes/breakfastlist",
+    link: "https://recipeslistapp.netlify.app",
   },
   {
     id: 3,
