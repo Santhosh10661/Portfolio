@@ -1,27 +1,36 @@
+import { motion } from 'framer-motion';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { experiences } from '@/data/experience';
-import { Briefcase, Calendar, MapPin, CheckCircle2 } from 'lucide-react';
+import { Calendar, MapPin, CheckCircle2 } from 'lucide-react';
+import { FadeIn, StaggerContainer, staggerItem } from '@/components/ui/Motion';
 
 export function ExperienceTimeline() {
   return (
     <section className="py-20 sm:py-28">
       <Container>
-        <SectionHeading
-          badge="Career Journey"
-          title="Professional Experience"
-          description="Shipping production web & mobile applications and leading frontend engineering teams."
-        />
+        <FadeIn direction="up">
+          <SectionHeading
+            badge="Career Journey"
+            title="Professional Experience"
+            description="Shipping production web &amp; mobile applications and leading frontend engineering squads."
+          />
+        </FadeIn>
 
         <div className="relative border-l border-border pl-6 sm:pl-8 ml-3 sm:ml-6 space-y-12 max-w-4xl mx-auto">
           {experiences.map((exp, index) => (
-            <div key={`${exp.company}-${exp.period}`} className="relative group">
-              {/* Timeline indicator node */}
-              <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full border-2 border-accent bg-background group-hover:bg-accent group-hover:scale-125 transition-all shadow-sm" />
+            <FadeIn
+              key={`${exp.company}-${exp.period}`}
+              direction="up"
+              delay={index * 0.15}
+              className="relative group"
+            >
+              {/* Timeline indicator node with glow */}
+              <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full border-2 border-accent bg-background group-hover:bg-accent group-hover:scale-125 transition-all duration-300 shadow-sm shadow-accent/40" />
 
-              <Card className="p-6 sm:p-8 bg-bg-secondary border-border hover:border-accent/40">
+              <Card className="p-6 sm:p-8 bg-bg-secondary border-border hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5 transition-all duration-300">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                   <div>
                     <h3 className="text-xl font-bold text-foreground group-hover:text-accent transition-colors">
@@ -66,7 +75,7 @@ export function ExperienceTimeline() {
                   ))}
                 </div>
               </Card>
-            </div>
+            </FadeIn>
           ))}
         </div>
       </Container>

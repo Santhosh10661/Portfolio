@@ -50,6 +50,7 @@
 ## Decisions Log
 | Date | Decision | Reason |
 |------|----------|--------|
+| 2026-11-09 | Added Framer Motion & Parallax system | Smooth cubic-bezier easing (`[0.21, 0.47, 0.32, 0.98]`), scroll-driven parallax layers (`useScroll`, `useTransform`, `useSpring`), and interactive 3D TiltCards for featured projects and certifications |
 | 2026-11-09 | Proposed Inter + JetBrains Mono over Josefin Sans | Cleaner professional look for Linear/Vercel aesthetic |
 | 2026-11-09 | Proposed keeping `#2EC1AC` teal accent | Existing brand color, works well in both themes |
 | 2026-11-09 | Recommended removing OGL particles | Too busy for minimal aesthetic; suggest gradient/grid-dot bg |
