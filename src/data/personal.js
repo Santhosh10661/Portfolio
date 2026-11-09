@@ -1,0 +1,25 @@
+export const personalInfo = {
+  name: 'Santhosh K',
+  title: 'Frontend Developer',
+  roles: [
+    'Frontend Developer',
+    'React & Next.js Specialist',
+    'React Native Mobile Developer',
+    'UI/UX Enthusiast',
+  ],
+  location: 'Chennai, Tamil Nadu, India',
+  email: 'santhoshkfwd@gmail.com',
+  phone: '+91 6383168720',
+  address: 'No.31, Nehru Colony Second Street, Darasuram, Kumbakonam - 612702',
+  linkedin: 'https://linkedin.com/in/santhosh-kannan16',
+  github: 'https://github.com/Santhosh10661',
+  resumeUrl: '/Santhosh_K_Resume.pdf',
+  bio: `Frontend Developer with 1.5+ years building and shipping production web and mobile apps using React.js, React Native (Expo and CLI/bare workflow), and Next.js. Delivered large-scale, multi-role platforms across ERP, e-commerce, and logistics domains. Currently leads a team of 4 developers, coordinating delivery and code quality. Strong in REST API integration, state management (Redux Toolkit, Context API), and responsive UI development.`,
+  shortBio: `Frontend Developer specializing in React.js, Next.js, and React Native. Experienced in delivering high-impact web and mobile solutions across ERP, e-commerce, and logistics.`,
+  stats: [
+    { label: 'Years Experience', value: '1.5+' },
+    { label: 'Projects Delivered', value: '6+' },
+    { label: 'Team Leadership', value: '4 Devs' },
+    { label: 'Certifications', value: '4' },
+  ],
+};

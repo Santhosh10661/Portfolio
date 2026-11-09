@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: 10 10 11;
+  --bg-secondary: 20 20 22;
+  --bg-tertiary: 30 30 34;
+  --text-primary: 237 237 239;
+  --text-secondary: 160 160 168;
+  --border: 42 42 46;
+}
+
+html.light {
+  --bg-primary: 250 250 249;
+  --bg-secondary: 240 239 237;
+  --bg-tertiary: 229 228 225;
+  --text-primary: 26 26 30;
+  --text-secondary: 107 107 115;
+  --border: 224 222 218;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--bg-primary));
+  color: rgb(var(--text-primary));
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  background-color: rgba(46, 193, 172, 0.25);
+  color: #2ec1ac;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(var(--bg-primary));
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--bg-tertiary));
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2ec1ac;
+}
