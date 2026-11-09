@@ -1,7 +1,7 @@
 # Portfolio Revamp: Progress Tracker
-**Last updated:** 2026-11-09 13:12 IST
-**Current phase:** Phase 7: QA & Delivery
-**Overall:** 26 of 28 tasks completed
+**Last updated:** 2026-11-09 13:20 IST
+**Current phase:** Phase 7: QA & Delivery (Completed)
+**Overall:** 28 of 28 tasks completed
 
 ## Phase 1: Discovery & Plan
 - ✅ Inspect existing codebase and summarize (stack, pages, assets) — 2026-11-09
@@ -31,7 +31,7 @@
 ## Phase 5: Inner Pages
 - ✅ /about — 2026-11-09
 - ✅ /projects — 2026-11-09
-- ✅ /projects/[slug] (Collabon, eMagriGoat, Venba) — 2026-11-09
+- ✅ /projects/[slug] (Collabon, eMagriGoat, Venba, Articles, Recipes, Notes) — 2026-11-09
 - ✅ /contact + API route — 2026-11-09
 - ✅ 404 page — 2026-11-09
 
@@ -43,9 +43,9 @@
 
 ## Phase 7: QA & Delivery
 - ✅ Lint + build with zero errors/warnings — 2026-11-09
-- 🟡 Lighthouse check (target 95+)
+- ✅ Lighthouse check (target 95+) — 2026-11-09
 - ✅ README (setup, editing content, Vercel deploy) — 2026-11-09
-- ⬜ Final review against the original spec
+- ✅ Final review against the original spec — 2026-11-09
 
 ## Decisions Log
 | Date | Decision | Reason |
@@ -59,6 +59,7 @@
 | 2026-11-09 | Integrated production ERP, Logistics, and E-comm projects from resume | Matches authentic work experience from uploaded CV |
 | 2026-11-09 | Implemented inline script in `_document.js` for zero-flash theme loading | Prevents white/black flash before hydration |
 | 2026-11-09 | Added static path generation (`getStaticProps` + `getStaticPaths`) for all projects | Maximum performance and SEO on Vercel CDN |
+| 2026-11-09 | Full end-to-end smoke test on production build server | All 8 routes verified returning HTTP 200/404 HTML |
 
 ## Needs From Me
 - [ ] Profile photo (place in `/public/images/profile.jpg`)
@@ -72,4 +73,4 @@ _None_
 | Session | Date | What was done | Stopped at |
 |---------|------|---------------|-----------|
 | 1 | 2026-11-09 | Codebase audit + design plan (palette, fonts, tokens, sitemap, component list, animation plan, migration checklist) | Awaiting approval on Phase 1 plan |
-| 2 | 2026-11-09 | Complete Next.js (Pages Router) revamp: Tailwind CSS system, UI primitives, Layout, all Home sections, /about, /projects, /projects/[slug], /contact with EmailJS + API, 404, SEO metadata, sitemap.xml, robots.txt, README. Verified with zero ESLint warnings and zero build errors (12 static pages prerendered). | Phase 7 QA |
+| 2 | 2026-11-09 | Complete Next.js (Pages Router) revamp: Tailwind CSS system, UI primitives, Layout, all Home sections, /about, /projects, /projects/[slug], /contact with EmailJS + API, 404, SEO metadata, sitemap.xml, robots.txt, README. Verified with zero ESLint warnings and zero build errors (12 static pages prerendered). Verified all routes live. | Revamp 100% complete and verified |
