@@ -1,12 +1,12 @@
 # Portfolio Revamp: Progress Tracker
-**Last updated:** 2026-11-09 12:36 IST
+**Last updated:** 2026-11-09 12:44 IST
 **Current phase:** Phase 1: Discovery & Plan
-**Overall:** 0 of 28 tasks completed
+**Overall:** 2 of 28 tasks completed
 
 ## Phase 1: Discovery & Plan
-- ⬜ Inspect existing codebase and summarize (stack, pages, assets)
-- ⬜ Write sitemap, design tokens (palette, fonts, spacing), component list
-- ⬜ Get my approval on the plan
+- ✅ Inspect existing codebase and summarize (stack, pages, assets) — 2026-11-09
+- ✅ Write sitemap, design tokens (palette, fonts, spacing), component list — 2026-11-09
+- 🟡 Get my approval on the plan
 
 ## Phase 2: Project Setup
 - ⬜ Scaffold Next.js (Pages Router) project / migrate existing one
@@ -50,6 +50,9 @@
 ## Decisions Log
 | Date | Decision | Reason |
 |------|----------|--------|
+| 2026-11-09 | Proposed Inter + JetBrains Mono over Josefin Sans | Cleaner professional look for Linear/Vercel aesthetic |
+| 2026-11-09 | Proposed keeping `#2EC1AC` teal accent | Existing brand color, works well in both themes |
+| 2026-11-09 | Recommended removing OGL particles | Too busy for minimal aesthetic; suggest gradient/grid-dot bg |
 
 ## Needs From Me
 - [ ] Profile photo
@@ -57,6 +60,10 @@
 - [ ] Live links / repo links
 - [ ] Resume PDF in /public
 - [ ] OG image
+- [ ] Palette choice (Option A or B)
+- [ ] Particle system decision (keep / replace / remove)
+- [ ] Project list clarification (Collabon/eMagriGoat/Venba vs Articles/Recipes/Notes)
+- [ ] Font preference confirmation
 
 ## Blockers
 _None_
@@ -64,3 +71,4 @@ _None_
 ## Session Log
 | Session | Date | What was done | Stopped at |
 |---------|------|---------------|-----------|
+| 1 | 2026-11-09 | Codebase audit + design plan (palette, fonts, tokens, sitemap, component list, animation plan, migration checklist) | Awaiting approval on Phase 1 plan |
