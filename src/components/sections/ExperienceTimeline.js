@@ -14,7 +14,7 @@ export function ExperienceTimeline() {
           <SectionHeading
             badge="Engineering Career"
             title="Professional Trajectory"
-            description="Leading frontend engineering squads, coordinating multi-role systems, and shipping production applications at Kriha IT Solutions."
+            description="Building frontend architectures, coordinating multi-role systems, and shipping production applications at Kriha IT Solutions."
           />
         </FadeIn>
 

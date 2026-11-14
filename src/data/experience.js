@@ -6,11 +6,11 @@ export const experiences = [
     period: 'Nov 2025 - Present',
     type: 'Full-time',
     description:
-      'Currently leading a team of 4 frontend developers coordinating multi-role ERP, logistics, and e-commerce platforms. Driving high delivery velocity, architecture planning, and pristine code reviews.',
+      'Developing and shipping production frontend modules for multi-role ERP, logistics, and e-commerce platforms. Driving high delivery velocity, performance tuning, and cross-platform mobile UI integration.',
     achievements: [
-      'Lead a team of 4 developers coordinating day-to-day delivery, sprint roadmaps, and code reviews.',
-      'Architected and delivered Venba Logistics: 3 admin web panels + 2 React Native CLI mobile apps ahead of scheduled deadline.',
-      'Spearheaded performance tuning, state normalization with Redux Toolkit, and reusable design components across enterprise clients.',
+      'Delivered frontend modules for Venba Logistics: 3 admin web panels and 2 React Native CLI mobile apps ahead of scheduled deadline.',
+      'Spearheaded performance tuning, state normalization with Redux Toolkit, and reusable design components across enterprise platforms.',
+      'Integrated resilient REST APIs and optimized client-side caching for high-concurrency web and mobile users.',
     ],
     technologies: ['React.js', 'React Native CLI', 'Next.js', 'Redux Toolkit', 'Tailwind CSS', 'Axios'],
   },

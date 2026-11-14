@@ -50,7 +50,7 @@
 ## Decisions Log
 | Date | Decision | Reason |
 |------|----------|--------|
-| 2026-11-14 | **Optimized for Experienced Tech Lead:** Removed fresher projects (Articles, Recipes, Notes, Weather, Todo) | Beginner/tutorial projects dilute senior positioning; replaced with standardized enterprise platforms |
+| 2026-11-14 | **Optimized for Experienced Frontend Developer:** Removed fresher projects (Articles, Recipes, Notes, Weather, Todo); removed all team/lead references | User clarification: individual contributor; accurate role representation |
 | 2026-11-14 | **Standardized Enterprise Systems (Venba, Collabon, eMagriGoat):** Added `ProjectMockup` with interactive multi-role tabs & KPI metrics | Enterprise client platforms are proprietary/intranet; interactive UI simulators showcase real multi-panel capabilities far better than static images |
 | 2026-11-14 | **Modern Trend Effects:** Added `SpotlightCard` (Linear/Vercel mouse-follow glow), `Magnetic` buttons, `AnimatedCounter`, and `layoutId` filter pills | High-end interactive feel matching current 2025/2026 design engineering standards |
 | 2026-11-09 | Added Framer Motion & Parallax system | Smooth cubic-bezier easing (`[0.21, 0.47, 0.32, 0.98]`), scroll-driven parallax layers (`useScroll`, `useTransform`, `useSpring`), and interactive 3D TiltCards for featured projects and certifications |
@@ -78,3 +78,4 @@ _None_
 |---------|------|---------------|-----------|
 | 1 | 2026-11-09 | Codebase audit + design plan (palette, fonts, tokens, sitemap, component list, animation plan, migration checklist) | Awaiting approval on Phase 1 plan |
 | 2 | 2026-11-09 | Complete Next.js (Pages Router) revamp: Tailwind CSS system, UI primitives, Layout, all Home sections, /about, /projects, /projects/[slug], /contact with EmailJS + API, 404, SEO metadata, sitemap.xml, robots.txt, README. Verified with zero ESLint warnings and zero build errors (12 static pages prerendered). Verified all routes live. | Revamp 100% complete and verified |
+| 3 | 2026-11-14 | Parallax + interactive micro-interactions (mouse spotlight glow, magnetic controls, animated counters, interactive mockups with live role simulators). Removed all fresher projects; standardized production enterprise systems (Venba, Collabon, eMagriGoat, Aura UI). Removed all team/lead/squad references site-wide, solidifying accurate Frontend Developer IC positioning. Zero ESLint warnings, 10/10 static pages built. | Ready for review |

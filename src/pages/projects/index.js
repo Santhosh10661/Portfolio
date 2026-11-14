@@ -28,7 +28,7 @@ export default function ProjectsIndexPage() {
 
   return (
     <Layout
-      title="Enterprise Systems & Architecture | Santhosh K - Frontend Lead"
+      title="Enterprise Systems & Architecture | Santhosh K - Frontend Developer"
       description="Production case studies: multi-role logistics platforms, campus ERP systems with companion mobile apps, and high-performance e-commerce suites."
     >
       <div className="py-12 sm:py-24">

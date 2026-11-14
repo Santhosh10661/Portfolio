@@ -13,7 +13,7 @@ export function Skills() {
           <SectionHeading
             badge="Technical Architecture"
             title="Engineered for performance and scale."
-            description="Core engineering proficiencies across frontend systems, mobile runtimes, state orchestration, and team leadership."
+            description="Core engineering proficiencies across frontend systems, mobile runtimes, state orchestration, and modern development workflows."
           />
         </FadeIn>
 

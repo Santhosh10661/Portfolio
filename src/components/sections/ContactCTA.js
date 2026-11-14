@@ -27,7 +27,7 @@ export function ContactCTA() {
               </h2>
 
               <p className="text-base text-text-secondary leading-relaxed mb-8">
-                Whether you need a dedicated frontend developer, a mobile app engineer, or someone to lead UI delivery, I&apos;m ready to contribute.
+                Whether you need a dedicated frontend developer, a React/Next.js engineer, or a mobile app specialist, I&apos;m ready to contribute.
               </p>
 
               <div className="flex flex-wrap items-center justify-center gap-4">

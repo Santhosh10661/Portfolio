@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ArrowDownToLine, GraduationCap, MapPin, Mail, Phone, Calendar, CheckCircle2, Award, Laptop, Users, ShieldCheck, Sparkles } from 'lucide-react';
+import { ArrowDownToLine, GraduationCap, MapPin, Mail, Phone, Calendar, CheckCircle2, Award, Laptop, ShieldCheck, Sparkles } from 'lucide-react';
 import { Layout } from '@/components/layout/Layout';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -15,8 +15,8 @@ import { certifications } from '@/data/certifications';
 export default function AboutPage() {
   return (
     <Layout
-      title="About Santhosh K | Frontend Tech Lead & Mobile Engineer"
-      description="Professional background, MCA education, enterprise software engineering leadership at Kriha IT Solutions, and technical certifications."
+      title="About Santhosh K | Frontend Developer & Mobile Engineer"
+      description="Professional background, MCA education, enterprise software engineering experience at Kriha IT Solutions, and technical certifications."
     >
       <div className="py-12 sm:py-24">
         <Container>
@@ -24,13 +24,13 @@ export default function AboutPage() {
           <div className="max-w-3xl mb-16">
             <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1 font-mono text-xs font-semibold text-accent shadow-sm">
               <Sparkles className="w-3.5 h-3.5 text-accent animate-pulse" />
-              Engineering Leadership
+              Engineering Profile
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6">
               Engineering intuitive, high-velocity web &amp; mobile platforms.
             </h1>
             <p className="text-lg text-text-secondary leading-relaxed">
-              I&apos;m a Frontend Tech Lead based in Chennai, India, with 1.5+ years of production experience managing multi-role enterprise ecosystems, leading a squad of 4 developers, and shipping cross-platform React Native applications.
+              I&apos;m a Frontend Developer based in Chennai, India, with 1.5+ years of production experience building multi-role enterprise ecosystems and shipping cross-platform React Native applications.
             </p>
           </div>
 
@@ -61,7 +61,7 @@ export default function AboutPage() {
               <span className="text-xs font-mono text-accent uppercase tracking-wider block mb-2 font-semibold">Engineering Role</span>
               <p className="text-base font-semibold text-foreground flex items-center gap-2">
                 <Laptop className="w-4 h-4 text-accent" />
-                <span>Squad Lead (4 Developers)</span>
+                <span>Junior Software Developer</span>
               </p>
               <p className="text-xs text-text-secondary mt-1 font-mono">Kriha IT Solutions, Chennai</p>
             </SpotlightCard>
@@ -77,10 +77,10 @@ export default function AboutPage() {
                 My foundation began with a Bachelor&apos;s degree in Computer Science, followed by a Master of Computer Applications (MCA) from Mass College of Arts &amp; Science (graduated 2023). What originated as an obsession with clean user interfaces evolved into architecting production platforms handling thousands of student and logistics interactions daily.
               </p>
               <p>
-                At <strong className="text-foreground">Kriha IT Solutions</strong>, I progressed from intern to software developer trainee and now Junior Software Developer leading a dedicated squad of 4 developers. In this role, I bridge the gap between technical architecture and timely project delivery, guiding code reviews, orchestrating REST API contracts, and ensuring accessible, responsive design.
+                At <strong className="text-foreground">Kriha IT Solutions</strong>, I progressed from intern to software developer trainee and now Junior Software Developer. In this role, I focus on delivering high-performance UI modules, integrating robust REST API contracts, and ensuring accessible, responsive design across web and mobile platforms.
               </p>
               <p>
-                I prioritize performance, accessibility (WCAG AA), and maintainability. When architecting multi-panel systems like <strong className="text-foreground">Venba</strong> (3 Web Admin Panels + 2 Native Apps), <strong className="text-foreground">Collabon</strong> (Campus ERP + Expo Mobile App + Social Feed), or <strong className="text-foreground">eMagriGoat</strong> (Next.js E-Commerce + Live Admin Control), I focus on predictable state machines, clean component boundaries, and sub-second user responsiveness.
+                I prioritize performance, accessibility (WCAG AA), and maintainability. When building multi-panel systems like <strong className="text-foreground">Venba</strong> (3 Web Admin Panels + 2 Native Apps), <strong className="text-foreground">Collabon</strong> (Campus ERP + Expo Mobile App + Social Feed), or <strong className="text-foreground">eMagriGoat</strong> (Next.js E-Commerce + Live Admin Control), I focus on predictable state machines, clean component boundaries, and sub-second user responsiveness.
               </p>
 
               <div className="pt-4">

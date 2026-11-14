@@ -61,7 +61,7 @@ export function Hero() {
         className="hidden lg:flex absolute right-8 top-1/3 items-center gap-2.5 rounded-2xl border border-border/80 bg-bg-secondary/70 backdrop-blur-md px-4 py-2.5 text-xs font-mono text-text-secondary shadow-2xl pointer-events-none"
       >
         <Terminal className="w-4 h-4 text-emerald-400" />
-        <span>Lead 4-Dev Engineering Squad</span>
+        <span>Production Web &amp; Mobile</span>
       </motion.div>
 
       <Container>
@@ -81,7 +81,7 @@ export function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
               </span>
-              <span>Available for Frontend Lead &amp; Senior Engineering</span>
+              <span>Available for Frontend Engineering Roles</span>
             </motion.div>
 
             {/* Quick copy email pill */}
@@ -127,7 +127,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.25, ease: transitionEase }}
             className="text-lg sm:text-xl text-text-secondary max-w-2xl leading-relaxed mb-10"
           >
-            I&apos;m <strong className="text-foreground">{personalInfo.name}</strong>, a Frontend Developer leading cross-platform delivery across enterprise ERP, multi-tier logistics, and e-commerce platforms using{' '}
+            I&apos;m <strong className="text-foreground">{personalInfo.name}</strong>, a Frontend Developer specialized in cross-platform delivery across enterprise ERP, multi-tier logistics, and e-commerce platforms using{' '}
             <span className="text-foreground font-medium">React.js</span>,{' '}
             <span className="text-foreground font-medium">Next.js</span>, and{' '}
             <span className="text-foreground font-medium">React Native</span>.

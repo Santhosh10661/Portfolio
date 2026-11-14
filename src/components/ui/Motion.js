@@ -272,7 +272,7 @@ export function AnimatedCounter({ value, duration = 1.5, className = '' }) {
   const [displayValue, setDisplayValue] = useState(0);
   const nodeRef = useRef(null);
 
-  // Parse numeric part and suffix (e.g. "1.5+" -> num: 1.5, suffix: "+", "4 Devs" -> num: 4, suffix: " Devs")
+  // Parse numeric part and suffix (e.g. "1.5+" -> num: 1.5, suffix: "+", "99%" -> num: 99, suffix: "%")
   const match = String(value).match(/^([0-9.]+)(.*)$/);
   const targetNum = match ? parseFloat(match[1]) : 0;
   const suffix = match ? match[2] : '';

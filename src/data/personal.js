@@ -14,12 +14,12 @@ export const personalInfo = {
   linkedin: 'https://linkedin.com/in/santhosh-kannan16',
   github: 'https://github.com/Santhosh10661',
   resumeUrl: '/Santhosh_K_Resume.pdf',
-  bio: `Frontend Developer with 1.5+ years building and shipping production web and mobile apps using React.js, React Native (Expo and CLI/bare workflow), and Next.js. Delivered large-scale, multi-role platforms across ERP, e-commerce, and logistics domains. Currently leads a team of 4 developers, coordinating delivery and code quality. Strong in REST API integration, state management (Redux Toolkit, Context API), and responsive UI development.`,
+  bio: `Frontend Developer with 1.5+ years building and shipping production web and mobile apps using React.js, React Native (Expo and CLI/bare workflow), and Next.js. Delivered large-scale, multi-role platforms across ERP, e-commerce, and logistics domains. Strong in REST API integration, state management (Redux Toolkit, Context API), cross-platform mobile delivery, and responsive UI development.`,
   shortBio: `Frontend Developer specializing in React.js, Next.js, and React Native. Experienced in delivering high-impact web and mobile solutions across ERP, e-commerce, and logistics.`,
   stats: [
     { label: 'Years Experience', value: '1.5+' },
     { label: 'Projects Delivered', value: '6+' },
-    { label: 'Team Leadership', value: '4 Devs' },
+    { label: 'Mobile Platforms', value: 'iOS & Android' },
     { label: 'Certifications', value: '4' },
   ],
 };

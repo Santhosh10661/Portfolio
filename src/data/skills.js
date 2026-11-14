@@ -37,11 +37,11 @@ export const skillCategories = [
     ],
   },
   {
-    name: 'Engineering & Leadership',
+    name: 'Development Workflow & Practices',
     skills: [
-      { name: 'Team Leadership (4 Devs)', level: 'Experienced', icon: 'Users', highlight: true },
+      { name: 'Performance Optimization', level: 'Advanced', icon: 'Zap', highlight: true },
       { name: 'Git & GitHub Collaboration', level: 'Advanced', icon: 'GitBranch', highlight: false },
-      { name: 'Code Review & QA Sync', level: 'Advanced', icon: 'CheckCircle2', highlight: false },
+      { name: 'Code Quality & Refactoring', level: 'Advanced', icon: 'CheckCircle2', highlight: false },
       { name: 'Agile & Sprint Delivery', level: 'Experienced', icon: 'Clock', highlight: false },
     ],
   },

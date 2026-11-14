@@ -88,8 +88,8 @@ export default function ContactPage() {
 
   return (
     <Layout
-      title="Contact Santhosh K | Frontend Tech Lead"
-      description="Connect with Santhosh K for frontend engineering leadership, enterprise system design, and cross-platform mobile development opportunities."
+      title="Contact Santhosh K | Frontend Developer"
+      description="Connect with Santhosh K for frontend development, enterprise system implementation, and cross-platform mobile engineering opportunities."
     >
       <div className="py-12 sm:py-24">
         <Container>
@@ -102,7 +102,7 @@ export default function ContactPage() {
               Let&apos;s build scalable systems together.
             </h1>
             <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
-              Available for Senior Frontend, Tech Lead, and Cross-Platform engineering opportunities. Whether discussing complex logistics architecture, design systems, or team leadership, let&apos;s talk.
+              Available for Frontend Developer and Cross-Platform engineering opportunities. Whether discussing complex logistics architecture, design systems, or component performance, let&apos;s talk.
             </p>
           </div>
 
@@ -170,7 +170,7 @@ export default function ContactPage() {
                     id="message"
                     name="message"
                     rows={5}
-                    placeholder="Describe your project, team goals, or technical requirements..."
+                    placeholder="Describe your project, engineering goals, or technical requirements..."
                     required
                     value={formData.message}
                     onChange={handleChange}

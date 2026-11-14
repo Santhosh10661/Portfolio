@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Code2, Sparkles, MapPin, Laptop, GraduationCap, Users, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Code2, Sparkles, MapPin, Laptop, GraduationCap, ShieldCheck } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Button } from '@/components/ui/Button';
@@ -17,7 +17,7 @@ export function AboutSnapshot() {
           <SectionHeading
             badge="Engineering Profile"
             title="Translating business complexity into intuitive products."
-            description="Leading frontend squads, architecting high-throughput state machines, and shipping multi-role software across web and mobile."
+            description="Architecting high-throughput state machines, responsive UI components, and shipping multi-role software across web and mobile."
           />
         </FadeIn>
 
@@ -31,7 +31,7 @@ export function AboutSnapshot() {
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-1">Santhosh K</h3>
                 <p className="text-xs font-mono text-accent mb-4 font-semibold">
-                  Frontend Tech Lead &amp; Cross-Platform Engineer
+                  Frontend Developer &amp; Cross-Platform Engineer
                 </p>
 
                 <div className="space-y-3 pt-4 border-t border-border text-xs text-text-secondary">
@@ -40,8 +40,8 @@ export function AboutSnapshot() {
                     <span>Chennai, Tamil Nadu, India (On-site)</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Users className="w-4 h-4 text-accent" />
-                    <span>Leads 4-Developer Engineering Squad</span>
+                    <ShieldCheck className="w-4 h-4 text-accent" />
+                    <span>Production Enterprise Applications</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Code2 className="w-4 h-4 text-accent" />
@@ -72,10 +72,10 @@ export function AboutSnapshot() {
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-                Proven leadership in shipping high-velocity web &amp; mobile platforms.
+                Proven experience in shipping high-velocity web &amp; mobile platforms.
               </h3>
               <p className="text-base text-text-secondary leading-relaxed mb-4">
-                At <strong className="text-foreground">Kriha IT Solutions</strong>, I manage frontend delivery across multiple enterprise ecosystems. I lead a squad of 4 developers, ensuring tight sprint execution, standardized REST API contracts, and consistent design system tokens across web portals and React Native mobile applications.
+                At <strong className="text-foreground">Kriha IT Solutions</strong>, I build and ship frontend architectures across multiple enterprise ecosystems, ensuring tight sprint execution, standardized REST API contracts, and consistent design system tokens across web portals and React Native mobile applications.
               </p>
               <p className="text-base text-text-secondary leading-relaxed mb-6">
                 Rather than generic starter apps, my focus is delivering resilient production systems: a 5-tier logistics operating network (Venba), a high-concurrency academic ERP with an interactive campus feed (Collabon), and an agricultural marketplace with real-time stock governance (eMagriGoat).
