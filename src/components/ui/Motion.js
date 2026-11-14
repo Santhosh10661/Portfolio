@@ -1,5 +1,5 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
+import { useRef, useEffect, useState } from 'react';
+import { motion, useScroll, useTransform, useSpring, useMotionValue, animate } from 'framer-motion';
 
 // Smooth cubic-bezier easing (Linear / Vercel style)
 export const transitionEase = [0.21, 0.47, 0.32, 0.98];
@@ -101,7 +101,7 @@ export const staggerItem = {
  */
 export function Parallax({
   children,
-  speed = 0.2, // positive moves slower (feels farther), negative moves faster
+  speed = 0.2,
   offset = 50,
   className = '',
   ...props
@@ -147,6 +147,154 @@ export function ParallaxLayer({
     <div ref={ref} className={className}>
       <motion.div style={{ y: smoothY }}>{children}</motion.div>
     </div>
+  );
+}
+
+/**
+ * SpotlightCard — Signature Linear/Vercel mouse-tracking radial spotlight effect
+ */
+export function SpotlightCard({
+  children,
+  className = '',
+  spotlightColor = 'rgba(46, 193, 172, 0.15)',
+  borderColor = 'rgba(46, 193, 172, 0.4)',
+  ...props
+}) {
+  const divRef = useRef(null);
+  const [isFocused, setIsFocused] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [opacity, setOpacity] = useState(0);
+
+  const handleMouseMove = (e) => {
+    if (!divRef.current || isFocused) return;
+    const div = divRef.current;
+    const rect = div.getBoundingClientRect();
+    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
+
+  const handleFocus = () => {
+    setIsFocused(true);
+    setOpacity(1);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+    setOpacity(0);
+  };
+
+  const handleMouseEnter = () => {
+    setOpacity(1);
+  };
+
+  const handleMouseLeave = () => {
+    setOpacity(0);
+  };
+
+  return (
+    <div
+      ref={divRef}
+      onMouseMove={handleMouseMove}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className={`relative overflow-hidden rounded-2xl border border-border bg-bg-secondary transition-all duration-300 ${className}`}
+      {...props}
+    >
+      {/* Dynamic Border Glow */}
+      <div
+        className="pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300"
+        style={{
+          opacity,
+          background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, ${borderColor}, transparent 80%)`,
+        }}
+      />
+
+      {/* Dynamic Inner Surface Spotlight */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300"
+        style={{
+          opacity,
+          background: `radial-gradient(450px circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 80%)`,
+        }}
+      />
+
+      <div className="relative z-10">{children}</div>
+    </div>
+  );
+}
+
+/**
+ * Magnetic — Interactive element that subtly pulls towards the cursor
+ */
+export function Magnetic({ children, strength = 0.25, className = '' }) {
+  const ref = useRef(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const springX = useSpring(x, { stiffness: 200, damping: 20 });
+  const springY = useSpring(y, { stiffness: 200, damping: 20 });
+
+  const handleMouseMove = (e) => {
+    if (!ref.current) return;
+    const { clientX, clientY } = e;
+    const { left, top, width, height } = ref.current.getBoundingClientRect();
+    const centerX = left + width / 2;
+    const centerY = top + height / 2;
+    const distanceX = clientX - centerX;
+    const distanceY = clientY - centerY;
+    x.set(distanceX * strength);
+    y.set(distanceY * strength);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ x: springX, y: springY }}
+      className={`inline-block ${className}`}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/**
+ * AnimatedCounter — Smoothly counts up when scrolled into view
+ */
+export function AnimatedCounter({ value, duration = 1.5, className = '' }) {
+  const [displayValue, setDisplayValue] = useState(0);
+  const nodeRef = useRef(null);
+
+  // Parse numeric part and suffix (e.g. "1.5+" -> num: 1.5, suffix: "+", "4 Devs" -> num: 4, suffix: " Devs")
+  const match = String(value).match(/^([0-9.]+)(.*)$/);
+  const targetNum = match ? parseFloat(match[1]) : 0;
+  const suffix = match ? match[2] : '';
+  const isFloat = match && match[1].includes('.');
+
+  useEffect(() => {
+    const controls = animate(0, targetNum, {
+      duration,
+      ease: transitionEase,
+      onUpdate: (latest) => {
+        setDisplayValue(isFloat ? latest.toFixed(1) : Math.round(latest));
+      },
+    });
+
+    return () => controls.stop();
+  }, [targetNum, duration, isFloat]);
+
+  return (
+    <span ref={nodeRef} className={className}>
+      {displayValue}
+      {suffix}
+    </span>
   );
 }
 

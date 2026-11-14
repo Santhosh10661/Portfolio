@@ -50,6 +50,9 @@
 ## Decisions Log
 | Date | Decision | Reason |
 |------|----------|--------|
+| 2026-11-14 | **Optimized for Experienced Tech Lead:** Removed fresher projects (Articles, Recipes, Notes, Weather, Todo) | Beginner/tutorial projects dilute senior positioning; replaced with standardized enterprise platforms |
+| 2026-11-14 | **Standardized Enterprise Systems (Venba, Collabon, eMagriGoat):** Added `ProjectMockup` with interactive multi-role tabs & KPI metrics | Enterprise client platforms are proprietary/intranet; interactive UI simulators showcase real multi-panel capabilities far better than static images |
+| 2026-11-14 | **Modern Trend Effects:** Added `SpotlightCard` (Linear/Vercel mouse-follow glow), `Magnetic` buttons, `AnimatedCounter`, and `layoutId` filter pills | High-end interactive feel matching current 2025/2026 design engineering standards |
 | 2026-11-09 | Added Framer Motion & Parallax system | Smooth cubic-bezier easing (`[0.21, 0.47, 0.32, 0.98]`), scroll-driven parallax layers (`useScroll`, `useTransform`, `useSpring`), and interactive 3D TiltCards for featured projects and certifications |
 | 2026-11-09 | Proposed Inter + JetBrains Mono over Josefin Sans | Cleaner professional look for Linear/Vercel aesthetic |
 | 2026-11-09 | Proposed keeping `#2EC1AC` teal accent | Existing brand color, works well in both themes |

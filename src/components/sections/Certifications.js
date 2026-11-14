@@ -2,19 +2,18 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Card } from '@/components/ui/Card';
 import { certifications } from '@/data/certifications';
-import { Calendar } from 'lucide-react';
-import { FadeIn, StaggerContainer, staggerItem, TiltCard } from '@/components/ui/Motion';
+import { Calendar, Award, ExternalLink, ShieldCheck } from 'lucide-react';
+import { FadeIn, StaggerContainer, staggerItem, SpotlightCard } from '@/components/ui/Motion';
 
 export function Certifications() {
   return (
-    <section className="py-20 sm:py-28 bg-bg-secondary/30 border-y border-border">
+    <section className="py-20 sm:py-32 bg-bg-secondary/30 border-y border-border">
       <Container>
         <FadeIn direction="up">
           <SectionHeading
             badge="Verified Credentials"
-            title="Meta &amp; Google Certifications"
+            title="Meta &amp; Google Accreditations"
             description="Industry-recognized credentials validating core mastery of React, JavaScript ES6+, frontend architecture, and UX principles."
           />
         </FadeIn>
@@ -24,51 +23,49 @@ export function Certifications() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {certifications.map((cert) => (
-            <motion.div key={cert.id} variants={staggerItem}>
-              <TiltCard maxTilt={6} className="h-full">
-                <Card className="flex flex-col justify-between h-full p-0 overflow-hidden bg-bg-secondary border-border hover:border-accent/40 group transition-all duration-300">
-                  {/* Image preview of certificate with smooth zoom */}
-                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-bg-tertiary">
-                    <Image
-                      src={cert.image}
-                      alt={cert.title}
-                      fill
-                      className="object-cover object-center transition-transform duration-500 group-hover:scale-108"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    />
-                    <div className="absolute top-2.5 right-2.5">
-                      <span className="rounded-full bg-accent/90 text-background px-2.5 py-0.5 text-[10px] font-mono font-bold shadow-md">
-                        {cert.grade}
+            <motion.div key={cert.id} variants={staggerItem} className="h-full">
+              <SpotlightCard className="flex flex-col justify-between h-full p-0 overflow-hidden bg-bg-secondary border-border/80 hover:border-accent/40 group shadow-lg">
+                {/* Image preview of certificate with smooth zoom */}
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-bg-tertiary">
+                  <Image
+                    src={cert.image}
+                    alt={cert.title}
+                    fill
+                    className="object-cover object-center transition-transform duration-500 group-hover:scale-108"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  />
+                  <div className="absolute top-2.5 right-2.5">
+                    <span className="rounded-full bg-accent text-background px-2.5 py-0.5 text-[10px] font-mono font-bold shadow-md">
+                      {cert.grade}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Body */}
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div>
+                    <span className="text-[11px] font-mono text-accent font-semibold">{cert.issuer}</span>
+                    <h3 className="text-base font-bold text-foreground mt-1 mb-2 group-hover:text-accent transition-colors">
+                      {cert.title}
+                    </h3>
+                    <div className="flex items-center gap-1.5 text-xs text-text-secondary font-mono mb-4">
+                      <Calendar className="w-3.5 h-3.5 text-accent" />
+                      <span>{cert.date}</span>
+                    </div>
+                  </div>
+
+                  <div className="pt-3 border-t border-border flex flex-wrap gap-1">
+                    {cert.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="text-[10px] font-mono text-text-secondary bg-bg-tertiary px-2 py-0.5 rounded"
+                      >
+                        {skill}
                       </span>
-                    </div>
+                    ))}
                   </div>
-
-                  {/* Body */}
-                  <div className="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                      <span className="text-[11px] font-mono text-accent">{cert.issuer}</span>
-                      <h3 className="text-base font-bold text-foreground mt-1 mb-2 group-hover:text-accent transition-colors">
-                        {cert.title}
-                      </h3>
-                      <div className="flex items-center gap-1.5 text-xs text-text-secondary font-mono mb-4">
-                        <Calendar className="w-3.5 h-3.5 text-accent" />
-                        <span>{cert.date}</span>
-                      </div>
-                    </div>
-
-                    <div className="pt-3 border-t border-border flex flex-wrap gap-1">
-                      {cert.skills.map((skill) => (
-                        <span
-                          key={skill}
-                          className="text-[10px] font-mono text-text-secondary bg-bg-tertiary px-2 py-0.5 rounded"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </Card>
-              </TiltCard>
+                </div>
+              </SpotlightCard>
             </motion.div>
           ))}
         </StaggerContainer>

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, Loader2, Github, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, Loader2, Github, Linkedin, Copy, Check, Sparkles } from 'lucide-react';
 import { Layout } from '@/components/layout/Layout';
 import { Container } from '@/components/ui/Container';
-import { Card } from '@/components/ui/Card';
+import { SpotlightCard, FadeIn } from '@/components/ui/Motion';
 import { Button } from '@/components/ui/Button';
 import { Input, Textarea } from '@/components/ui/Input';
 import { personalInfo } from '@/data/personal';
@@ -18,6 +18,13 @@ export default function ContactPage() {
 
   const [status, setStatus] = useState('idle'); // 'idle' | 'loading' | 'success' | 'error'
   const [errorMessage, setErrorMessage] = useState('');
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = (text) => {
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -32,7 +39,6 @@ export default function ContactPage() {
     setErrorMessage('');
 
     try {
-      // Send with EmailJS using the existing configured service
       await emailjs.send(
         'service_sydrf49',
         'template_32den8s',
@@ -53,7 +59,6 @@ export default function ContactPage() {
       });
     } catch (err) {
       console.error('Email send failed:', err);
-      // Fallback: also try sending to the internal Next.js API route
       try {
         const res = await fetch('/api/contact', {
           method: 'POST',
@@ -83,35 +88,35 @@ export default function ContactPage() {
 
   return (
     <Layout
-      title="Contact Santhosh K | Frontend Developer"
-      description="Get in touch with Santhosh K for web development opportunities, engineering roles, and project inquiries."
+      title="Contact Santhosh K | Frontend Tech Lead"
+      description="Connect with Santhosh K for frontend engineering leadership, enterprise system design, and cross-platform mobile development opportunities."
     >
-      <div className="py-12 sm:py-20">
+      <div className="py-12 sm:py-24">
         <Container>
           <div className="max-w-3xl mb-16">
-            <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-3 py-1 font-mono text-xs font-medium text-accent">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              Get In Touch
+            <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1 font-mono text-xs font-semibold text-accent shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-accent animate-pulse" />
+              Direct Channel
             </span>
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-4">
-              Let&apos;s build something exceptional together.
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-4">
+              Let&apos;s build scalable systems together.
             </h1>
             <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
-              Whether you have an inquiry about full-time opportunities, contract work, or architecture consultations, drop me a note below.
+              Available for Senior Frontend, Tech Lead, and Cross-Platform engineering opportunities. Whether discussing complex logistics architecture, design systems, or team leadership, let&apos;s talk.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Contact Form */}
             <div className="lg:col-span-7">
-              <Card className="p-6 sm:p-10 bg-bg-secondary border-border">
+              <SpotlightCard className="p-6 sm:p-10 border border-border/80 shadow-2xl">
                 {status === 'success' && (
                   <div className="mb-6 flex items-start gap-3 rounded-xl border border-accent/30 bg-accent/10 p-4 text-sm text-foreground">
                     <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                     <div>
                       <p className="font-semibold text-accent">Message Sent Successfully!</p>
                       <p className="text-xs text-text-secondary mt-1">
-                        Thank you for reaching out. I&apos;ll get back to you as soon as possible.
+                        Thank you for reaching out. I&apos;ll get back to you promptly.
                       </p>
                     </div>
                   </div>
@@ -143,7 +148,7 @@ export default function ContactPage() {
                       id="from_email"
                       name="from_email"
                       type="email"
-                      placeholder="jane@example.com"
+                      placeholder="jane@company.com"
                       required
                       value={formData.from_email}
                       onChange={handleChange}
@@ -154,7 +159,7 @@ export default function ContactPage() {
                     label="Subject"
                     id="subject"
                     name="subject"
-                    placeholder="Project Inquiry / Job Opportunity"
+                    placeholder="Engineering Role / System Consultation"
                     required
                     value={formData.subject}
                     onChange={handleChange}
@@ -165,7 +170,7 @@ export default function ContactPage() {
                     id="message"
                     name="message"
                     rows={5}
-                    placeholder="Tell me about your project, timeline, and goals..."
+                    placeholder="Describe your project, team goals, or technical requirements..."
                     required
                     value={formData.message}
                     onChange={handleChange}
@@ -178,17 +183,17 @@ export default function ContactPage() {
                     disabled={status === 'loading'}
                     icon={status === 'loading' ? Loader2 : Send}
                   >
-                    {status === 'loading' ? 'Sending message...' : 'Send Message'}
+                    {status === 'loading' ? 'Dispatching Message...' : 'Send Message'}
                   </Button>
                 </form>
-              </Card>
+              </SpotlightCard>
             </div>
 
             {/* Sidebar Info */}
             <div className="lg:col-span-5 space-y-6">
-              <Card className="p-6 sm:p-8 bg-bg-secondary border-border space-y-6">
-                <h3 className="font-mono text-xs uppercase tracking-wider text-accent border-b border-border pb-3">
-                  Direct Contact
+              <SpotlightCard className="p-6 sm:p-8 border border-border/80 space-y-6 shadow-xl">
+                <h3 className="font-mono text-xs uppercase tracking-wider text-accent border-b border-border pb-3 font-semibold">
+                  Verified Contact Direct
                 </h3>
 
                 <div className="space-y-4">
@@ -196,14 +201,23 @@ export default function ContactPage() {
                     <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0">
                       <Mail className="w-4 h-4" />
                     </div>
-                    <div>
-                      <span className="text-xs font-mono text-text-secondary block">Email</span>
-                      <a
-                        href={`mailto:${personalInfo.email}`}
-                        className="text-sm font-semibold text-foreground hover:text-accent transition-colors"
-                      >
-                        {personalInfo.email}
-                      </a>
+                    <div className="flex-1">
+                      <span className="text-xs font-mono text-text-secondary block">Primary Email</span>
+                      <div className="flex items-center justify-between">
+                        <a
+                          href={`mailto:${personalInfo.email}`}
+                          className="text-sm font-semibold text-foreground hover:text-accent transition-colors"
+                        >
+                          {personalInfo.email}
+                        </a>
+                        <button
+                          onClick={() => handleCopy(personalInfo.email)}
+                          className="text-xs font-mono text-text-secondary hover:text-accent p-1"
+                          title="Copy email"
+                        >
+                          {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                        </button>
+                      </div>
                     </div>
                   </div>
 
@@ -227,7 +241,7 @@ export default function ContactPage() {
                       <MapPin className="w-4 h-4" />
                     </div>
                     <div>
-                      <span className="text-xs font-mono text-text-secondary block">Location</span>
+                      <span className="text-xs font-mono text-text-secondary block">Current Location</span>
                       <p className="text-sm font-semibold text-foreground">
                         {personalInfo.location}
                       </p>
@@ -237,23 +251,26 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-              </Card>
+              </SpotlightCard>
 
-              {/* Social channels */}
-              <Card className="p-6 sm:p-8 bg-bg-secondary border-border">
-                <h3 className="font-mono text-xs uppercase tracking-wider text-accent border-b border-border pb-3 mb-4">
-                  Online Profiles
+              {/* Profiles */}
+              <SpotlightCard className="p-6 sm:p-8 border border-border/80 shadow-xl">
+                <h3 className="font-mono text-xs uppercase tracking-wider text-accent border-b border-border pb-3 mb-4 font-semibold">
+                  Engineering Profiles
                 </h3>
                 <div className="space-y-3">
                   <a
                     href={personalInfo.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between p-3 rounded-xl bg-bg-tertiary hover:bg-bg-tertiary/70 transition-colors group"
+                    className="flex items-center justify-between p-3.5 rounded-xl bg-bg-tertiary/60 hover:bg-bg-tertiary border border-border/60 hover:border-accent/40 transition-all group"
                   >
                     <div className="flex items-center gap-3">
                       <Linkedin className="w-4 h-4 text-accent" />
-                      <span className="text-sm font-medium text-foreground">LinkedIn</span>
+                      <div>
+                        <span className="text-sm font-semibold text-foreground block">LinkedIn</span>
+                        <span className="text-[11px] font-mono text-text-secondary">/in/santhosh-kannan16</span>
+                      </div>
                     </div>
                     <span className="text-xs font-mono text-text-secondary group-hover:text-accent">
                       Connect &rarr;
@@ -264,18 +281,21 @@ export default function ContactPage() {
                     href={personalInfo.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between p-3 rounded-xl bg-bg-tertiary hover:bg-bg-tertiary/70 transition-colors group"
+                    className="flex items-center justify-between p-3.5 rounded-xl bg-bg-tertiary/60 hover:bg-bg-tertiary border border-border/60 hover:border-accent/40 transition-all group"
                   >
                     <div className="flex items-center gap-3">
                       <Github className="w-4 h-4 text-accent" />
-                      <span className="text-sm font-medium text-foreground">GitHub</span>
+                      <div>
+                        <span className="text-sm font-semibold text-foreground block">GitHub</span>
+                        <span className="text-[11px] font-mono text-text-secondary">/Santhosh10661</span>
+                      </div>
                     </div>
                     <span className="text-xs font-mono text-text-secondary group-hover:text-accent">
                       Follow &rarr;
                     </span>
                   </a>
                 </div>
-              </Card>
+              </SpotlightCard>
             </div>
           </div>
         </Container>

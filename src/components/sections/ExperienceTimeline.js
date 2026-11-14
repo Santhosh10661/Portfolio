@@ -1,25 +1,24 @@
 import { motion } from 'framer-motion';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { experiences } from '@/data/experience';
-import { Calendar, MapPin, CheckCircle2 } from 'lucide-react';
-import { FadeIn, StaggerContainer, staggerItem } from '@/components/ui/Motion';
+import { Calendar, MapPin, CheckCircle2, ShieldCheck, Users } from 'lucide-react';
+import { FadeIn, SpotlightCard } from '@/components/ui/Motion';
 
 export function ExperienceTimeline() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-20 sm:py-32">
       <Container>
         <FadeIn direction="up">
           <SectionHeading
-            badge="Career Journey"
-            title="Professional Experience"
-            description="Shipping production web &amp; mobile applications and leading frontend engineering squads."
+            badge="Engineering Career"
+            title="Professional Trajectory"
+            description="Leading frontend engineering squads, coordinating multi-role systems, and shipping production applications at Kriha IT Solutions."
           />
         </FadeIn>
 
-        <div className="relative border-l border-border pl-6 sm:pl-8 ml-3 sm:ml-6 space-y-12 max-w-4xl mx-auto">
+        <div className="relative border-l border-border/80 pl-6 sm:pl-8 ml-3 sm:ml-6 space-y-12 max-w-4xl mx-auto">
           {experiences.map((exp, index) => (
             <FadeIn
               key={`${exp.company}-${exp.period}`}
@@ -28,13 +27,18 @@ export function ExperienceTimeline() {
               className="relative group"
             >
               {/* Timeline indicator node with glow */}
-              <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full border-2 border-accent bg-background group-hover:bg-accent group-hover:scale-125 transition-all duration-300 shadow-sm shadow-accent/40" />
+              <div className="absolute -left-[31px] sm:-left-[39px] top-2 w-4 h-4 rounded-full border-2 border-accent bg-background group-hover:bg-accent group-hover:scale-125 transition-all duration-300 shadow-sm shadow-accent/50" />
 
-              <Card className="p-6 sm:p-8 bg-bg-secondary border-border hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5 transition-all duration-300">
+              <SpotlightCard className="p-6 sm:p-8 bg-bg-secondary border-border/80 hover:border-accent/40 shadow-xl">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                   <div>
-                    <h3 className="text-xl font-bold text-foreground group-hover:text-accent transition-colors">
-                      {exp.role}
+                    <h3 className="text-xl sm:text-2xl font-bold text-foreground group-hover:text-accent transition-colors flex items-center gap-2">
+                      <span>{exp.role}</span>
+                      {index === 0 && (
+                        <span className="px-2.5 py-0.5 rounded-full bg-accent/15 text-accent border border-accent/30 font-mono text-[10px] font-bold">
+                          Current Role
+                        </span>
+                      )}
                     </h3>
                     <p className="text-sm font-semibold text-accent font-mono mt-0.5">
                       {exp.company}
@@ -62,7 +66,7 @@ export function ExperienceTimeline() {
                   {exp.achievements.map((item, i) => (
                     <div key={i} className="flex items-start gap-2.5 text-xs text-text-secondary">
                       <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
-                      <span>{item}</span>
+                      <span className="leading-relaxed">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -74,7 +78,7 @@ export function ExperienceTimeline() {
                     </Badge>
                   ))}
                 </div>
-              </Card>
+              </SpotlightCard>
             </FadeIn>
           ))}
         </div>
