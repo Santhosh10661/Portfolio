@@ -53,8 +53,15 @@ A modern, high-performance personal portfolio built with **Next.js (Pages Router
    npm run start
    ```
 
-## 🚢 Deploying to Vercel
+## 🚢 Deploying to Netlify / Vercel
 
+### Netlify
+1. Push your repository to GitHub.
+2. The included `netlify.toml` and `@netlify/plugin-nextjs` automatically configure the build command (`npm run build`) and output directory (`.next`).
+3. If previously configured with Create React App settings in the Netlify UI, clear the old Publish directory (`build`) in **Site configuration > Build & deploy** so Netlify uses the `netlify.toml` configuration.
+4. Click **Deploy**.
+
+### Vercel
 1. Push your repository to GitHub.
 2. Import the repository in [Vercel](https://vercel.com).
 3. Framework preset will automatically detect **Next.js**.
