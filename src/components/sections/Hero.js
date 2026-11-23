@@ -1,202 +1,256 @@
 import { useRef, useState } from 'react';
-import Link from 'next/link';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { ArrowRight, ArrowDownToLine, Sparkles, Terminal, Code2, Check, Copy } from 'lucide-react';
+import { ArrowRight, Download, Copy, Check } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
+import { Terminal } from '@/components/ui/Terminal';
+import { Keyword, Str, Variable, Num, Comment, Punct, Tag } from '@/components/ui/Terminal';
+import { BlinkingCursor } from '@/components/ui/TypeWriter';
+import { StaggerContainer, staggerItem, Magnetic, AnimatedCounter } from '@/components/ui/Motion';
 import { personalInfo } from '@/data/personal';
-import { transitionEase, AnimatedCounter, Magnetic } from '@/components/ui/Motion';
 
 export function Hero() {
-  const containerRef = useRef(null);
+  const sectionRef = useRef(null);
   const [copied, setCopied] = useState(false);
 
   const { scrollYProgress } = useScroll({
-    target: containerRef,
+    target: sectionRef,
     offset: ['start start', 'end start'],
   });
 
-  // Parallax layers for background orbs and elements
-  const orbY = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const orbScale = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
-  const floatingBadgeY1 = useTransform(scrollYProgress, [0, 1], [0, -80]);
-  const floatingBadgeY2 = useTransform(scrollYProgress, [0, 1], [0, -140]);
-  const textY = useTransform(scrollYProgress, [0, 1], [0, 70]);
-  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0.15]);
+  const orbY = useSpring(useTransform(scrollYProgress, [0, 1], [0, 200]), {
+    stiffness: 100,
+    damping: 30,
+  });
+  const textY = useTransform(scrollYProgress, [0, 0.5], [0, 60]);
+  const opacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
 
-  const smoothOrbY = useSpring(orbY, { stiffness: 200, damping: 40 });
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(personalInfo.email);
+  const copyEmail = () => {
+    navigator.clipboard?.writeText(personalInfo.email);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
   return (
     <section
-      ref={containerRef}
-      className="relative overflow-hidden pt-12 pb-20 sm:pt-24 sm:pb-36"
+      ref={sectionRef}
+      className="relative min-h-[100dvh] flex items-center overflow-hidden"
     >
-      {/* Dynamic Animated Ambient Glow Orb */}
+      {/* Background — subtle code grid + gradient orb */}
+      <div className="absolute inset-0 dev-grid-bg" />
       <motion.div
-        style={{ y: smoothOrbY, scale: orbScale }}
-        className="absolute top-0 left-1/2 -translate-x-1/2 -z-10 w-[600px] h-[360px] sm:w-[1050px] sm:h-[500px] bg-gradient-to-tr from-accent/25 via-teal-500/15 to-emerald-500/10 blur-[150px] rounded-full pointer-events-none"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-accent/20 via-teal-500/10 to-emerald-500/5 blur-[150px] pointer-events-none"
+        style={{ y: orbY }}
+      />
+      {/* Scan line effect */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-[0.03]">
+        <motion.div
+          className="absolute left-0 right-0 h-[2px] bg-accent"
+          animate={{ y: ['0vh', '100vh'] }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+        />
+      </div>
+      {/* Radial mask */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse 70% 50% at 50% 50%, transparent, rgb(var(--bg-primary)))',
+        }}
       />
 
-      {/* Grid Pattern with Vignette Mask */}
-      <div className="absolute inset-0 -z-20 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:36px_36px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
-
-      {/* Floating decorative parallax pills (desktop only) */}
-      <motion.div
-        style={{ y: floatingBadgeY1 }}
-        className="hidden lg:flex absolute left-8 top-1/4 items-center gap-2.5 rounded-2xl border border-border/80 bg-bg-secondary/70 backdrop-blur-md px-4 py-2.5 text-xs font-mono text-text-secondary shadow-2xl pointer-events-none"
-      >
-        <span className="w-2 h-2 rounded-full bg-accent animate-ping" />
-        <Code2 className="w-4 h-4 text-accent" />
-        <span>Next.js · React Native · Redux</span>
-      </motion.div>
-
-      <motion.div
-        style={{ y: floatingBadgeY2 }}
-        className="hidden lg:flex absolute right-8 top-1/3 items-center gap-2.5 rounded-2xl border border-border/80 bg-bg-secondary/70 backdrop-blur-md px-4 py-2.5 text-xs font-mono text-text-secondary shadow-2xl pointer-events-none"
-      >
-        <Terminal className="w-4 h-4 text-emerald-400" />
-        <span>Production Web &amp; Mobile</span>
-      </motion.div>
-
-      <Container>
-        <motion.div
-          style={{ y: textY, opacity }}
-          className="flex flex-col items-center text-center max-w-4xl mx-auto"
-        >
-          {/* Status Badge + Quick Copy Interaction */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-6 sm:mb-8">
-            <motion.div
-              initial={{ opacity: 0, y: -20, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.5, ease: transitionEase }}
-              className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 font-mono text-xs text-accent shadow-sm"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
+      <motion.div style={{ y: textY, opacity }} className="relative w-full">
+        <Container>
+          <StaggerContainer className="max-w-4xl mx-auto" staggerDelay={0.12}>
+            {/* Status badge */}
+            <motion.div variants={staggerItem} className="mb-8">
+              <span className="inline-flex items-center gap-2 rounded-full border border-syntax-string/30 bg-syntax-string/5 px-4 py-1.5 font-mono text-xs text-syntax-string">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-syntax-string/60" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-syntax-string" />
+                </span>
+                available for opportunities
               </span>
-              <span>Available for Frontend Engineering Roles</span>
             </motion.div>
 
-            {/* Quick copy email pill */}
-            <motion.button
-              onClick={handleCopyEmail}
-              initial={{ opacity: 0, y: -20, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.1, ease: transitionEase }}
-              className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-bg-secondary/80 px-3 py-1.5 font-mono text-xs text-text-secondary hover:text-foreground hover:border-accent/40 transition-colors"
-              title="Click to copy email"
+            {/* Terminal window — the centerpiece */}
+            <motion.div variants={staggerItem}>
+              <Terminal
+                title={`santhosh@dev ~ /portfolio`}
+                variant="editor"
+                className="mb-8 shadow-2xl shadow-accent/5"
+              >
+                {/* Command prompt intro */}
+                <div className="mb-4 space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="syntax-prompt">$</span>
+                    <span className="text-foreground">cat developer.js</span>
+                  </div>
+                </div>
+
+                {/* Code object — developer profile */}
+                <div className="space-y-0.5 text-[13px] sm:text-sm">
+                  <div>
+                    <Keyword>const</Keyword> <Variable>developer</Variable>{' '}
+                    <Punct>=</Punct> <Punct>{'{'}</Punct>
+                  </div>
+                  <div className="pl-4 sm:pl-6">
+                    <Tag>name</Tag>
+                    <Punct>:</Punct> <Str>{`"${personalInfo.name}"`}</Str>
+                    <Punct>,</Punct>
+                  </div>
+                  <div className="pl-4 sm:pl-6">
+                    <Tag>role</Tag>
+                    <Punct>:</Punct> <Str>{`"${personalInfo.title}"`}</Str>
+                    <Punct>,</Punct>
+                  </div>
+                  <div className="pl-4 sm:pl-6">
+                    <Tag>location</Tag>
+                    <Punct>:</Punct> <Str>{`"Chennai, India"`}</Str>
+                    <Punct>,</Punct>
+                  </div>
+                  <div className="pl-4 sm:pl-6">
+                    <Tag>experience</Tag>
+                    <Punct>:</Punct> <Str>{`"1.5+ years"`}</Str>
+                    <Punct>,</Punct>
+                  </div>
+                  <div className="pl-4 sm:pl-6">
+                    <Tag>stack</Tag>
+                    <Punct>: [</Punct>
+                    <Str>{`"React.js"`}</Str>
+                    <Punct>,</Punct> <Str>{`"Next.js"`}</Str>
+                    <Punct>,</Punct> <Str>{`"React Native"`}</Str>
+                    <Punct>,</Punct> <Str>{`"Tailwind CSS"`}</Str>
+                    <Punct>],</Punct>
+                  </div>
+                  <div className="pl-4 sm:pl-6">
+                    <Tag>focus</Tag>
+                    <Punct>:</Punct>{' '}
+                    <Str>{`"Building production web & mobile apps"`}</Str>
+                    <Punct>,</Punct>
+                  </div>
+                  <div className="pl-4 sm:pl-6">
+                    <Tag>deployed</Tag>
+                    <Punct>:</Punct> <Num>6</Num>
+                    <Punct>,</Punct>{' '}
+                    <Comment>{'// production projects shipped'}</Comment>
+                  </div>
+                  <div className="pl-4 sm:pl-6">
+                    <Tag>certifications</Tag>
+                    <Punct>:</Punct> <Num>4</Num>
+                    <Punct>,</Punct>{' '}
+                    <Comment>{'// Meta & Google verified'}</Comment>
+                  </div>
+                  <div className="pl-4 sm:pl-6">
+                    <Tag>hireable</Tag>
+                    <Punct>:</Punct>{' '}
+                    <Keyword>true</Keyword>
+                    <Punct>,</Punct>
+                  </div>
+                  <div>
+                    <Punct>{'}'}</Punct>
+                    <Punct>;</Punct>
+                  </div>
+                </div>
+
+                {/* Second command — run action */}
+                <div className="mt-5 pt-4 border-t border-border/50">
+                  <div className="flex items-center gap-2">
+                    <span className="syntax-prompt">$</span>
+                    <span className="text-foreground">
+                      npm run build-career
+                    </span>
+                    <BlinkingCursor />
+                  </div>
+                  <div className="mt-1 text-syntax-string text-xs">
+                    ✓ Ready to ship production code
+                  </div>
+                </div>
+              </Terminal>
+            </motion.div>
+
+            {/* Tagline below terminal */}
+            <motion.div variants={staggerItem} className="mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+                <span className="text-foreground">I build </span>
+                <span className="bg-gradient-to-r from-accent via-teal-300 to-emerald-400 bg-clip-text text-transparent">
+                  interfaces
+                </span>
+                <span className="text-foreground"> that ship.</span>
+              </h1>
+              <p className="mt-3 text-base sm:text-lg text-text-secondary max-w-2xl font-mono text-[13px] sm:text-sm">
+                <Comment>{'// '}</Comment>
+                {personalInfo.shortBio}
+              </p>
+            </motion.div>
+
+            {/* CTA row */}
+            <motion.div
+              variants={staggerItem}
+              className="flex flex-wrap items-center gap-3 mb-10"
             >
-              {copied ? (
-                <>
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="text-emerald-400 font-semibold">Email Copied!</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="w-3.5 h-3.5 text-accent" />
-                  <span>{personalInfo.email}</span>
-                </>
-              )}
-            </motion.button>
-          </div>
+              <Magnetic>
+                <Button href="/projects" icon={ArrowRight} size="lg">
+                  View Projects
+                </Button>
+              </Magnetic>
+              <Magnetic>
+                <Button
+                  href={personalInfo.resumeUrl}
+                  variant="secondary"
+                  icon={Download}
+                  size="lg"
+                  external
+                >
+                  Resume.pdf
+                </Button>
+              </Magnetic>
 
-          {/* Heading with Shimmer Accent Gradient */}
-          <motion.h1
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: transitionEase }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1] mb-6"
-          >
-            Engineering scalable web &amp; mobile platforms with{' '}
-            <span className="bg-gradient-to-r from-accent via-teal-300 to-emerald-400 bg-clip-text text-transparent">
-              precision.
-            </span>
-          </motion.h1>
-
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.25, ease: transitionEase }}
-            className="text-lg sm:text-xl text-text-secondary max-w-2xl leading-relaxed mb-10"
-          >
-            I&apos;m <strong className="text-foreground">{personalInfo.name}</strong>, a Frontend Developer specialized in cross-platform delivery across enterprise ERP, multi-tier logistics, and e-commerce platforms using{' '}
-            <span className="text-foreground font-medium">React.js</span>,{' '}
-            <span className="text-foreground font-medium">Next.js</span>, and{' '}
-            <span className="text-foreground font-medium">React Native</span>.
-          </motion.p>
-
-          {/* Magnetic CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35, ease: transitionEase }}
-            className="flex flex-wrap items-center justify-center gap-4 mb-16"
-          >
-            <Magnetic strength={0.2}>
-              <Button href="/projects" size="lg" icon={ArrowRight}>
-                Explore Enterprise Systems
-              </Button>
-            </Magnetic>
-
-            <Magnetic strength={0.2}>
-              <Button
-                href="/Santhosh_K_Resume.pdf"
-                variant="secondary"
-                size="lg"
-                icon={ArrowDownToLine}
-                external
+              {/* Copy email pill */}
+              <button
+                onClick={copyEmail}
+                className="group flex items-center gap-2 rounded-full border border-border bg-bg-secondary/60 px-4 py-2 font-mono text-xs text-text-secondary hover:border-accent/40 hover:text-accent transition-all duration-300"
               >
-                Download Resume PDF
-              </Button>
-            </Magnetic>
-          </motion.div>
+                {copied ? (
+                  <Check className="w-3.5 h-3.5 text-syntax-string" />
+                ) : (
+                  <Copy className="w-3.5 h-3.5" />
+                )}
+                {copied ? 'Copied!' : personalInfo.email}
+              </button>
+            </motion.div>
 
-          {/* Stat counters with Smooth Animated Numbers */}
-          <motion.div
-            initial="hidden"
-            animate="show"
-            variants={{
-              hidden: { opacity: 0 },
-              show: {
-                opacity: 1,
-                transition: { staggerChildren: 0.1, delayChildren: 0.45 },
-              },
-            }}
-            className="w-full grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-10 border-t border-border/80"
-          >
-            {personalInfo.stats.map((stat) => (
-              <motion.div
-                key={stat.label}
-                variants={{
-                  hidden: { opacity: 0, y: 20, scale: 0.95 },
-                  show: {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    transition: { duration: 0.5, ease: transitionEase },
-                  },
-                }}
-                className="group flex flex-col items-center p-4 rounded-xl bg-bg-secondary/40 border border-border/60 hover:border-accent/40 hover:bg-bg-secondary/70 transition-all duration-300 shadow-sm"
-              >
-                <span className="text-2xl sm:text-3xl font-bold text-accent font-mono mb-1 group-hover:scale-105 transition-transform">
-                  <AnimatedCounter value={stat.value} />
-                </span>
-                <span className="text-xs text-text-secondary font-mono uppercase tracking-wider">
-                  {stat.label}
-                </span>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
-      </Container>
+            {/* Stats row */}
+            <motion.div
+              variants={staggerItem}
+              className="grid grid-cols-2 sm:grid-cols-4 gap-3"
+            >
+              {personalInfo.stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="group rounded-lg border border-border/60 bg-bg-secondary/30 p-3 hover:border-accent/40 hover:bg-bg-secondary/60 transition-all duration-300"
+                >
+                  <div className="font-mono text-lg sm:text-xl font-bold text-accent">
+                    {/\d/.test(stat.value) ? (
+                      <AnimatedCounter
+                        value={parseInt(stat.value)}
+                        suffix={stat.value.replace(/\d+/, '')}
+                      />
+                    ) : (
+                      stat.value
+                    )}
+                  </div>
+                  <div className="font-mono text-[10px] sm:text-xs text-text-secondary uppercase tracking-wider mt-0.5">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </StaggerContainer>
+        </Container>
+      </motion.div>
     </section>
   );
 }
+
+export default Hero;

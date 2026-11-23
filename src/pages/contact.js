@@ -91,102 +91,116 @@ export default function ContactPage() {
       title="Contact Santhosh K | Frontend Developer"
       description="Connect with Santhosh K for frontend development, enterprise system implementation, and cross-platform mobile engineering opportunities."
     >
-      <div className="py-12 sm:py-24">
+      <div className="py-12 sm:py-24 dev-grid-bg">
         <Container>
-          <div className="max-w-3xl mb-16">
-            <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1 font-mono text-xs font-semibold text-accent shadow-sm">
+          <div className="max-w-3xl mb-16 font-mono">
+            <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-syntax-function/30 bg-syntax-function/10 px-3.5 py-1 text-xs font-semibold text-syntax-function shadow-sm">
               <Sparkles className="w-3.5 h-3.5 text-accent animate-pulse" />
-              Direct Channel
+              curl -X POST /api/contact
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-4">
+            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-foreground mb-4">
               Let&apos;s build scalable systems together.
             </h1>
-            <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
+            <p className="text-sm sm:text-base text-text-secondary leading-relaxed font-sans">
               Available for Frontend Developer and Cross-Platform engineering opportunities. Whether discussing complex logistics architecture, design systems, or component performance, let&apos;s talk.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            {/* Contact Form */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+            {/* Contact Form as Terminal Window */}
             <div className="lg:col-span-7">
-              <SpotlightCard className="p-6 sm:p-10 border border-border/80 shadow-2xl">
-                {status === 'success' && (
-                  <div className="mb-6 flex items-start gap-3 rounded-xl border border-accent/30 bg-accent/10 p-4 text-sm text-foreground">
-                    <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-semibold text-accent">Message Sent Successfully!</p>
-                      <p className="text-xs text-text-secondary mt-1">
-                        Thank you for reaching out. I&apos;ll get back to you promptly.
-                      </p>
+              <div className="terminal-window shadow-2xl bg-bg-secondary border-border/90">
+                <div className="terminal-header flex items-center justify-between font-mono text-xs">
+                  <div className="flex items-center gap-2">
+                    <div className="flex gap-1.5">
+                      <span className="terminal-dot bg-red-500/80" />
+                      <span className="terminal-dot bg-yellow-500/80" />
+                      <span className="terminal-dot bg-green-500/80" />
                     </div>
+                    <span className="text-text-secondary ml-1">POST /api/contact — dispatch.sh</span>
                   </div>
-                )}
+                  <span className="text-[11px] text-syntax-comment">status: ready</span>
+                </div>
 
-                {status === 'error' && (
-                  <div className="mb-6 flex items-start gap-3 rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-sm text-foreground">
-                    <AlertCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-semibold text-red-400">Message Delivery Error</p>
-                      <p className="text-xs text-text-secondary mt-1">{errorMessage}</p>
+                <div className="p-6 sm:p-8 font-sans">
+                  {status === 'success' && (
+                    <div className="mb-6 flex items-start gap-3 rounded-lg border border-syntax-string/30 bg-syntax-string/10 p-4 text-xs font-mono text-foreground">
+                      <CheckCircle2 className="w-5 h-5 text-syntax-string shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-semibold text-syntax-string">HTTP 200 OK — Message Dispatched</p>
+                        <p className="text-text-secondary mt-1">
+                          Thank you for reaching out. I will respond to your transmission promptly.
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                )}
+                  )}
 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {status === 'error' && (
+                    <div className="mb-6 flex items-start gap-3 rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-xs font-mono text-foreground">
+                      <AlertCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-semibold text-red-400">HTTP 500 — Delivery Failed</p>
+                        <p className="text-text-secondary mt-1">{errorMessage}</p>
+                      </div>
+                    </div>
+                  )}
+
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <Input
+                        label="param: sender_name"
+                        id="from_name"
+                        name="from_name"
+                        placeholder="Jane Doe"
+                        required
+                        value={formData.from_name}
+                        onChange={handleChange}
+                      />
+                      <Input
+                        label="param: sender_email"
+                        id="from_email"
+                        name="from_email"
+                        type="email"
+                        placeholder="jane@company.com"
+                        required
+                        value={formData.from_email}
+                        onChange={handleChange}
+                      />
+                    </div>
+
                     <Input
-                      label="Your Name"
-                      id="from_name"
-                      name="from_name"
-                      placeholder="Jane Doe"
+                      label="header: subject"
+                      id="subject"
+                      name="subject"
+                      placeholder="Frontend Role / Architecture Discussion"
                       required
-                      value={formData.from_name}
+                      value={formData.subject}
                       onChange={handleChange}
                     />
-                    <Input
-                      label="Your Email"
-                      id="from_email"
-                      name="from_email"
-                      type="email"
-                      placeholder="jane@company.com"
+
+                    <Textarea
+                      label="payload: message_body"
+                      id="message"
+                      name="message"
+                      rows={5}
+                      placeholder="Enter requirements, role scope, or project specifications..."
                       required
-                      value={formData.from_email}
+                      value={formData.message}
                       onChange={handleChange}
                     />
-                  </div>
 
-                  <Input
-                    label="Subject"
-                    id="subject"
-                    name="subject"
-                    placeholder="Engineering Role / System Consultation"
-                    required
-                    value={formData.subject}
-                    onChange={handleChange}
-                  />
-
-                  <Textarea
-                    label="Your Message"
-                    id="message"
-                    name="message"
-                    rows={5}
-                    placeholder="Describe your project, engineering goals, or technical requirements..."
-                    required
-                    value={formData.message}
-                    onChange={handleChange}
-                  />
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full"
-                    disabled={status === 'loading'}
-                    icon={status === 'loading' ? Loader2 : Send}
-                  >
-                    {status === 'loading' ? 'Dispatching Message...' : 'Send Message'}
-                  </Button>
-                </form>
-              </SpotlightCard>
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="w-full font-mono text-xs"
+                      disabled={status === 'loading'}
+                      icon={status === 'loading' ? Loader2 : Send}
+                    >
+                      {status === 'loading' ? '$ dispatching payload...' : '$ ./send-message.sh'}
+                    </Button>
+                  </form>
+                </div>
+              </div>
             </div>
 
             {/* Sidebar Info */}

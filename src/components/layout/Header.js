@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Menu, X, Sun, Moon, ArrowDownToLine } from 'lucide-react';
+import { Menu, X, Sun, Moon, ArrowDownToLine, GitBranch, Terminal } from 'lucide-react';
 import { useTheme } from '@/hooks/useTheme';
 import { Container } from '@/components/ui/Container';
 import { MobileMenu } from './MobileMenu';
 
 const navLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Projects', href: '/projects' },
-  { name: 'Contact', href: '/contact' },
+  { name: '~/home', href: '/' },
+  { name: '~/about', href: '/about' },
+  { name: '~/projects', href: '/projects' },
+  { name: '~/contact', href: '/contact' },
 ];
 
 export function Header() {
@@ -37,24 +37,31 @@ export function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled
-            ? 'bg-background/85 backdrop-blur-md border-b border-border shadow-sm'
+            ? 'bg-background/90 backdrop-blur-md border-b border-border shadow-sm'
             : 'bg-transparent border-b border-transparent'
         }`}
       >
         <Container>
-          <div className="flex h-16 sm:h-20 items-center justify-between">
+          <div className="flex h-16 sm:h-20 items-center justify-between font-mono">
             {/* Logo */}
-            <Link
-              href="/"
-              className="group flex items-center gap-1.5 text-lg sm:text-xl font-bold font-mono tracking-tight text-foreground transition-colors hover:text-accent"
-            >
-              <span className="text-accent">&lt;</span>
-              <span>Santhosh</span>
-              <span className="text-accent">/&gt;</span>
-            </Link>
+            <div className="flex items-center gap-3">
+              <Link
+                href="/"
+                className="group flex items-center gap-1.5 text-base sm:text-lg font-bold tracking-tight text-foreground transition-colors hover:text-accent"
+              >
+                <Terminal className="w-4 h-4 text-accent" />
+                <span className="text-accent">&lt;</span>
+                <span>santhosh.dev</span>
+                <span className="text-accent">/&gt;</span>
+              </Link>
+              <span className="hidden lg:inline-flex items-center gap-1 px-2 py-0.5 rounded bg-bg-tertiary border border-border text-[11px] text-text-secondary">
+                <GitBranch className="w-2.5 h-2.5 text-syntax-string" />
+                main
+              </span>
+            </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+            <nav className="hidden md:flex items-center gap-1">
               {navLinks.map((link) => {
                 const isActive =
                   link.href === '/'
@@ -65,16 +72,13 @@ export function Header() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className={`relative px-3.5 py-1.5 text-sm font-medium transition-colors rounded-lg ${
+                    className={`relative px-3 py-1.5 text-xs font-mono transition-colors rounded-md ${
                       isActive
-                        ? 'text-accent'
-                        : 'text-text-secondary hover:text-foreground hover:bg-bg-tertiary/40'
+                        ? 'text-accent bg-accent/10 border border-accent/25'
+                        : 'text-text-secondary hover:text-foreground hover:bg-bg-tertiary'
                     }`}
                   >
                     {link.name}
-                    {isActive && (
-                      <span className="absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-accent rounded-full" />
-                    )}
                   </Link>
                 );
               })}
@@ -102,7 +106,7 @@ export function Header() {
                 className="inline-flex items-center gap-2 rounded-lg bg-bg-tertiary px-3.5 py-2 text-xs font-mono font-medium text-foreground border border-border hover:border-accent/40 hover:text-accent transition-all"
               >
                 <ArrowDownToLine className="w-3.5 h-3.5 text-accent" />
-                <span>Resume</span>
+                <span>resume.pdf</span>
               </a>
             </div>
 

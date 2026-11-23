@@ -1,13 +1,13 @@
-import { motion } from 'framer-motion';
-import { Mail, Send, Sparkles } from 'lucide-react';
+import { Mail, Send } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { personalInfo } from '@/data/personal';
-import { FadeIn, ParallaxLayer } from '@/components/ui/Motion';
+import { FadeIn, ParallaxLayer, Magnetic } from '@/components/ui/Motion';
+import { Terminal, Keyword, Str, Variable, Comment, Punct } from '@/components/ui/Terminal';
 
 export function ContactCTA() {
   return (
-    <section className="py-20 sm:py-28 relative overflow-hidden">
+    <section className="py-20 sm:py-28 relative overflow-hidden dev-grid-bg">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent pointer-events-none" />
 
       {/* Floating parallax ambient back-drop */}
@@ -15,36 +15,71 @@ export function ContactCTA() {
 
       <Container>
         <FadeIn direction="up">
-          <div className="relative rounded-3xl border border-accent/30 bg-bg-secondary p-8 sm:p-14 text-center overflow-hidden shadow-2xl">
-            <div className="relative z-10 max-w-2xl mx-auto">
-              <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1 font-mono text-xs text-accent">
-                <Sparkles className="w-3.5 h-3.5 text-accent animate-pulse" />
-                Start A Project Or Hire
-              </span>
+          <div className="max-w-3xl mx-auto">
+            <Terminal
+              title="ssh connection — santhosh@connect:22"
+              className="shadow-2xl border-accent/30 bg-bg-secondary"
+            >
+              {/* Terminal session text */}
+              <div className="space-y-4 font-mono text-xs sm:text-sm">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="syntax-prompt">$</span>
+                    <span className="text-foreground">ssh connect@santhosh.dev</span>
+                  </div>
+                  <div className="text-syntax-string text-[11px] sm:text-xs mt-1">
+                    ✓ Connection established. Session active.
+                  </div>
+                </div>
 
-              <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-foreground mb-4">
-                Have an idea or an open role? Let&apos;s build something great.
-              </h2>
+                <div className="p-4 rounded bg-bg-tertiary/60 border border-border space-y-1.5 text-xs">
+                  <div>
+                    <Keyword>const</Keyword> <Variable>collaboration</Variable> <Punct>=</Punct> <Punct>{'{'}</Punct>
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-syntax-tag">status</span><Punct>:</Punct> <Str>&quot;open_for_opportunities&quot;</Str><Punct>,</Punct>
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-syntax-tag">roles</span><Punct>:</Punct> <Punct>[</Punct>
+                    <Str>&quot;Frontend Developer&quot;</Str><Punct>,</Punct> <Str>&quot;React / Next.js Engineer&quot;</Str><Punct>,</Punct> <Str>&quot;React Native Developer&quot;</Str>
+                    <Punct>],</Punct>
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-syntax-tag">location</span><Punct>:</Punct> <Str>&quot;Chennai, India / Remote / Hybrid&quot;</Str><Punct>,</Punct>
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-syntax-tag">response_time</span><Punct>:</Punct> <Str>&quot;&lt; 24 hours&quot;</Str>
+                  </div>
+                  <div>
+                    <Punct>{'}'};</Punct>
+                  </div>
+                </div>
 
-              <p className="text-base text-text-secondary leading-relaxed mb-8">
-                Whether you need a dedicated frontend developer, a React/Next.js engineer, or a mobile app specialist, I&apos;m ready to contribute.
-              </p>
+                <div className="pt-2 text-text-secondary leading-relaxed text-xs sm:text-sm">
+                  Looking for a frontend developer who writes clean, testable code and ships production web &amp; mobile apps on schedule? Let&apos;s talk.
+                </div>
 
-              <div className="flex flex-wrap items-center justify-center gap-4">
-                <Button href="/contact" size="lg" icon={Send}>
-                  Send Message
-                </Button>
-                <Button
-                  href={`mailto:${personalInfo.email}`}
-                  variant="secondary"
-                  size="lg"
-                  icon={Mail}
-                  external
-                >
-                  {personalInfo.email}
-                </Button>
+                {/* Commands CTA */}
+                <div className="pt-4 border-t border-border flex flex-wrap items-center gap-3">
+                  <Magnetic>
+                    <Button href="/contact" size="md" icon={Send}>
+                      $ ./send-message.sh
+                    </Button>
+                  </Magnetic>
+                  <Magnetic>
+                    <Button
+                      href={`mailto:${personalInfo.email}`}
+                      variant="secondary"
+                      size="md"
+                      icon={Mail}
+                      external
+                    >
+                      $ mailto:{personalInfo.email}
+                    </Button>
+                  </Magnetic>
+                </div>
               </div>
-            </div>
+            </Terminal>
           </div>
         </FadeIn>
       </Container>

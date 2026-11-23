@@ -1,35 +1,56 @@
-import Link from 'next/link';
-import { Home, ArrowLeft } from 'lucide-react';
+import { Home, ArrowLeft, AlertTriangle } from 'lucide-react';
 import { Layout } from '@/components/layout/Layout';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
+import { Terminal, Comment } from '@/components/ui/Terminal';
 
 export default function Custom404() {
   return (
     <Layout
-      title="404 - Page Not Found | Santhosh K"
-      description="The page you are looking for does not exist."
+      title="404: Route Not Found | Santhosh K"
+      description="The requested route does not exist in the routing table."
     >
-      <div className="min-h-[70vh] flex items-center justify-center py-20">
+      <div className="min-h-[75vh] flex items-center justify-center py-20 dev-grid-bg">
         <Container>
-          <div className="max-w-md mx-auto text-center">
-            <span className="font-mono text-7xl sm:text-8xl font-black text-accent block mb-4">
-              404
-            </span>
-            <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-              Page Not Found
-            </h1>
-            <p className="text-sm text-text-secondary leading-relaxed mb-8">
-              The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
-            </p>
-            <div className="flex items-center justify-center gap-4">
-              <Button href="/" icon={Home}>
-                Return Home
-              </Button>
-              <Button href="/projects" variant="secondary" icon={ArrowLeft}>
-                View Projects
-              </Button>
-            </div>
+          <div className="max-w-xl mx-auto">
+            <Terminal
+              title="error: 404_PAGE_NOT_FOUND (exit code 1)"
+              className="shadow-2xl border-syntax-variable/40"
+            >
+              <div className="space-y-4 font-mono text-xs sm:text-sm">
+                <div className="flex items-center gap-2 text-syntax-variable font-bold">
+                  <AlertTriangle className="w-4 h-4" />
+                  <span>Uncaught RouteError: 404 (Resource Not Found)</span>
+                </div>
+
+                <div className="p-3.5 rounded bg-bg-tertiary/70 border border-border text-[11px] sm:text-xs text-text-secondary space-y-1">
+                  <div>
+                    <span className="text-syntax-comment">at</span> <span className="text-syntax-function">Router.resolve</span> (<span className="text-syntax-string">/src/pages/[...route].tsx:404:12</span>)
+                  </div>
+                  <div>
+                    <span className="text-syntax-comment">at</span> <span className="text-syntax-function">ServerResponse.dispatch</span> (<span className="text-syntax-string">/node_modules/next/server.js:88:5</span>)
+                  </div>
+                  <div>
+                    <span className="text-syntax-comment">at</span> <span className="text-syntax-function">async handleRequest</span> (<span className="text-syntax-string">/node_modules/next/handler.js:142:9</span>)
+                  </div>
+                </div>
+
+                <div className="text-text-secondary text-xs leading-relaxed">
+                  <Comment>{'// The requested route does not exist in this deployment.'}</Comment>
+                  <br />
+                  <span className="text-foreground">Please choose a valid recovery destination:</span>
+                </div>
+
+                <div className="pt-3 border-t border-border flex flex-wrap items-center gap-3">
+                  <Button href="/" icon={Home} size="sm">
+                    $ cd /home
+                  </Button>
+                  <Button href="/projects" variant="secondary" icon={ArrowLeft} size="sm">
+                    $ ls /projects
+                  </Button>
+                </div>
+              </div>
+            </Terminal>
           </div>
         </Container>
       </div>

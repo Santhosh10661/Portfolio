@@ -18,6 +18,17 @@ module.exports = {
           dark: '#249e8c',
         },
         border: 'rgb(var(--border) / <alpha-value>)',
+        // Syntax highlighting palette (One Dark inspired)
+        syntax: {
+          keyword: '#C678DD',
+          string: '#98C379',
+          function: '#61AFEF',
+          variable: '#E06C75',
+          number: '#D19A66',
+          comment: '#5C6370',
+          operator: '#56B6C2',
+          tag: '#E5C07B',
+        },
       },
       fontFamily: {
         sans: ['var(--font-inter)', ...fontFamily.sans],
@@ -32,6 +43,9 @@ module.exports = {
         'fade-in': 'fade-in 0.6s ease-out',
         'fade-up': 'fade-up 0.6s ease-out',
         'slide-in-right': 'slide-in-right 0.4s ease-out',
+        'blink': 'blink 1.1s step-end infinite',
+        'typing-cursor': 'typing-cursor 1s step-end infinite',
+        'scan-line': 'scan-line 8s linear infinite',
       },
       keyframes: {
         'fade-in': {
@@ -45,6 +59,18 @@ module.exports = {
         'slide-in-right': {
           from: { opacity: '0', transform: 'translateX(100%)' },
           to: { opacity: '1', transform: 'translateX(0)' },
+        },
+        'blink': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
+        },
+        'typing-cursor': {
+          '0%, 100%': { borderColor: '#2EC1AC' },
+          '50%': { borderColor: 'transparent' },
+        },
+        'scan-line': {
+          '0%': { transform: 'translateY(-100%)' },
+          '100%': { transform: 'translateY(100%)' },
         },
       },
     },
